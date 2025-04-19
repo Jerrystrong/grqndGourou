@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "1",
+    "title": "Les LLM et le modèle de génération text",
+    "imageBanner": "codeBack.jpg",
+    "categorie": "Conférences",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "lieu": "Kinshasa",
+    "createAt": 1744533491186
+  },
+  {
+    "_id": "2",
+    "title": "Les LLM et le modèle de génération text",
+    "imageBanner": "codeBack.jpg",
+    "categorie": "Conférences",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "lieu": "Kinshasa",
+    "createAt": 1744533491186
+  },
+  {
+    "_id": "4",
+    "title": "Les LLM et le modèle de génération text last",
+    "imageBanner": "codeBack.jpg",
+    "categorie": "Conférences",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "lieu": "Kinshasa",
+    "createAt": 1744533491186
+  }
+]

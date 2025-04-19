@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "1",
+    "title": "Comprendre la communication du code  par EventEmitter",
+    "imageBanner": "codeBack.jpg",
+    "categorie": "Rituels du code",
+    "description": "Augmenter la performance de vos tasks asynchrone grace à l'EventEmitter",
+    "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi incidunt, aperiam maxime quos veniam, quaerat quae explicabo, esse reiciendis rerum aliquid accusantium rem cupiditate iusto neque? Corrupti, eum cum ipsam voluptatum assumenda provident, recusandae in explicabo laborum ex facere pariatur nobis ipsum qui. Quod molestiae ut, ipsam porro numquam fugiat!",
+    "createAt": 1733958000000
+  },
+  {
+    "_id": "2",
+    "title": "Comprendre la communication du code  par EventEmitter 2",
+    "imageBanner": "back2.png",
+    "categorie": "Decryptage du gourou",
+    "description": "Augmenter la performance de vos tasks asynchrone grace à l'EventEmitter",
+    "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi incidunt, aperiam maxime quos veniam, quaerat quae explicabo, esse reiciendis rerum aliquid accusantium rem cupiditate iusto neque? Corrupti, eum cum ipsam voluptatum assumenda provident, recusandae in explicabo laborum ex facere pariatur nobis ipsum qui. Quod molestiae ut, ipsam porro numquam fugiat!",
+    "createAt": 1731711600000
+  },
+  {
+    "_id": "3",
+    "title": "Comprendre la communication du code  par EventEmitter",
+    "imageBanner": "codeBack.jpg",
+    "categorie": "Oracles de la Cyber",
+    "description": "Augmenter la performance de vos tasks asynchrone grace à l'EventEmitter",
+    "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi incidunt, aperiam maxime quos veniam, quaerat quae explicabo, esse reiciendis rerum aliquid accusantium rem cupiditate iusto neque? Corrupti, eum cum ipsam voluptatum assumenda provident, recusandae in explicabo laborum ex facere pariatur nobis ipsum qui. Quod molestiae ut, ipsam porro numquam fugiat!",
+    "createAt": 1744533491186
+  },
+  {
+    "_id": "4",
+    "title": "Comprendre la communication du code  par EventEmitter last in the list",
+    "imageBanner": "back2.png",
+    "categorie": "Rituels du code",
+    "description": "Augmenter la performance de vos tasks asynchrone grace à l'EventEmitter",
+    "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi incidunt, aperiam maxime quos veniam, quaerat quae explicabo, esse reiciendis rerum aliquid accusantium rem cupiditate iusto neque? Corrupti, eum cum ipsam voluptatum assumenda provident, recusandae in explicabo laborum ex facere pariatur nobis ipsum qui. Quod molestiae ut, ipsam porro numquam fugiat!",
+    "createAt": 1744533720891
+  }
+]

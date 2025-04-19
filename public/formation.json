@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "1",
+    "title": "Comprendre la communication du code  par EventEmitter",
+    "imageBanner": "codeBack.jpg",
+    "categorie": "Formation et mentorat",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "createAt": 1733958000000
+  },
+  {
+    "_id": "2",
+    "title": "Comprendre la communication du code  par EventEmitter 2",
+    "imageBanner": "back2.png",
+    "categorie": "Formation et mentorat",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "createAt": 1764543600000
+  },
+  {
+    "_id": "3",
+    "title": "Comprendre la communication du code  par EventEmitter 2",
+    "imageBanner": "back2.png",
+    "categorie": "Formation et mentorat",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "createAt": 1744533720891
+  },
+  {
+    "_id": "4",
+    "title": "Comprendre la communication du code  par EventEmitter",
+    "imageBanner": "codeBack.jpg",
+    "categorie": "Formation et mentorat",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "createAt": 1744533491186
+  }
+]

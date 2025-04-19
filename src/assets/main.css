@@ -1,2 +1,68 @@
-@import './base.css';
 @import 'tailwindcss';
+@import '@splidejs/vue-splide/css';
+
+@theme {
+  --color-primary: #02000a;
+  --color-secondary: #f8fafc;
+  --color-bleu: #0a5eb0;
+  --font-inter: 'Inter', sans-serif;
+  --font-abeeze: 'Abeezee', sans-serif;
+  --text-un: '16px';
+  --text-deux: '20px';
+  --text-trois: '24px';
+  --text-quatre: '32px';
+  --spacing-un: '16px';
+  --spacing-deux: '20px';
+  --spacing-trois: '24px';
+  --spacing-quatre: '32px';
+}
+.is-active > img {
+  @apply grayscale-0;
+}
+body {
+  @apply dark:bg-primary bg-primary box-border text-secondary;
+}
+.router-link-active {
+  @apply text-bleu/50 relative;
+}
+.router-link-active::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50px;
+  display: block;
+  @apply bg-secondary/45 absolute left-1/2 -bottom-1 transition duration-300 delay-200 font-inter text-[16px];
+}
+
+.primaryDeg {
+  background: linear-gradient(90deg, #0a5eb0, #04284a);
+}
+
+.shadownCustom {
+  box-shadow: 2px 12px 2px #ffffff;
+}
+.gradient-border {
+  border-width: 1px;
+  border-radius: 50px;
+  border-style: solid;
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, #0a5eb0, #04284a) border-box;
+  color: #04284a;
+  padding: 8px 24px;
+  /* border-image-slice: 10; */
+}
+.gradient-text {
+  background: linear-gradient(90deg, #0a5eb0, #04284a);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.primaryImgDeg {
+  border-image-source: linear-gradient(90deg, #0a5eb0, #04284a);
+}
+
+.second-text-gradient {
+  background: linear-gradient(45deg, #ffffff, #999999);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
