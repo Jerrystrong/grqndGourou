@@ -66,3 +66,15 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.scrollCustom {
+  scrollbar-width: 2px;
+}
+.scrollCustom::-webkit-scrollbar {
+  color: #f8fafc;
+  width: 4px;
+}
+.scrollCustom::-webkit-scrollbar-thumb {
+  color: #04284a;
+  width: 2px;
+}

@@ -1,17 +1,7 @@
 import moment from 'moment'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
-
-type Blog = {
-  readonly _id: string
-  title: string
-  imageBanner: string
-  categorie: string
-  description?: string
-  body: string
-  createAt: number | string
-  timePassed?: string
-}
+import type { Blog } from '../types'
 
 export const useBlogStore = defineStore('blog', () => {
   const data = ref<Array<Blog>>()
@@ -75,5 +65,6 @@ export const useBlogStore = defineStore('blog', () => {
       }
     }
   })
+
   return { data, fetchData, threeLast, total, filterBlog }
 })

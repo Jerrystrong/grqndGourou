@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type RouteLocationNormalizedLoaded } from 'vue-router'
 import HomeView from '../views/client/indexView.vue'
 import blogsView from '../views/client/blogsView.vue'
 import singleBlog from '../views/client/singleBlog.vue'
@@ -18,6 +18,9 @@ const router = createRouter({
       path: '/blogs',
       name: 'blogs',
       component: blogsView,
+      props: (route: RouteLocationNormalizedLoaded) => ({
+        searchTerm: route.query?.search || '',
+      }),
     },
     {
       path: '/blog/:id',

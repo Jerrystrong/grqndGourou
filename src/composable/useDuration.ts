@@ -1,5 +1,5 @@
 import moment from 'moment'
-
+import type { Blog } from '../types'
 interface formation {
   readonly _id: string
   title: string
@@ -14,7 +14,7 @@ interface formation {
   timePassed?: string
 }
 
-const useDuration = (data: formation[]): formation[] => {
+const useDuration = (data: (formation | Blog)[]): (formation | Blog)[] => {
   const filterArray = [...(data ?? [])]
   filterArray.map((item) => {
     const now = moment()

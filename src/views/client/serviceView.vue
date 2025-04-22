@@ -4,7 +4,7 @@ import WhatsappIcon from '../../components/whatsappIcon.vue'
 import { ref } from 'vue'
 import InputComponent from '@/components/inputComponent.vue'
 import worldCountries from 'world-countries'
-// import { getName } from 'country-list'
+import FooterComponent from '@/components/footerComponent.vue'
 // slide splite config --one
 const opt = ref<Options>()
 opt.value = {
@@ -166,8 +166,8 @@ const setClientCountry = (country: string, flag: string, code: string[]) => {
       </h2>
     </div>
 
-    <div class="flex items-center justify-center py-7 gap-5 md:flex-row flex-col">
-      <div class="bg-secondary/20 md:w-[300px] w-[95%] p-5 h-full md:rounded-tl-lg rounded-tl-0">
+    <div class="flex justify-center py-7 gap-5 md:flex-row flex-col">
+      <div class="bg-secondary/20 md:w-[400px] w-[95%] p-5 h-full md:rounded-tl-lg rounded-tl-0">
         <h2 class="font-semibold text-2xl my-5">Vos coordonnées</h2>
         <div class="form">
           <div class="grid gap-5">
@@ -500,5 +500,7 @@ const setClientCountry = (country: string, flag: string, code: string[]) => {
         </div>
       </div>
     </div>
+    <!-- footer -->
+    <FooterComponent class="w-[95%] mx-auto" />
   </div>
 </template>

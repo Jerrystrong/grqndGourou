@@ -4,6 +4,7 @@ import SectionHeader from '../../components/sectionHeader.vue'
 import { useBlogStore } from '../../stores/blog'
 import FooterComponent from '@/components/footerComponent.vue'
 import SearchComponent from '@/components/searchComponent.vue'
+import { useRouter } from 'vue-router'
 
 type Blog = {
   readonly _id: string
@@ -15,6 +16,11 @@ type Blog = {
   createAt: number | string
   timePassed?: string
 }
+const props = defineProps<{
+  searchTerm: string
+}>()
+// router
+const router = useRouter()
 // initialising blog store
 const blogs = useBlogStore()
 const search = ref('')
@@ -26,6 +32,9 @@ const filterTerm = ref<string>('')
 const filterArray = ref<Blog[]>()
 // open research component and push data
 const searchBlog = () => {
+  router.replace({ query: { search: search.value } })
+  console.log(props.searchTerm)
+  console.log('iici')
   filterArray.value = blogs.filterBlog(search.value, 'title')
   openSearch.value = true
 }
@@ -161,11 +170,11 @@ blogs.fetchData()
           </div>
           <div
             v-else
-            class="w-full bg-secondary/60 h-[300px] flex items-center justify-center relative text-3xl"
+            class="w-full bg-secondary/60 h-[300px] flex items-center justify-center relative text-3xl animate-pulse"
           >
-            <div
+            <!-- <div
               class="absolute w-full bg-primary/30 h-full top-0 left-0 bottom-0 animatedOne"
-            ></div>
+            ></div> -->
             Not data available now
           </div>
         </transition>

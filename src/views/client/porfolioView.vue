@@ -41,7 +41,7 @@ opt.value = {
 </script>
 <template>
   <div class="bg-primary dark:bg-primary w-screen">
-    <div class="w-[90%] mx-auto bg-primary">
+    <div class="w-[90%] mx-auto bg-primary rounded-2xl">
       <!-- header -->
       <div
         class="h-[90dvh] w-full flex items-center lg:gap-[200px] md:gap-[100px] gap-10 lg:flex-row flex-col justify-center lg:justify-start relative"

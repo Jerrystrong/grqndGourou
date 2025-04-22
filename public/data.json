@@ -5,6 +5,7 @@
     "imageBanner": "codeBack.jpg",
     "categorie": "Rituels du code",
     "description": "Augmenter la performance de vos tasks asynchrone grace à l'EventEmitter",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
     "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi incidunt, aperiam maxime quos veniam, quaerat quae explicabo, esse reiciendis rerum aliquid accusantium rem cupiditate iusto neque? Corrupti, eum cum ipsam voluptatum assumenda provident, recusandae in explicabo laborum ex facere pariatur nobis ipsum qui. Quod molestiae ut, ipsam porro numquam fugiat!",
     "createAt": 1733958000000
   },
@@ -14,7 +15,16 @@
     "imageBanner": "back2.png",
     "categorie": "Decryptage du gourou",
     "description": "Augmenter la performance de vos tasks asynchrone grace à l'EventEmitter",
-    "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi incidunt, aperiam maxime quos veniam, quaerat quae explicabo, esse reiciendis rerum aliquid accusantium rem cupiditate iusto neque? Corrupti, eum cum ipsam voluptatum assumenda provident, recusandae in explicabo laborum ex facere pariatur nobis ipsum qui. Quod molestiae ut, ipsam porro numquam fugiat!",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nisi quam distinctio doloremque assumenda optio amet dignissimos facilis sunt? Porro dicta at aliquam odio quos obcaecati, magni consequatur ratione eos adipisci doloribus. Ipsa, nostrum? Aspernatur enim repudiandae sunt ab temporibus consectetur voluptate molestiae maxime, rerum consequuntur ipsum et id quod repellat voluptatum sequi tempora labore? Eum id odit inventore recusandae autem ratione rerum deserunt alias perferendis quae sunt, quos eligendi debitis, corporis accusantium, delectus iusto ipsum dignissimos fugit explicabo! Soluta quia atque libero? Necessitatibus corrupti tempora, eveniet, fugiat consequuntur eius omnis, fugit consequatur harum iste voluptatem aspernatur? Laborum, ab at.",
+    "feeds": {
+      "viewer": 10,
+      "commentaires": [
+        { "name": "Alfred", "message": "Super explicite", "like": 0 },
+        { "name": "Alfred", "message": "Super explicite", "like": 0 }
+      ],
+      "like": 10
+    },
     "createAt": 1731711600000
   },
   {
@@ -23,7 +33,16 @@
     "imageBanner": "codeBack.jpg",
     "categorie": "Oracles de la Cyber",
     "description": "Augmenter la performance de vos tasks asynchrone grace à l'EventEmitter",
-    "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi incidunt, aperiam maxime quos veniam, quaerat quae explicabo, esse reiciendis rerum aliquid accusantium rem cupiditate iusto neque? Corrupti, eum cum ipsam voluptatum assumenda provident, recusandae in explicabo laborum ex facere pariatur nobis ipsum qui. Quod molestiae ut, ipsam porro numquam fugiat!",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nisi quam distinctio doloremque assumenda optio amet dignissimos facilis sunt? Porro dicta at aliquam odio quos obcaecati, magni consequatur ratione eos adipisci doloribus. Ipsa, nostrum? Aspernatur enim repudiandae sunt ab temporibus consectetur voluptate molestiae maxime, rerum consequuntur ipsum et id quod repellat voluptatum sequi tempora labore? Eum id odit inventore recusandae autem ratione rerum deserunt alias perferendis quae sunt, quos eligendi debitis, corporis accusantium, delectus iusto ipsum dignissimos fugit explicabo! Soluta quia atque libero? Necessitatibus corrupti tempora, eveniet, fugiat consequuntur eius omnis, fugit consequatur harum iste voluptatem aspernatur? Laborum, ab at.",
+    "feeds": {
+      "viewer": 10,
+      "commentaires": [
+        { "name": "Alfred", "message": "Super explicite", "like": 0 },
+        { "name": "Alfred", "message": "Super explicite", "like": 0 }
+      ],
+      "like": 3
+    },
     "createAt": 1744533491186
   },
   {
@@ -32,7 +51,16 @@
     "imageBanner": "back2.png",
     "categorie": "Rituels du code",
     "description": "Augmenter la performance de vos tasks asynchrone grace à l'EventEmitter",
-    "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi incidunt, aperiam maxime quos veniam, quaerat quae explicabo, esse reiciendis rerum aliquid accusantium rem cupiditate iusto neque? Corrupti, eum cum ipsam voluptatum assumenda provident, recusandae in explicabo laborum ex facere pariatur nobis ipsum qui. Quod molestiae ut, ipsam porro numquam fugiat!",
+    "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
+    "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nisi quam distinctio doloremque assumenda optio amet dignissimos facilis sunt? Porro dicta at aliquam odio quos obcaecati, magni consequatur ratione eos adipisci doloribus. Ipsa, nostrum? Aspernatur enim repudiandae sunt ab temporibus consectetur voluptate molestiae maxime, rerum consequuntur ipsum et id quod repellat voluptatum sequi tempora labore? Eum id odit inventore recusandae autem ratione rerum deserunt alias perferendis quae sunt, quos eligendi debitis, corporis accusantium, delectus iusto ipsum dignissimos fugit explicabo! Soluta quia atque libero? Necessitatibus corrupti tempora, eveniet, fugiat consequuntur eius omnis, fugit consequatur harum iste voluptatem aspernatur? Laborum, ab at.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nisi quam distinctio doloremque assumenda optio amet dignissimos facilis sunt? Porro dicta at aliquam odio quos obcaecati, magni consequatur ratione eos adipisci doloribus. Ipsa, nostrum? Aspernatur enim repudiandae sunt ab temporibus consectetur voluptate molestiae maxime, rerum consequuntur ipsum et id quod repellat voluptatum sequi tempora labore? Eum id odit inventore recusandae autem ratione rerum deserunt alias perferendis quae sunt, quos eligendi debitis, corporis accusantium, delectus iusto ipsum dignissimos fugit explicabo! Soluta quia atque libero? Necessitatibus corrupti tempora, eveniet, fugiat consequuntur eius omnis, fugit consequatur harum iste voluptatem aspernatur? Laborum, ab at.",
+    "feeds": {
+      "viewer": 10,
+      "commentaires": [
+        { "name": "Alfred", "message": "Super explicite", "like": 0 },
+        { "name": "Alfred", "message": "Super explicite", "like": 0 }
+      ],
+      "like": 5
+    },
     "createAt": 1744533720891
   }
 ]
