@@ -1,6 +1,16 @@
-<script setup lang="ts">
-defineProps({
-  iteration: Number,
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+// defineProps({
+//   iteration: Number,
+// })
+export default defineComponent({
+  props: {
+    iteration: Number,
+  },
+  setup(props) {
+    console.log(props.iteration)
+  },
 })
 </script>
 <template>

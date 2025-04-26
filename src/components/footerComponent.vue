@@ -1,5 +1,10 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from 'vue'
 import WhatsappIcon from './whatsappIcon.vue'
+export default defineComponent({
+  components: { WhatsappIcon },
+  name: 'FooterComponent',
+})
 </script>
 <template>
   <div class="mb-5 mt-5">

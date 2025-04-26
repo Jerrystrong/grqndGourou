@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import SectionHeader from '../../components/sectionHeader.vue'
 import { useBlogStore } from '../../stores/blog'
-import FooterComponent from '@/components/footerComponent.vue'
-import SearchComponent from '@/components/searchComponent.vue'
+import FooterComponent from '../../components/footerComponent.vue'
+import SearchComponent from '../../components/searchComponent.vue'
 import { useRouter } from 'vue-router'
+import SectionHeader from '../../components/sectionHeader.vue'
 
 type Blog = {
   readonly _id: string

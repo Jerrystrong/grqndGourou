@@ -1,7 +1,15 @@
-<script setup lang="ts">
-defineProps({
-  sectionName: String,
-  widthC: Number,
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+// defineProps({
+//   sectionName: String,
+//   widthC: Number,
+// })
+export default defineComponent({
+  props: {
+    sectionName: String,
+    widthC: Number,
+  },
 })
 </script>
 <template>

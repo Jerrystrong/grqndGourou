@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import WhatsappIcon from '../../components/whatsappIcon.vue'
 import leftIcon from '../../components/icons/leftIcon.vue'
 import { useBlogStore } from '../../stores/blog'
 import { useRouter } from 'vue-router'
@@ -8,7 +7,7 @@ import { useFetch } from '../../composable/useFetch'
 import useDuration from '../../composable/useDuration'
 import BounderBal from '../../components/bounderBal.vue'
 import FooterComponent from '../../components/footerComponent.vue'
-
+import WhatsappIcon from '../../components/whatsappIcon.vue'
 const router = useRouter()
 const changeRoute = (id: string) => {
   router.push({ name: 'singleBlog', params: { id } })

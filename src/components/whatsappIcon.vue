@@ -1,7 +1,15 @@
-<script setup lang="ts">
-defineProps({
-  w: String,
-  h: String,
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+// defineProps({
+//   w: String,
+//   h: String,
+// })
+export default defineComponent({
+  props: {
+    w: String,
+    h: String,
+  },
 })
 </script>
 <template>
