@@ -64,7 +64,7 @@ const openMenu = (): void => {
       </nav>
 
       <button
-        class="transition duration-300 delay-200 cursor-pointer border rounded-md border-white text-white px-5 py-1 h-fit hover:bg-white hover:text-primary"
+        class="transition duration-300 delay-200 cursor-pointer border rounded-md border-white px-5 py-1 h-fit bg-white text-primary hover:bg-white/90 hover:border-primary hover:scale-105"
       >
         Communauté
       </button>
@@ -114,7 +114,7 @@ const openMenu = (): void => {
             >Services et collaboration</router-link
           >
           <button
-            class="border rounded-md border-white text-white px-5 py-1 w-fit text-xl hover:bg-white hover:text-primary z-50"
+            class="transition duration-300 delay-200 cursor-pointer border rounded-md border-white px-5 py-1 h-fit bg-white text-primary hover:bg-white/90 hover:border-primary hover:scale-105"
           >
             Communauté
           </button>

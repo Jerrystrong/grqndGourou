@@ -109,7 +109,7 @@ const sendMessage = () => {
           <div
             v-for="(data, index) in blogs.threeLast"
             :key="index"
-            class="cart bg-secondary/20 rounded-lg lg:w-[380px] md:w-[300px] h-fit cursor-pointer group/blog w-[95%] md:m-0 m-auto hover:bg-secondary/15 transition duration-300 delay-200 ease-in-out"
+            class="cart bg-secondary/20 rounded-lg lg:w-[380px] md:w-[300px] h-fit cursor-pointer group/blog w-[95%] md:m-0 m-auto hover:bg-secondary/15 transition duration-300 delay-200 ease-in-out before before:content-[''] before:w-full before:h-[50px] before:bg-primary before:block before:absolute relative before:bottom-0 before:z-30 z-10 before:rounded-bl-lg before:rounded-br-lg before:blur-lg"
             @click="changeRoute(data._id)"
           >
             <div class="w-full h-[200px] rounded-tl-lg rounded-tr-lg relative overflow-hidden">
@@ -118,7 +118,9 @@ const sendMessage = () => {
               <!-- badge -->
               <div class="absolute w-full top-[70%] transition duration-300 ease-in-out">
                 <div class="flex items-center justify-between absolute w-full px-5">
-                  <div class="bag primaryDeg w-fit rounded-full px-7 py-1 border border-primary">
+                  <div
+                    class="bag primaryDeg w-fit rounded-full md:px-7 px-5 py-1 border border-primary truncate"
+                  >
                     {{ data.categorie }}
                   </div>
                   <p>{{ data.timePassed }}</p>
@@ -184,7 +186,7 @@ const sendMessage = () => {
             <div class="absolute w-full top-[70%] transition duration-300 ease-in-out">
               <div class="flex items-center justify-between absolute w-full px-5">
                 <div
-                  class="bag primaryDeg w-fit rounded-full lg:px-7 px-5 lg:text-[16px] text-[11px] py-1 border border-primary"
+                  class="bag primaryDeg w-fit rounded-full lg:px-7 px-5 lg:text-[16px] text-[12px] py-1 border border-primary truncate"
                 >
                   {{ data.categorie }}
                 </div>
@@ -304,25 +306,31 @@ const sendMessage = () => {
           class="grid grid-cols-2 lg:w-1/2 md:w-[60%] w-[90%] gap-y-[30px] relative lg:text-[16px] text-[12px] place-items-center"
         >
           <div
-            class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-8 absolute lg:-left-[40%] md:top-[35%] md:-left-[30%] top-[110%]"
+            class="text-bleu bg-secondary rounded-[50px] text-center w-fit md:px-8 absolute lg:-left-[40%] md:top-[35%] md:-left-[30%] top-[110%] px-5 max-[380]:px-1"
           >
             Decryptage du goourou
           </div>
           <div
-            class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-8 absolute lg:-right-[35%] top-[35%] md:-right-[25%]"
+            class="text-bleu bg-secondary rounded-[50px] text-center w-fit absolute lg:-right-[35%] top-[35%] md:-right-[25%] px-5 max-[380]:px-1"
           >
             Service et partaria
           </div>
-          <div class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-8">
+          <div class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-5 max-[380]:px-1">
             Rituels du Code
           </div>
-          <div class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-8">
+          <div
+            class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-5 max-[380]:px-1 truncate"
+          >
             Oracles de la Cyber
           </div>
-          <div class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-8">
+          <div
+            class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-5 max-[380]:px-1 truncate"
+          >
             Grimoire des Outils
           </div>
-          <div class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-8">
+          <div
+            class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-5 max-[380]:px-1 truncate"
+          >
             Formation & mentorat
           </div>
         </div>
