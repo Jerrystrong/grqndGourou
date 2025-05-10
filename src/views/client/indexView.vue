@@ -109,7 +109,7 @@ const sendMessage = () => {
           <div
             v-for="(data, index) in blogs.threeLast"
             :key="index"
-            class="cart bg-secondary/20 rounded-lg lg:w-[380px] md:w-[300px] h-fit cursor-pointer group/blog w-[95%] md:m-0 m-auto hover:bg-secondary/15 transition duration-300 delay-200 ease-in-out before before:content-[''] before:w-full before:h-[50px] before:bg-primary before:block before:absolute relative before:bottom-0 before:z-30 z-10 before:rounded-bl-lg before:rounded-br-lg before:blur-lg"
+            class="cart bg-secondary/20 rounded-lg lg:w-[380px] md:w-[300px] h-fit cursor-pointer group/blog w-[95%] md:m-0 m-auto hover:bg-secondary/15 transition duration-300 delay-200 ease-in-out before before:content-['Voir plus'] before:w-full before:h-[50px] before:bg-primary before:block before:absolute relative before:bottom-0 before:z-30 z-10 before:rounded-bl-lg before:rounded-br-lg before:blur-lg before:text-white before:text-center"
             @click="changeRoute(data._id)"
           >
             <div class="w-full h-[200px] rounded-tl-lg rounded-tr-lg relative overflow-hidden">
@@ -134,7 +134,7 @@ const sendMessage = () => {
               />
             </div>
             <div class="p-5">
-              <h2 class="font-abeeze text-2xl">{{ data.title }}</h2>
+              <h2 class="font-abeeze md:text-2xl text-xl">{{ data.title }}</h2>
               <p class="h-[80px] mt-4 overflow-clip">{{ data.body }}</p>
             </div>
           </div>
