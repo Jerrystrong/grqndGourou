@@ -22,7 +22,7 @@ console.log(props.data)
 </script>
 <template>
   <div
-    class="absolute bottom-0 left-0 w-full h-[90%] bg-black/75 flex justify-center items-center flex-col gap-2"
+    class="fixed z-50 top-0 bottom-0 left-0 w-full h-[100%] bg-black/75 flex justify-center items-center flex-col gap-2"
   >
     <div class="self-end mr-[10%] cursor-pointer" @click="closeSearch">
       <img src="/close.png" alt="" />
@@ -30,12 +30,12 @@ console.log(props.data)
     <div class="bg-secondary w-[70%] h-[80%] text-primary p-6 overflow-y-scroll">
       <h2 class="text-3xl font-abeeze">Recherche</h2>
       <p>Terme recherché "{{ searchTerm }}"</p>
-      <p>{{ data?.length }} suggections possible</p>
+      <p>{{ data?.length }} suggection(s) possible</p>
       <div class="flex flex-col gap-2 m-2 md:gap-5">
         <div
           v-for="(blog, index) in data"
           :key="index"
-          class="flex gap-3 md:gap-6 group/hov cursor-pointer"
+          class="flex gap-3 md:gap-6 group/hov cursor-pointer md:flex-row flex-col"
         >
           <div>
             <img

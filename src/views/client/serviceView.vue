@@ -45,13 +45,17 @@ const setClientCountry = (country: string, flag: string, code: string[]) => {
   countryFlag.value = flag
   ClientCountryActive.value = false
 }
+// whatcall
+const whatsappCall = () => {
+  window.open(`whatsapp://send?phone=+243826526374`)
+}
 </script>
 <template>
   <div>
     <!-- header -->
     <div>
       <div
-        class="flex items-center md:justify-end justify-center h-[65dvh] flex-col gap-7 relative"
+        class="flex items-center md:justify-end justify-center lg:h-[65dvh] md:h-[45dvh] h-[65dvh] flex-col gap-7 relative"
       >
         <div class="flex self-start translate-x-10 opacity-50">
           <div class="relative">
@@ -60,17 +64,20 @@ const setClientCountry = (country: string, flag: string, code: string[]) => {
           </div>
 
           <div
-            class="translate-x-7 flex items-center bg-yellow-300/50 border border-yellow-300 px-6 py-1 rounded-full font-abeeze"
+            class="translate-x-7 flex items-center bg-yellow-300/50 border border-yellow-300 md:px-6 px-4 py-1 rounded-full font-abeeze md:text-[16px] text-[12px]"
           >
             50+ Etudiants
           </div>
         </div>
 
-        <h1 class="text-5xl second-text-gradient text-center">
+        <h1 class="md:text-5xl text-2xl second-text-gradient text-center">
           Offrez à votre business un nouveau souffle
         </h1>
         <div class="flex gap-4">
-          <a href="" class="text-bleu bg-secondary px-5 py-1 rounded-full flex items-center gap-3">
+          <button
+            class="text-bleu bg-secondary px-5 py-1 rounded-full flex items-center gap-3"
+            @click="whatsappCall"
+          >
             Appel
             <svg
               width="20"
@@ -99,7 +106,7 @@ const setClientCountry = (country: string, flag: string, code: string[]) => {
                 />
               </defs>
             </svg>
-          </a>
+          </button>
 
           <router-link :to="{ name: 'about' }" class="primaryDeg px-5 p-1 rounded-full"
             >A propos de moi</router-link
@@ -113,7 +120,7 @@ const setClientCountry = (country: string, flag: string, code: string[]) => {
           </div>
 
           <div
-            class="-translate-x-2 flex items-center bg-bleu/50 border border-bleu px-6 py-1 rounded-full font-abeeze"
+            class="-translate-x-2 flex items-center bg-bleu/50 border border-bleu rounded-full font-abeeze md:px-6 px-4 py-1 rounded-full font-abeeze md:text-[16px] text-[12px]"
           >
             10+ Collaborations
           </div>
@@ -166,8 +173,10 @@ const setClientCountry = (country: string, flag: string, code: string[]) => {
       </h2>
     </div>
 
-    <div class="flex justify-center py-7 gap-5 md:flex-row flex-col">
-      <div class="bg-secondary/20 md:w-[400px] w-[95%] p-5 h-full md:rounded-tl-lg rounded-tl-0">
+    <div class="flex justify-center py-7 gap-1 lg:flex-row flex-col">
+      <div
+        class="bg-secondary/20 md:w-[400px] w-[90%] mx-auto p-5 h-full md:rounded-tl-lg rounded-tl-0"
+      >
         <h2 class="font-semibold text-2xl my-5">Vos coordonnées</h2>
         <div class="form">
           <div class="grid gap-5">
@@ -470,7 +479,7 @@ const setClientCountry = (country: string, flag: string, code: string[]) => {
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-6 md:w-fit w-[90%] mx-auto">
         <div>
           <h2 class="text-2xl my-5">Email support</h2>
           <p>Pour toutes préoccupations contacter nous via notre mail</p>

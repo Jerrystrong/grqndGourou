@@ -92,6 +92,7 @@ const openMenu = (): void => {
         <div
           class="flex flex-col gap-5 text-white absolute top-13 bg-gray-900 backdrop-blur-lg border-t w-full border-secondary/35 h-screen p-5"
           v-if="menuOpen"
+          @click="openMenu"
         >
           <router-link
             :to="{ name: 'home' }"

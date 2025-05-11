@@ -50,6 +50,44 @@ const userMessage = ref<string>('')
 const sendMessage = () => {
   console.log('message send with success')
 }
+// scroll effect for mobile <formation Section>
+const cursor = ref(0)
+const scroll = ref(0)
+const putOtherFormation = () => {
+  const formContainer = document.querySelector('#formContainer')
+  const firstFormation: HTMLElement | null = document.getElementById('0')
+  cursor.value = cursor.value + 1
+  if (cursor.value === 1) {
+    if (firstFormation) {
+      scroll.value = scroll.value + firstFormation?.getClientRects()[0].width
+      const two = document.getElementById('1')
+      if (two) {
+        two.classList.add('w-[300px]')
+        // scroll.value = scroll.value + 300
+      }
+    } else {
+      console.log('composant raté')
+    }
+  } else if (cursor.value > 3) {
+    cursor.value = 1
+    scroll.value = 0
+  } else {
+    console.log('next')
+    const el = document.getElementById(`${cursor.value}`)
+    if (el) {
+      scroll.value = scroll.value + 300
+      el.classList.add('w-[300px]')
+      const next = document.getElementById(`${cursor.value + 1}`)
+      console.log(el)
+      console.log(next)
+      // if (next) {
+      //   next.classList.add('w-[300px]')
+      // }
+    }
+  }
+  formContainer?.scrollTo(scroll.value, 0)
+  console.log(formContainer)
+}
 </script>
 <template>
   <div class="w-[95%] mx-auto">
@@ -109,9 +147,12 @@ const sendMessage = () => {
           <div
             v-for="(data, index) in blogs.threeLast"
             :key="index"
-            class="cart bg-secondary/20 rounded-lg lg:w-[380px] md:w-[300px] h-fit cursor-pointer group/blog w-[95%] md:m-0 m-auto hover:bg-secondary/15 transition duration-300 delay-200 ease-in-out before before:content-['Voir plus'] before:w-full before:h-[50px] before:bg-primary before:block before:absolute relative before:bottom-0 before:z-30 z-10 before:rounded-bl-lg before:rounded-br-lg before:blur-lg before:text-white before:text-center"
+            class="cart bg-secondary/20 rounded-lg lg:w-[380px] md:w-[300px] h-fit cursor-pointer group/blog w-[95%] md:m-0 m-auto hover:bg-secondary/15 transition duration-300 delay-200 ease-in-out before before:content-[''] before:w-full before:h-[50px] before:bg-primary/25 before:block before:absolute relative before:bottom-0 before:z-30 z-10 before:rounded-bl-lg before:rounded-br-lg before:backdrop-blur-[2px] before:text-white before:text-center before:blur-sm relative"
             @click="changeRoute(data._id)"
           >
+            <div class="absolute bottom-4 left-[40%] z-30 md:text-[18px] text-[14px] font-semibold">
+              Voir plus ...
+            </div>
             <div class="w-full h-[200px] rounded-tl-lg rounded-tr-lg relative overflow-hidden">
               <!-- little background effect -->
               <div class="absolute top-0 left-0 w-full h-full bg-primary/25"></div>
@@ -170,13 +211,14 @@ const sendMessage = () => {
     </div>
     <!-- formation part -->
 
-    <div class="overflow-hidden my-10 flex gap-7">
+    <div class="overflow-hidden my-10 flex gap-7" id="formContainer">
       <div v-for="(data, index) in formation" :key="index" class="" style="flex-wrap: nowrap">
         <!-- only when the index===1 -->
         <div
           v-if="index === 0"
           class="lg:w-[500px] w-[300px] bg-secondary/25 rounded-lg cursor-pointer group/form hover:bg-secondary/15 transition duration-300 delay-200 ease-in-out"
           @click="router.push({ name: 'service' })"
+          :id="index.toString()"
         >
           <!-- formation header -->
           <div class="w-full h-[150px] rounded-tl-lg rounded-tr-lg relative overflow-hidden">
@@ -227,6 +269,7 @@ const sendMessage = () => {
         <div
           class="lg:w-[300px] flex relative rounded-lg overflow-hidden items-center justify-center h-full group/back cursor-pointer md:w-[250px] w-[95%]"
           @click="router.push({ name: 'service' })"
+          :id="index.toString()"
           v-else
         >
           <img
@@ -242,7 +285,7 @@ const sendMessage = () => {
       </div>
     </div>
     <div class="flex justify-end mb-7 -translate-x-5">
-      <button class="gradient-border">
+      <button class="gradient-border" @click="putOtherFormation">
         <span class="flex items-center group/btn transition duration-300 ease-in-out delay-200">
           <span
             class="translate-x-2 gradient-text group-hover/btn:-translate-x-1 transition duration-300 ease-in-out"
@@ -278,16 +321,16 @@ const sendMessage = () => {
           name="userName"
           id="userName"
           placeholder="Entrez votre noms"
-          class="border border-bleu px-2 rounded-lg placeholder:text-black/70 focus:outline-2 py-1 focus:outline-bleu/60 focus:border-bleu focus:transition focus:placeholder:text-black/50 transition duration-300 ease-in-out active:outline-bleu/60 active:outline-2"
+          class="border border-bleu px-2 rounded-lg placeholder:text-black/70 focus:outline-2 py-1 focus:outline-bleu/60 focus:border-bleu focus:transition focus:placeholder:text-black/50 transition duration-300 ease-in-out active:outline-bleu/60 active:outline-2 max-[380px]:w-[300px] max-[380px]:ml-2"
           v-model="userName"
         />
-        <div class="flex gap-2">
+        <div class="flex gap-2 max-[380px]:gap-1">
           <input
             type="email"
             name="userMail"
             id="userMail"
             placeholder="Entrez votre e-mail"
-            class="border border-bleu px-2 rounded-lg placeholder:text-black/70 focus:outline-2 py-1 focus:outline-bleu/60 focus:border-bleu focus:transition focus:placeholder:text-black/50 transition duration-300 ease-in-out active:outline-bleu/60 active:outline-2"
+            class="border border-bleu px-2 rounded-lg placeholder:text-black/70 focus:outline-2 py-1 focus:outline-bleu/60 focus:border-bleu focus:transition focus:placeholder:text-black/50 transition duration-300 ease-in-out active:outline-bleu/60 active:outline-2 max-[380px]:w-[180px] max-[380px]:ml-2"
             v-model="userMail"
           />
           <button @click="sendNewsLetter" class="text-secondary bg-bleu px-7 rounded-lg py-1">
@@ -352,7 +395,7 @@ const sendMessage = () => {
           name="message"
           id="message"
           v-model="userMessage"
-          class="md:w-1/2 w-[70%] bg-secondary placeholder:text-black/70 rounded-lg p-3 text-primary"
+          class="md:w-1/2 w-[70%] bg-secondary placeholder:text-black/70 rounded-lg p-3 text-primary resize-none"
           placeholder="Ecrivez vos questions ici"
         ></textarea>
       </div>

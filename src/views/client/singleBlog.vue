@@ -80,8 +80,10 @@ const getPopularPost = computed(() => {
           <span class="gradient-text">{{ getPost?.categorie }}</span>
         </div>
       </div>
-      <div class="title m-5 flex justify-between">
-        <h2 class="font-abeeze text-4xl w-[70%]">{{ getPost?.title }}</h2>
+      <div class="title m-5 flex justify-between md:flex-row flex-col md:gap-0 gap-2">
+        <h2 class="font-abeeze md:text-4xl text-2xl md:w-[70%] w-[100%]">
+          {{ getPost?.title }}
+        </h2>
         <div class="flex gap-4 items-center">
           <button class="flex gap-1">
             <img src="/visible.png" alt="" class="w-7 h-7" />
@@ -93,13 +95,13 @@ const getPopularPost = computed(() => {
           </button>
         </div>
       </div>
-      <div class="flex my-7 w-full gap-3 md:flex-row flex-col">
-        <div class="md:h-[100dvh] md:w-[70%] flex flex-col gap-7 md:overflow-y-scroll scrollCustom">
+      <div class="flex my-7 w-full gap-3 lg:flex-row flex-col">
+        <div class="lg:h-[100dvh] lg:w-[70%] flex flex-col gap-7 md:overflow-y-scroll scrollCustom">
           <div class="banner">
             <img
               :src="`/${getPost?.imageBanner}`"
               alt=""
-              class="w-full md:h-[400px] h-[200px] object-cover"
+              class="w-full lg:h-[400px] h-[200px] object-cover"
             />
           </div>
           <p class="text-justify">{{ getPost?.body }}</p>
@@ -265,8 +267,8 @@ const getPopularPost = computed(() => {
             </div>
           </div>
         </div>
-        <div class="md:h-[100dvh] md:w-[30%]">
-          <div class="bg-secondary/20 md:w-[80%] w-full mx-auto">
+        <div class="lg:h-[100dvh] lg:w-[30%]">
+          <div class="bg-secondary/20 lg:w-[80%] w-full mx-auto">
             <h2 class="text-xl text-center">Postes simulaires</h2>
             <div v-for="recent in blogStorage.threeLast" :key="recent._id" class="m-3 border-b">
               <router-link :to="{ name: 'singleBlog', params: { id: recent._id } }">
@@ -276,7 +278,7 @@ const getPopularPost = computed(() => {
             </div>
           </div>
 
-          <div class="md:w-[80%] w-ful mx-auto">
+          <div class="lg:w-[80%] w-ful mx-auto">
             <h3 class="text-xl font-bold mb-4">Les plus populaire</h3>
             <router-link
               :to="{ name: 'singleBlog', params: { id: popular._id } }"
@@ -286,7 +288,7 @@ const getPopularPost = computed(() => {
               <div>
                 <img
                   :src="`/${popular.imageBanner}`"
-                  class="w-full md:h-[100px] h-[200px] object-cover"
+                  class="w-full lg:h-[100px] h-[200px] object-cover"
                 />
                 <h3 class="font-bold m-2">{{ popular.title }}</h3>
                 <div class="flex justify-between text-secondary m-2">

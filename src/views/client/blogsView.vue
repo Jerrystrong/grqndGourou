@@ -55,7 +55,9 @@ blogs.fetchData()
     />
     <!-- header -->
     <div class="md:h-[90vh] h-[70vh] w-full flex items-center justify-center flex-col gap-8">
-      <h1 class="text-5xl second-text-gradient text-center">LES ÉCRITS DU GRAND GOUROU</h1>
+      <h1 class="md:text-5xl text-3xl second-text-gradient text-center">
+        LES ÉCRITS DU GRAND GOUROU
+      </h1>
       <div
         class="bg-secondary px-8 py-4 rounded-full transition duration-300 ease-in-out flex items-center"
         :class="{
@@ -87,7 +89,10 @@ blogs.fetchData()
         <button class="px-4 py-1 filter" @click="filterTerm = 'Rituels du Code'">
           Rituels du Code
         </button>
-        <button class="px-4 py-1 filter" @click="filterTerm = 'Grimoire des Outils'">
+        <button
+          class="px-4 py-1 filter max-[380px]:tricante"
+          @click="filterTerm = 'Grimoire des Outils'"
+        >
           Grimoire des Outils
         </button>
         <button class="px-4 py-1 filter" @click="filterTerm = 'Oracles de la Cyber'">
@@ -101,14 +106,16 @@ blogs.fetchData()
         <!-- render blog -->
         <transition appear>
           <div class="grid gap-8 mt-8" v-if="blogs.filterBlog(filterTerm, 'categorie').length > 0">
-            <h2 class="second-text-gradient text-4xl my-7">
+            <h2 class="second-text-gradient md:text-4xl text-2xl md:my-7 my-3">
               Les plus recents [{{ blogs.filterBlog(filterTerm, 'categorie').length }}]
             </h2>
             <transition-group appear name="slide">
               <div v-for="(data, index) in blogs.filterBlog(filterTerm, 'categorie')" :key="index">
                 <div class="flex gap-10 justify-between p-8 md:flex-row flex-col-reverse fade">
                   <div class="flex flex-col gap-4">
-                    <h2 class="text-2xl font-bold md:w-[70%] w-full">{{ data.title }}</h2>
+                    <h2 class="md:text-2xl text-xl font-bold md:w-[70%] w-full">
+                      {{ data.title }}
+                    </h2>
                     <p>{{ data?.description }}</p>
                     <router-link
                       :to="{ name: 'singleBlog', params: { id: data._id } }"

@@ -44,7 +44,7 @@ opt.value = {
     <div class="w-[90%] mx-auto bg-primary rounded-2xl">
       <!-- header -->
       <div
-        class="h-[90dvh] w-full flex items-center lg:gap-[200px] md:gap-[100px] gap-10 lg:flex-row flex-col justify-center lg:justify-start relative"
+        class="h-[90dvh] max-[390px]:h-[100dvh] w-full flex items-center lg:gap-[200px] md:gap-[100px] gap-10 lg:flex-row flex-col justify-center lg:justify-start relative"
       >
         <div class="absolute bottom-4 right-6">
           <svg
@@ -91,7 +91,7 @@ opt.value = {
               façonner l'avenir numérique.
             </p>
           </div>
-          <div class="flex flex-row gap-7 mt-7 justify-center lg:justify-start">
+          <div class="flex flex-row gap-7 mt-7 max-[390px]:mt-4 justify-center lg:justify-start">
             <a href="" class="">
               <WhatsappIcon w="20" h="20" />
             </a>
@@ -107,7 +107,7 @@ opt.value = {
 
       <!--  slogant -->
       <h2
-        class="slogant lg:text-4xl md:text-2xl text-[14px] second-text-gradient flex md:lg:gap-7 gap-4 justify-center"
+        class="slogant lg:text-4xl md:text-2xl text-[14px] second-text-gradient flex md:gap-7 gap-4 justify-center max-[390px]:translate-y-5 max-[380px]:text-[12px]"
       >
         <span>Les détails</span>
         <span class="before:content-[''] before:block before:h-4">façonnent</span>
@@ -115,7 +115,9 @@ opt.value = {
         <span class="before:content-[''] before:block before:h-4">technologique</span>
       </h2>
       <!--  -->
-      <p class="my-10 md:text-2xl text-xl second-text-gradient text-center">
+      <p
+        class="my-10 md:text-2xl text-xl max-[390px]:text-lg max-[390px]:text-justify second-text-gradient text-center"
+      >
         Passionné par l'innovation, je suis expert en Intelligence Artificielle, Ingénierie des
         Données, Architecture Logicielle et Algorithmique. Mon objectif ? Concevoir des solutions
         performantes, optimiser les systèmes et décrypter les tendances technologiques pour façonner
@@ -253,7 +255,7 @@ opt.value = {
     <div class="my-10 -translate-y-5 grid gap-7 w-[85%] mx-auto">
       <SectionHeader sectionName="Projets" :width-c="100" />
 
-      <div class="">
+      <div class="max-[390px]:w-[90%]">
         <div class="flex justify-end my-5">
           <a class="flex items-center gap-4 group/route transistion duration-300 ease-in-out w-fit">
             <span class="group-hover/route:font-semibold">Visitez</span>
@@ -292,10 +294,10 @@ opt.value = {
             <img src="/codeBack.jpg" alt="" class="h-[300px] w-full object-cover" />
           </div>
           <div>
-            <h2 class="text-4xl font-semibold p-2 w-[80%] mb-3 font-abeeze">
+            <h2 class="md:text-4xl text-2xl font-semibold p-2 w-[80%] mb-3 font-abeeze">
               Implementation d'un agent detecteur de faux billets Dollars USD
             </h2>
-            <p class="border-t p-4">
+            <p class="border-t p-4 max-[390px]:p-1">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus magnam minima
               accusamus consectetur vero saepe maiores inventore eum rem dolorum, porro nihil
               eveniet repellat autem architecto quam id? Nemo, ducimus.
@@ -310,7 +312,7 @@ opt.value = {
         </div>
       </div>
 
-      <div class="">
+      <div class="max-[390px]:w-[90%]">
         <div class="flex justify-end my-5">
           <a class="flex items-center gap-4 group/route transistion duration-300 ease-in-out w-fit">
             <span class="group-hover/route:font-semibold">Visitez</span>
@@ -349,10 +351,10 @@ opt.value = {
             <img src="/codeBack.jpg" alt="" class="h-[300px] w-full object-cover" />
           </div>
           <div>
-            <h2 class="text-4xl font-semibold p-2 w-[80%] mb-3 font-abeeze">
+            <h2 class="md:text-4xl text-2xl font-semibold p-2 w-[80%] mb-3 font-abeeze">
               Implementation d'un agent detecteur de faux billets Dollars USD
             </h2>
-            <p class="border-t p-4">
+            <p class="border-t p-4 max-[390px]:p-2">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus magnam minima
               accusamus consectetur vero saepe maiores inventore eum rem dolorum, porro nihil
               eveniet repellat autem architecto quam id? Nemo, ducimus.

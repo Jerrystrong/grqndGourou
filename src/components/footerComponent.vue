@@ -32,7 +32,7 @@ export default defineComponent({
       </div>
       <div>
         <div class="flex flex-col gap-4">
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-4 max-[380px]:text-[12px]">
             <button>Communauté</button>
             <div class="w-1 h-1 bg-secondary block rounded-full"></div>
             <router-link :to="{ name: 'about' }">À propos</router-link>

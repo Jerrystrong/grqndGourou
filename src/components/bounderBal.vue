@@ -8,9 +8,7 @@ export default defineComponent({
   props: {
     iteration: Number,
   },
-  setup(props) {
-    console.log(props.iteration)
-  },
+  setup() {},
 })
 </script>
 <template>
