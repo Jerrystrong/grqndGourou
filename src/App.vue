@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRoute } from 'vue-router'
 import HeaderComponent from './components/headerComponent.vue'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 const scrollState = ref(false)
 document.addEventListener('scroll', () => {
   if (scrollY > 125) {
@@ -10,10 +10,27 @@ document.addEventListener('scroll', () => {
     scrollState.value = false
   }
 })
+const route = useRoute()
+const isNav = ref(true)
+if (route.path == '/login') {
+  isNav.value = !isNav.value
+} else {
+  isNav.value = true
+}
+watch(
+  () => route.path,
+  () => {
+    if (route.path == '/login') {
+      isNav.value = !isNav.value
+    } else {
+      isNav.value = true
+    }
+  },
+)
 </script>
 
 <template>
-  <HeaderComponent :scroll="scrollState" />
+  <HeaderComponent :scroll="scrollState" v-if="isNav" />
 
   <RouterView />
 </template>

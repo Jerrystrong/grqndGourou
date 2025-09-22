@@ -93,9 +93,15 @@ const putOtherFormation = () => {
   <div class="w-[95%] mx-auto">
     <!-- hero -->
     <div
-      class="hero flex lg:gap-[100px] gap-10 items-center justify-center lg:h-screen sm:h-[calc(100dvh-100px)] max-sm:h-[calc(100dvh-100px)] lg:flex-row flex-col-reverse"
+      class="hero flex lg:gap-[100px] gap-10 items-center justify-center lg:h-[85dvh] sm:h-[calc(90dvh-100px)] max-sm:h-[calc(90dvh-100px)] lg:flex-row flex-col-reverse"
     >
-      <div class="flex lg:flex-col flex-row gap-7">
+      <div
+        class="blur-xl block w-full h-full absolute bg-primary/70 bottom-0 right-0 left-0 -z-1 transition duration-300 delay-200"
+      ></div>
+      <div
+        class="blur-xs block w-full h-[24px] absolute bg-primary -bottom-1 right-0 left-0 z-5 transition duration-300 delay-200"
+      ></div>
+      <div class="flex lg:flex-col flex-row gap-7 mt-5 lg:mt-0">
         <a href="" class="">
           <WhatsappIcon w="30" h="30" />
         </a>
@@ -116,18 +122,103 @@ const putOtherFormation = () => {
       </div>
       <div class="flex flex-col items-center justify-center max-sm:gap-5 gap-7">
         <h1 class="md:text-[32px] text-[24px] max-sm:text-[18px] text-center w-[95%] font-abeeze">
-          Façonner l'avenir du numérique avec intelligence et précision : expert en IA, Ingénierie
-          des Données, Architecture Logicielle et Algorithmique, j'allie innovation et performance
-          pour créer des solutions technologiques d'excellence.
+          L'excellence en IA, Data, Architecture Logicielle et Algorithmes : une expertise qui
+          transforme vos défis en opportunités
+          <span class="relative spanOne">stratégiques.</span>
         </h1>
         <router-link :to="{ name: 'blogs' }">
           <div class="primaryDeg px-10 py-3 rounded-full relative shadownCustom">
             <div
               class="w-full h-full block absolute left-0 bottom-0 rounded-full shadow-white shadow-2xl -z-40"
             ></div>
-            Lire mon blog
+            Découvrir notre expertise
+            <div class="absolute w-[60px] -right-[41px] translate-y-[14px] -z-5 blur-[2px]">
+              <img src="../../components/icons/codeX.svg" alt="" class="w-full -z-3" />
+            </div>
           </div>
         </router-link>
+      </div>
+    </div>
+    <!-- profil show -->
+    <div id="profilSection">
+      <div class="grid grid-cols-12 w-full mb-10">
+        <div class="md:col-span-6 col-span-12 p-4">
+          <div class="relative w-full h-fit">
+            <div class="degProfHeader"></div>
+            <img
+              src="/yellowAsset.png"
+              alt=""
+              class="absolute -left-5 md:w-[100px] w-[50px] bottom-[100px]"
+            />
+            <img src="/profilT.png" alt="" class="w-full" />
+          </div>
+          <p class="text-[16px] font-inter text-center">
+            AI, Data, Software Architect and Algorithm Engineer
+          </p>
+          <div class="flex items-center justify-center gap-4 mt-3">
+            <router-link :to="{ name: 'blogs' }">
+              <div
+                class="bg-white font-abeeze rounded-full text-primary flex p-2 gap-2 items-center justify-between md:w-[120px] w-[110px]"
+              >
+                <div
+                  class="bg-bleu/50 border rounded-full flex items-center justify-center border-bleu w-[30px] h-[30px]"
+                >
+                  <img src="/seeOph.svg" alt="" class="w-[20px] h-[20px]" />
+                </div>
+                <router-link :to="{ name: 'blogs' }"> Insights </router-link>
+              </div>
+            </router-link>
+            <router-link :to="{ name: 'service' }">
+              <div
+                class="bg-white font-abeeze rounded-full text-primary flex p-2 gap-2 items-center justify-between md:w-[150px] w-fit"
+              >
+                <span
+                  class="bg-bleu/50 border rounded-full flex items-center justify-center border-bleu w-[30px] h-[30px]"
+                >
+                  <img src="/commu.svg" alt="" class="w-[20px] h-[20px]" />
+                </span>
+                <span class="md:block hidden"> Collaborer </span>
+              </div>
+            </router-link>
+            <router-link :to="{ name: 'tarif' }">
+              <div
+                class="bg-white font-abeeze rounded-full text-primary flex p-2 gap-2 items-center justify-between md:w-[120px] w-[110px]"
+              >
+                <div
+                  class="bg-bleu/50 border rounded-full flex items-center justify-center border-bleu w-[30px] h-[30px]"
+                >
+                  <img src="/etiquette.svg" alt="" class="w-[20px] h-[20px]" />
+                </div>
+                Prix
+              </div>
+            </router-link>
+          </div>
+        </div>
+        <div class="md:col-span-6 col-span-12 flex flex-col items-center justify-center gap-6">
+          <h1
+            class="font-abeeze md:text-[32px] text-[24px] flex md:flex-col m-0 flex-row gap-2 md:gap-0"
+          >
+            <span>Plamedi</span>
+            <span class="md:translate-x-[100px] md:-translate-y-[20px] translate-y-[10px]"
+              >Musenga</span
+            >
+          </h1>
+          <p class="text-center lg:w-[435px] md:w-[350px] 250px">
+            Dans un écosystème où les solutions se ressemblent, ce sont les détails qui créent la
+            singularité — et la performance. Notre approche ? Allier innovation, précision et
+            pragmatisme pour des résultats concrets.
+          </p>
+          <div>
+            <router-link :to="{ name: 'about' }">
+              <div
+                class="primaryDeg py-2 w-[200px] rounded-full mt-5 font-abeeze text-[16px] relative text-center"
+              >
+                A propos
+                <img src="/bs.svg" class="w-[80px] absolute -right-5 -top-5" />
+              </div>
+            </router-link>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -135,7 +226,7 @@ const putOtherFormation = () => {
     <div>
       <div class="flex items-center md:gap-8 gap-2 lg:flex-row flex-col">
         <h2 class="w-fit font-abeeze md:text-[24px] text-[18px]">Articles recents</h2>
-        <div class="flex items-center w-[80%]">
+        <div class="flex items-center w-[64%]">
           <div class="rond rounded-full w-[15px] h-[15px] block bg-secondary"></div>
           <div class="rond rounded-full w-[100%] h-[1px] block bg-secondary"></div>
         </div>
@@ -182,12 +273,12 @@ const putOtherFormation = () => {
         </div>
 
         <div class="flex justify-center mb-7">
-          <router-link :to="{ name: 'blogs' }" class="gradient-border"
-            ><span
-              class="flex items-center group/btn transition duration-300 ease-in-out delay-200"
-            >
+          <router-link
+            :to="{ name: 'blogs' }"
+            class="gradient-border hover:shadow-sm hover:shadow-bleu/70 group/btn transition duration-300 ease-in-out delay-200"
+            ><span class="flex items-center">
               <span
-                class="translate-x-2 gradient-text group-hover/btn:-translate-x-1 transition duration-300 ease-in-out"
+                class="font-inter translate-x-2 gradient-text group-hover/btn:-translate-x-1 transition duration-300 ease-in-out"
               >
                 Voir plus
               </span>
@@ -285,8 +376,11 @@ const putOtherFormation = () => {
       </div>
     </div>
     <div class="flex justify-end mb-7 -translate-x-5">
-      <button class="gradient-border" @click="putOtherFormation">
-        <span class="flex items-center group/btn transition duration-300 ease-in-out delay-200">
+      <button
+        class="gradient-border group/btn transition duration-300 ease-in-out delay-200 cursor-pointer"
+        @click="putOtherFormation"
+      >
+        <span class="flex items-center">
           <span
             class="translate-x-2 gradient-text group-hover/btn:-translate-x-1 transition duration-300 ease-in-out"
           >
@@ -351,15 +445,15 @@ const putOtherFormation = () => {
           <div
             class="text-bleu bg-secondary rounded-[50px] text-center w-fit md:px-8 absolute lg:-left-[40%] md:top-[35%] md:-left-[30%] top-[110%] px-5 max-[380]:px-1"
           >
-            Decryptage du goourou
+            Decryptage du gourou
           </div>
           <div
             class="text-bleu bg-secondary rounded-[50px] text-center w-fit absolute lg:-right-[35%] top-[35%] md:-right-[25%] px-5 max-[380]:px-1"
           >
-            Service et partaria
+            Service et partariat
           </div>
           <div class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-5 max-[380]:px-1">
-            Rituels du Code
+            Rituels du gourou
           </div>
           <div
             class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-5 max-[380]:px-1 truncate"
@@ -411,3 +505,52 @@ const putOtherFormation = () => {
     <FooterComponent />
   </div>
 </template>
+<style lang="scss" scoped>
+.hero {
+  // background-color: #dfdbe5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  backdrop-filter: blur(10px);
+  // filter: blur(0.5px);
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    background: #02000a;
+    z-index: -50000;
+    filter: blur(8px);
+    left: -5px;
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    background: #02000a;
+    z-index: -50000;
+    filter: blur(8px);
+    right: -5px;
+  }
+}
+.degProfHeader {
+  background: linear-gradient(180deg, rgb(0, 0, 0, 0.2), #02000a);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.spanOne {
+  &:before {
+    content: '';
+    display: block;
+    background: url('/shapeOne.svg');
+    position: absolute;
+    width: 130px;
+    height: 20px;
+    bottom: -18px;
+    right: 0;
+  }
+}
+</style>

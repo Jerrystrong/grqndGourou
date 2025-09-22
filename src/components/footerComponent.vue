@@ -25,8 +25,10 @@ export default defineComponent({
             <img src="@/assets/twitter.svg" alt="" class="w-[20px] h-[20px]" />
           </a>
         </div>
-        <h2 class="text-xl font-abeeze">Les details façonnent l’excellence technologique</h2>
-        <p class="text-[14px]">
+        <h2 class="text-xl font-abeeze md:block hidden">
+          Les details façonnent l’excellence technologique
+        </h2>
+        <p class="text-[14px] md:mt-0 mt-10">
           Copyright CHEZLEGRANDGOUROU @{{ new Date().getFullYear() }}. Tout droit réserver
         </p>
       </div>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
 @import 'tailwindcss';
 @import '@splidejs/vue-splide/css';
 
@@ -6,8 +7,9 @@
   --color-primary: #02000a;
   --color-secondary: #f8fafc;
   --color-bleu: #0a5eb0;
+  --color-yl: #757b24;
   --font-inter: 'Inter', sans-serif;
-  --font-abeeze: 'Fraunces', serif;
+  --font-abeeze: 'ABeeZee', serif;
   --text-un: '16px';
   --text-deux: '20px';
   --text-trois: '24px';
