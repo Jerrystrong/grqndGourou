@@ -6,7 +6,7 @@ import { ref } from 'vue'
 import type { formation } from '../../types'
 import useDuration from '../../composable/useDuration'
 import FooterComponent from '../../components/footerComponent.vue'
-import { Splide, SplideSlide, SplideTrack, Options } from '@splidejs/vue-splide'
+// import { Splide, SplideSlide, SplideTrack, Options } from '@splidejs/vue-splide'
 
 const activities = ref<formation[]>([])
 
@@ -23,29 +23,37 @@ const fetchActivities = async () => {
 fetchActivities()
 
 // slide splite config --one
-const opt = ref<Options>()
-opt.value = {
-  gap: '1rem',
-  autoplay: true,
-  focus: 'center',
-  drag: 'free',
-  height: '10rem',
-  perPage: 3,
-  type: 'loop',
-  arrows: false,
-  pagination: false,
-  autoScroll: {
-    speed: 100,
-  },
-}
+// const opt = ref<Options>()
+// opt.value = {
+//   gap: '1rem',
+//   autoplay: true,
+//   focus: 'center',
+//   drag: 'free',
+//   height: '10rem',
+//   perPage: 3,
+//   type: 'loop',
+//   arrows: false,
+//   pagination: false,
+//   autoScroll: {
+//     speed: 100,
+//   },
+// }
 </script>
 <template>
   <div class="bg-primary dark:bg-primary w-screen">
-    <div class="w-[90%] mx-auto bg-primary rounded-2xl">
+    <div class="w-[90%] mx-auto bg-primary rounded-2xl pt-[100px] md:pt-[0px]">
       <!-- header -->
       <div
-        class="h-[90dvh] max-[390px]:h-[100dvh] w-full flex items-center lg:gap-[200px] md:gap-[100px] gap-10 lg:flex-row flex-col justify-center lg:justify-start relative"
+        class="hero h-[90dvh] max-[390px]:h-[100dvh] w-full flex items-center lg:gap-[200px] md:gap-[100px] gap-10 lg:flex-row flex-col justify-center lg:justify-start relative"
       >
+        <!-- blur effect -->
+        <div
+          class="blur-xl block w-full h-full absolute bg-primary/70 bottom-0 right-0 left-0 -z-1 transition duration-300 delay-200"
+        ></div>
+        <div
+          class="blur-xs block w-full h-[24px] absolute bg-primary -bottom-1 right-0 left-0 z-5 transition duration-300 delay-200"
+        ></div>
+        <!-- end blur effect -->
         <div class="absolute bottom-4 right-6">
           <svg
             width="55"
@@ -83,7 +91,9 @@ opt.value = {
         </div>
 
         <div>
-          <h1 class="text-5xl mb-6 lg:text-left text-center font-abeeze">PLAMEDI MUSENGA</h1>
+          <h1 class="md:text-5xl text-[32px] mb-6 lg:text-left text-center font-abeeze">
+            PLAMEDI <span class="relative spanOne">MUSENGA</span>
+          </h1>
           <div class="md:w-[80%] lg:mx-0 mx-auto w-full grid gap-6 lg:text-left text-center">
             <p>Expert en IA, Ingénierie des Données, Architecture Logicielle et Algorithmique.</p>
             <p>
@@ -116,7 +126,7 @@ opt.value = {
       </h2>
       <!--  -->
       <p
-        class="my-10 md:text-2xl text-xl max-[390px]:text-lg max-[390px]:text-justify second-text-gradient text-center"
+        class="my-10 md:text-2xl text-[16px] max-[390px]:text-lg max-[390px]:text-justify second-text-gradient md:text-center text-justify lg:w-[60%] md:w-[80%] w-full mx-auto"
       >
         Passionné par l'innovation, je suis expert en Intelligence Artificielle, Ingénierie des
         Données, Architecture Logicielle et Algorithmique. Mon objectif ? Concevoir des solutions
@@ -139,7 +149,7 @@ opt.value = {
       </div>
 
       <!-- Partenaire -->
-      <h2 class="text-4xl font-abeeze">Partenariats</h2>
+      <!-- <h2 class="text-4xl font-abeeze">Partenariats</h2>
 
       <div class="my-10">
         <Splide :options="opt" tag="div" :has-track="false">
@@ -174,7 +184,7 @@ opt.value = {
             </SplideSlide>
           </SplideTrack>
         </Splide>
-      </div>
+      </div> -->
 
       <!-- recents activities -->
       <div class="my-[100px]">

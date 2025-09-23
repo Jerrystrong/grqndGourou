@@ -53,11 +53,22 @@ const whatsappCall = () => {
 <template>
   <div>
     <!-- header -->
-    <div>
+    <div class="pt-[100px] md:pt-[100px]">
       <div
-        class="flex items-center md:justify-end justify-center lg:h-[65dvh] md:h-[45dvh] h-[65dvh] flex-col gap-7 relative"
+        class="hero flex items-center md:justify-end justify-center lg:h-[65dvh] md:h-[45dvh] h-[65dvh] flex-col gap-7 relative"
       >
-        <div class="flex self-start translate-x-10 opacity-50">
+        <!-- blur effect -->
+        <div
+          class="blur-xl block w-full h-full absolute bg-primary/70 bottom-0 right-0 left-0 -z-1 transition duration-300 delay-200"
+        ></div>
+        <div
+          class="blur-xs block w-full h-[24px] absolute bg-primary -top-1 right-0 left-0 transition duration-300 delay-200 -z-30"
+        ></div>
+        <div
+          class="blur-xs block w-full h-[24px] absolute bg-primary -bottom-1 right-0 left-0 transition duration-300 delay-200 -z-30"
+        ></div>
+        <!-- end blur effect -->
+        <div class="md:flex hidden self-start translate-x-10 opacity-50">
           <div class="relative">
             <img src="/coupeProfJey.png" alt="students" class="rounded-full w-10 h-10" />
             <div class="w-10 h-10 rounded-full bg-secondary absolute -right-1/2 top-0 -z-20"></div>
@@ -70,8 +81,15 @@ const whatsappCall = () => {
           </div>
         </div>
 
-        <h1 class="md:text-5xl text-2xl second-text-gradient text-center">
-          Offrez à votre business un nouveau souffle
+        <h1
+          class="md:text-[24px] text-[18px] text-secondary text-center md:w-[80%] w-[90%] relative"
+        >
+          Nous accompagnons <span class="text-bleu">professionnels</span>, startups et entreprises
+          dans la maîtrise des enjeux technologiques modernes : <span class="font-bold">IA</span>,
+          <span>Data</span>, <span class="text-yl">Architecture Logicielle</span> et Algorithmes.
+          Que vous cherchiez à optimiser vos systèmes, former vos équipes ou pivoter vers un nouveau
+          domaine, nos solutions sont conçues pour répondre à vos besoins avec
+          <span class="relative spanOne text-secondary">précision</span> et impact.
         </h1>
         <div class="flex gap-4">
           <button
@@ -112,7 +130,14 @@ const whatsappCall = () => {
             >A propos de moi</router-link
           >
         </div>
-
+        <!-- figure process -->
+        <div class="w-screen absolute -bottom-10 left-0">
+          <img
+            src="/figg.png"
+            alt="figure"
+            class="md:w-[75%] w-[100%] md:h-[100px] h-[60px] object-cover z-50"
+          />
+        </div>
         <div class="flex flex-row-reverse self-end -translate-x-10 opacity-55">
           <div class="relative">
             <img src="/coupeProfJey.png" alt="students" class="rounded-full w-10 h-10" />
@@ -130,7 +155,7 @@ const whatsappCall = () => {
     <!--  -->
 
     <!-- slide -->
-    <div class="w-[90%] mx-auto">
+    <!-- <div class="w-[90%] mx-auto">
       <Splide :options="opt" tag="div" :has-track="false">
         <SplideTrack tag="div" class="">
           <SplideSlide class="rounded-lg overflow-hidden" tag="div">
@@ -163,14 +188,12 @@ const whatsappCall = () => {
           </SplideSlide>
         </SplideTrack>
       </Splide>
-    </div>
+    </div> -->
     <!--  -->
 
     <!-- formulaire -->
     <div class="my-[100px] flex items-center justify-center flex-col gap-7">
-      <h2 class="text-3xl lg:w-[50%] w-[95%] text-center">
-        Remplissez ce formulaire en nous parlant de vous et de votre entreprise
-      </h2>
+      <h2 class="text-[32px] lg:w-[50%] w-[95%] text-center">Nos services clés</h2>
     </div>
 
     <div class="flex justify-center py-7 gap-1 lg:flex-row flex-col">
@@ -479,7 +502,7 @@ const whatsappCall = () => {
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-6 md:w-fit w-[90%] mx-auto">
+      <!-- <div class="flex flex-col gap-6 md:w-fit w-[90%] mx-auto">
         <div>
           <h2 class="text-2xl my-5">Email support</h2>
           <p>Pour toutes préoccupations contacter nous via notre mail</p>
@@ -507,7 +530,7 @@ const whatsappCall = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- footer -->
     <FooterComponent class="w-[95%] mx-auto" />

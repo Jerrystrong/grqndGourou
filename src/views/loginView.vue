@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center flex-col w-screen h-screen relative">
     <div
-      class="hero absolute top-0 left-0 right-0 bottom-0 bg-primary/50 blur-[4px] w-full h-full -z-50"
+      class="heroL absolute top-0 left-0 right-0 bottom-0 bg-primary/50 blur-[4px] w-full h-full -z-50"
     ></div>
     <div class="flex justify-center flex-col mb-10 w-full items-center">
       <h1 class="second-text-gradient font-abeeze md:text-[32px] text-[24px] w-[800px] text-center">
@@ -39,7 +39,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-.hero {
+.heroL {
   // background-color: #dfdbe5;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   backdrop-filter: blur(10px);
