@@ -149,16 +149,41 @@ fetchActivities()
           </div>
           <div class="flex flex-row gap-7 mt-7 max-[390px]:mt-4 justify-center lg:justify-start">
             <a href="" class="">
-              <WhatsappIcon w="20" h="20" />
+              <WhatsappIcon
+                w="20"
+                h="20"
+                class="w-[20px] h-[20px] h-[20px] max-sm:h-[30px] max-sm:w-[30px]"
+              />
             </a>
             <a href="">
-              <img src="@/assets/linkedin.svg" alt="" class="w-[20px] h-[20px]" />
+              <img
+                src="@/assets/linkedin.svg"
+                alt=""
+                class="w-[20px] h-[20px] h-[20px] max-sm:h-[30px] max-sm:w-[30px]"
+              />
             </a>
             <a href="">
-              <img src="@/assets/twitter.svg" alt="" class="w-[20px] h-[20px]" />
+              <img
+                src="@/assets/twitter.svg"
+                alt=""
+                class="w-[20px] h-[20px] max-sm:h-[30px] max-sm:w-[30px]"
+              />
             </a>
           </div>
         </div>
+      </div>
+      <!-- philosophy -->
+      <div class="">
+        <p class="text-center md:w-1/2 w-full text-xl mx-auto my-1 font-abeeze relative">
+          <img
+            src="/yellowAsset.png"
+            alt=""
+            class="absolute -left-7 md:w-[100px] w-[50px] bottom-[50px] max-sm:bottom-[100px]"
+          />
+          Ma philosophie : (Dans un écosystème où les solutions se ressemblent, ce sont les détails
+          qui créent la singularité — et la performance. Notre approche ? Allier innovation,
+          précision et pragmatisme pour des résultats concrets.).
+        </p>
       </div>
 
       <!-- <div class="flex justify-center items-center flex-col m-8 gap-7">
