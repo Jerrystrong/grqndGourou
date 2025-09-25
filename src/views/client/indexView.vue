@@ -126,7 +126,7 @@ const putOtherFormation = () => {
           transforme vos défis en opportunités
           <span class="relative spanOne">stratégiques.</span>
         </h1>
-        <router-link :to="{ name: 'blogs' }">
+        <router-link :to="{ name: 'about' }">
           <div class="primaryDeg px-10 py-3 rounded-full relative shadownCustom">
             <div
               class="w-full h-full block absolute left-0 bottom-0 rounded-full shadow-white shadow-2xl -z-40"

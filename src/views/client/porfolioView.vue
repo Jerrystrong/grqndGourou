@@ -66,6 +66,53 @@ fetchActivities()
             <path d="M1 0.5L43 56.5L84.5 0.5" stroke="#F8FAFC" stroke-opacity="0.2" />
           </svg>
         </div>
+        <!-- header content -->
+        <div
+          class="max-md:flex hidden flex-row-reverse self-end -translate-x-10 opacity-55 absolute top-[100px]"
+        >
+          <div class="relative">
+            <img src="/coupeProfJey.png" alt="students" class="rounded-full w-10 h-10" />
+            <div class="w-10 h-10 rounded-full bg-secondary absolute -right-1/2 top-0 -z-20"></div>
+          </div>
+
+          <div
+            class="-translate-x-2 flex items-center bg-bleu/50 border border-bleu rounded-full font-abeeze md:px-6 px-4 py-1 rounded-full font-abeeze md:text-[16px] text-[12px]"
+          >
+            10+ Collaborations
+          </div>
+        </div>
+        <div>
+          <!--  slogant -->
+          <h2
+            class="slogant lg:text-4xl md:text-2xl text-[14px] second-text-gradient flex md:gap-7 gap-4 justify-center max-[390px]:translate-y-5 max-[380px]:text-[12px] font-abeeze font-semibold"
+          >
+            <span>Les détails</span>
+            <span class="before:content-[''] before:block before:h-4">façonnent</span>
+            <span>l'excellence</span>
+            <span class="before:content-[''] before:block before:h-4">technologique</span>
+          </h2>
+          <!--  -->
+          <p
+            class="my-10 md:text-2xl text-[24px] max-[390px]:text-lg max-[390px]:text-justify second-text-gradient md:text-center text-justify lg:w-[60%] md:w-[80%] w-full mx-auto max-sm:text-center"
+          >
+            CHEZ LE GRAND GOUROU , nous croyons que les détails font la différence — parce que votre
+            succès mérite une attention sans compromis.
+          </p>
+          <router-link :to="{ name: 'service' }">
+            <div class="primaryDeg px-10 py-3 rounded-full relative shadownCustom w-fit mx-auto">
+              <div
+                class="w-full h-full block absolute left-0 bottom-0 rounded-full shadow-white shadow-2xl -z-40"
+              ></div>
+              Travailler avec nous
+            </div>
+          </router-link>
+        </div>
+      </div>
+
+      <!-- content from header -->
+      <div
+        class="h-[90dvh] max-[390px]:h-[100dvh] w-full flex items-center lg:gap-[200px] md:gap-[100px] gap-10 lg:flex-row flex-col justify-center lg:justify-start relative"
+      >
         <div class="relative">
           <div
             class="block w-[300px] h-[300px] border border-secondary/20 rounded-full absolute -z-50 -top-7 Color"
@@ -89,7 +136,6 @@ fetchActivities()
             class="md:w-[450px] h-[300px] w-full object-cover rounded-lg"
           />
         </div>
-
         <div>
           <h1 class="md:text-5xl text-[32px] mb-6 lg:text-left text-center font-abeeze">
             PLAMEDI <span class="relative spanOne">MUSENGA</span>
@@ -115,26 +161,7 @@ fetchActivities()
         </div>
       </div>
 
-      <!--  slogant -->
-      <h2
-        class="slogant lg:text-4xl md:text-2xl text-[14px] second-text-gradient flex md:gap-7 gap-4 justify-center max-[390px]:translate-y-5 max-[380px]:text-[12px]"
-      >
-        <span>Les détails</span>
-        <span class="before:content-[''] before:block before:h-4">façonnent</span>
-        <span>l'excellence</span>
-        <span class="before:content-[''] before:block before:h-4">technologique</span>
-      </h2>
-      <!--  -->
-      <p
-        class="my-10 md:text-2xl text-[16px] max-[390px]:text-lg max-[390px]:text-justify second-text-gradient md:text-center text-justify lg:w-[60%] md:w-[80%] w-full mx-auto"
-      >
-        Passionné par l'innovation, je suis expert en Intelligence Artificielle, Ingénierie des
-        Données, Architecture Logicielle et Algorithmique. Mon objectif ? Concevoir des solutions
-        performantes, optimiser les systèmes et décrypter les tendances technologiques pour façonner
-        l'avenir du numérique.
-      </p>
-
-      <div class="flex justify-center items-center flex-col m-8 gap-7">
+      <!-- <div class="flex justify-center items-center flex-col m-8 gap-7">
         <p class="text-center md:w-1/3 w-full text-xl">
           Offrez à votre business un nouveau souffle en collaborant avec le Grand Gourou
         </p>
@@ -146,7 +173,7 @@ fetchActivities()
             Travailler avec moi
           </div>
         </router-link>
-      </div>
+      </div> -->
 
       <!-- Partenaire -->
       <!-- <h2 class="text-4xl font-abeeze">Partenariats</h2>
@@ -267,7 +294,9 @@ fetchActivities()
 
       <div class="max-[390px]:w-[90%]">
         <div class="flex justify-end my-5">
-          <a class="flex items-center gap-4 group/route transistion duration-300 ease-in-out w-fit">
+          <a
+            class="flex items-center gap-4 group/route transistion duration-300 ease-in-out w-fit font-abeeze"
+          >
             <span class="group-hover/route:font-semibold">Visitez</span>
             <svg
               width="30"
@@ -324,8 +353,10 @@ fetchActivities()
 
       <div class="max-[390px]:w-[90%]">
         <div class="flex justify-end my-5">
-          <a class="flex items-center gap-4 group/route transistion duration-300 ease-in-out w-fit">
-            <span class="group-hover/route:font-semibold">Visitez</span>
+          <a
+            class="flex items-center gap-4 group/route transistion duration-300 ease-in-out w-fit font-abeeze"
+          >
+            <span class="group-hover/route:font-semibold font-abeeze">Visitez</span>
             <svg
               width="30"
               height="20"

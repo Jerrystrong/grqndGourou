@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { Splide, SplideSlide, SplideTrack, Options } from '@splidejs/vue-splide'
+// import { Splide, SplideSlide, SplideTrack, Options } from '@splidejs/vue-splide'
 import WhatsappIcon from '../../components/whatsappIcon.vue'
 import { ref } from 'vue'
-import InputComponent from '@/components/inputComponent.vue'
+import InputComponent from '../../components/inputComponent.vue'
 import worldCountries from 'world-countries'
-import FooterComponent from '@/components/footerComponent.vue'
+import FooterComponent from '../../components/footerComponent.vue'
 // slide splite config --one
-const opt = ref<Options>()
-opt.value = {
-  gap: '1rem',
-  autoplay: true,
-  focus: 'center',
-  drag: 'free',
-  height: '10rem',
-  perPage: 3,
-  type: 'loop',
-  arrows: false,
-  pagination: false,
-  autoScroll: {
-    speed: 100,
-  },
-}
+// const opt = ref<Options>()
+// opt.value = {
+//   gap: '1rem',
+//   autoplay: true,
+//   focus: 'center',
+//   drag: 'free',
+//   height: '10rem',
+//   perPage: 3,
+//   type: 'loop',
+//   arrows: false,
+//   pagination: false,
+//   autoScroll: {
+//     speed: 100,
+//   },
+// }
 // client form
 const clientName = ref('')
 const clientEmail = ref('')
