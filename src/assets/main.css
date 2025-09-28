@@ -18,6 +18,15 @@
   --spacing-deux: '20px';
   --spacing-trois: '24px';
   --spacing-quatre: '32px';
+  --animate-showing: showing 1.3s ease-in-out infinite;
+}
+@keyframes showing {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(10px);
+  }
 }
 .is-active > img {
   @apply grayscale-0;

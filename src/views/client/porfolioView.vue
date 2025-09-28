@@ -44,7 +44,7 @@ fetchActivities()
     <div class="w-[90%] mx-auto bg-primary rounded-2xl pt-[100px] md:pt-[0px]">
       <!-- header -->
       <div
-        class="hero h-[90dvh] max-[390px]:h-[100dvh] w-full flex items-center lg:gap-[200px] md:gap-[100px] gap-10 lg:flex-row flex-col justify-center lg:justify-start relative"
+        class="hero h-[90dvh] max-[390px]:h-[80dvh] w-full flex items-center lg:gap-[200px] md:gap-[100px] gap-10 lg:flex-row flex-col justify-center lg:justify-start relative"
       >
         <!-- blur effect -->
         <div
@@ -68,7 +68,7 @@ fetchActivities()
         </div>
         <!-- header content -->
         <div
-          class="max-md:flex hidden flex-row-reverse self-end -translate-x-10 opacity-55 absolute top-[100px]"
+          class="max-md:flex hidden flex-row-reverse self-end -translate-x-5 opacity-55 absolute top-[80px]"
         >
           <div class="relative">
             <img src="/coupeProfJey.png" alt="students" class="rounded-full w-10 h-10" />
@@ -113,6 +113,7 @@ fetchActivities()
       <div
         class="h-[90dvh] max-[390px]:h-[100dvh] w-full flex items-center lg:gap-[200px] md:gap-[100px] gap-10 lg:flex-row flex-col justify-center lg:justify-start relative"
       >
+        <!-- image side collaboration and student -->
         <div class="relative">
           <div
             class="block w-[300px] h-[300px] border border-secondary/20 rounded-full absolute -z-50 -top-7 Color"
