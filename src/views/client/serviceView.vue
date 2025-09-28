@@ -35,7 +35,7 @@ const clientName = ref('')
 const clientEmail = ref('')
 const clientFirm = ref('')
 const clientAge = ref('')
-const isFormVisible: boolean = ref(true)
+const isFormVisible: boolean = ref(false)
 const clientCountry = ref('DR Congo')
 const countryCode = ref('+243')
 const countryFlag = ref('CD')
@@ -356,7 +356,9 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
           </li>
         </ol>
       </h1>
-      <div class="w-[90%] md:w-[50%] mx-auto mt-5 flex items-center gap-5 md:flex-row flex-col">
+      <div
+        class="w-[90%] md:w-[50%] mx-auto mt-5 flex items-center gap-5 md:flex-row flex-col cursor-pointer"
+      >
         <button class="primaryDeg rounded-full relative w-fit p-2" @click="isFormVisible = true">
           Remplir le formulaire
         </button>
@@ -395,340 +397,359 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
     <!-- footer -->
     <FooterComponent class="w-[95%] mx-auto" />
   </div>
-  <div class="flex justify-center py-7 gap-1 lg:flex-row flex-col" v-if="isFormVisible">
+  <transition name="formFade">
     <div
-      class="bg-secondary/20 md:w-[400px] w-[90%] mx-auto p-5 h-full md:rounded-tl-lg rounded-tl-0"
+      class="flex justify-center py-7 gap-1 lg:flex-row flex-col fixed z-50 top-0 left-0 right-0 bottom-0 w-full bg-primary/80"
+      v-if="isFormVisible"
     >
-      <h2 class="font-semibold text-2xl my-5">Vos coordonnées</h2>
-      <div class="form">
-        <div class="grid gap-5">
-          <InputComponent
-            name="Noms"
-            placeholder="Entrez votre nom complet"
-            type="text"
-            inputId="userName"
-            v-model="clientName"
+      <div
+        class="absolute w-full h-full blur-2xl top-0 bottom-0 left-0 right-0 bg-primary/20 -z-10"
+      ></div>
+      <div
+        class="bg-primary/80 md:w-[400px] w-[90%] mx-auto p-5 h-full md:rounded-tl-lg rounded-tl-0 shadow-sm shadow-bleu/20 overflow-y-scroll ffg animate-simpleFormAnim"
+      >
+        <div class="flex justify-between items-center">
+          <h2 class="font-semibold text-2xl my-5">Vos coordonnées</h2>
+
+          <button
+            class="font-abeeze text-[16px] text-bleu bg-secondary p-1 px-3 rounded-full cursor-pointer"
+            @click.self="isFormVisible = false"
           >
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <rect width="30" height="30" fill="url(#pattern0_137_86)" />
-              <defs>
-                <pattern
-                  id="pattern0_137_86"
-                  patternContentUnits="objectBoundingBox"
-                  width="1"
-                  height="1"
-                >
-                  <use xlink:href="#image0_137_86" transform="scale(0.0333333)" />
-                </pattern>
-                <image
-                  id="image0_137_86"
-                  width="30"
-                  height="30"
-                  preserveAspectRatio="none"
-                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABSElEQVR4nO2UsUoDQRCGg8WZmSbaKdb6CvoiEcHMnJWV5yuk00YUX+PAzISInZYaqwQfQBtJrBSJaBnZkEgQ4+2RiVG5H/5qd/n4Z3Yml8v0KxWdzUKou8hSR5aXvutAErmziTCBa0vA2kTW7lcG0oa7Y5+UR0OH4abJoVfe76EfcK7umIGR9NoXjCRXdmDWjjeYtWMJ7qbxVBIDy/Pf7zGQRFP51Tk3x6QNrzkuxoH95qLR8MlsroGKceBK6frY/3DOl73yWifN9LMql2cgrK4Byz6QXABJG0nenIG1BSznQLIHJV11d8fm4ebJIpIcAsuD9xyTtIH1AMPThdTAQihzSHKMrK9p9/SQ3duj+e244AUNqLKCpHdjAD9ZboOt2nIiGEhv7KCDNarNZDBryxqMJPeJ4HxJN4D0yS6tPOa5su7V50z/Su9zYiZacdRUJAAAAABJRU5ErkJggg=="
-                />
-              </defs>
-            </svg>
-          </InputComponent>
-          <InputComponent
-            name="Email"
-            placeholder="Entrez votre email"
-            type="email"
-            inputId="userEmail"
-            v-model="clientEmail"
-          >
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 30 30"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <rect width="30" height="30" fill="url(#pattern0_138_94)" />
-              <defs>
-                <pattern
-                  id="pattern0_138_94"
-                  patternContentUnits="objectBoundingBox"
-                  width="1"
-                  height="1"
-                >
-                  <use xlink:href="#image0_138_94" transform="scale(0.0416667)" />
-                </pattern>
-                <image
-                  id="image0_138_94"
-                  width="24"
-                  height="24"
-                  preserveAspectRatio="none"
-                  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVR4nO2SO0jEQBCG1wd4OxELwcJGsBcLC1tBEBSuvUKSnWhzraXlCTa2go2tZeAykwg+KittrrneRmMviDaiEsliwkESkssJWmTgh2V35v92Z1aIOv5NGJa3AcgPgByOJnqMvFIAQDoZ3Zy1pKLD9BM6nXGwqS2RXiobIz1HHkKEY7mtArM7L5HPKrTGmd515nKNpaJLUG4zASm3WW4mdG9Y3noyS5tNQOplzCB+Jp83lL+gN1uOlIoOAPk9w/gDFB0L69qIUqcsb1EiX8XnuYCf4jdA2hctZ0LfCr1lQL4byLk1rO6SLly7mZTIe4D8OuhRAEhAPTD9lfgTNNDdjhStdVvRXZXI/azakgAOQfEXKD6dNS9mkuS2D1LxESB/5tWVB2ACCsCiHS3kp6L84QE4nGpAWKVFhYODslIcZADcrV+BKA7A9jZTgDr+LL4BPrJYwzTtIeAAAAAASUVORK5CYII="
-                />
-              </defs>
-            </svg>
-          </InputComponent>
-          <!-- PROFESSION -->
-          <div class="border border-secondary px-5 py-2 rounded-xl relative">
-            <label for="" class="font-bold">Proffession</label>
-            <div class="flex gap-3 items-center justify-between" @click="professionActive = true">
-              <button>{{ clientProfession || 'Selectionnez' }}</button>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <rect width="20" height="20" fill="url(#pattern0_139_100)" />
-                <defs>
-                  <pattern
-                    id="pattern0_139_100"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
-                    <use xlink:href="#image0_139_100" transform="scale(0.0416667)" />
-                  </pattern>
-                  <image
-                    id="image0_139_100"
-                    width="24"
-                    height="24"
-                    preserveAspectRatio="none"
-                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO3VPUpDQRSG4RskglhkATauIK0ES91CmizAxsLS1ir+7MAt2CqCTZbgEmwkKdIKVsojI3NhvNyrN8koFnnhNIcz3zec+TlF8RdgE1eYWZ0ZLoJmanApP+epQbnzvQzdGEStaZr8ZFXxRr21wf9rEW5xhq2Wb+gEd+j8aIBRcpefcYSNGuEOhnhK6kdtDCY1j+YRh0n9QcxVmbQx6OIY8xqB+xhV5nFNt9UZxNw2TvGimdf47/QWOuRK8Q6u8ZYIv+MGuw1r2huUoI+HGP3iG5YyWIS1wVItKgfOIIP4ft3ACXc5N+PUIHxYwWSaQThojL8M/d/kA3lrjcV5ttuGAAAAAElFTkSuQmCC"
-                  />
-                </defs>
-              </svg>
-            </div>
-            <div
-              class="bg-secondary p-2 px-5 flex-col flex text-primary/70 rounded-lg absolute top-8 w-full right-0"
-              v-if="professionActive"
-            >
-              <div
-                class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
-                @click.self="setProfession('IA engineer')"
-              >
-                IA engineer
-              </div>
-              <div
-                class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
-                @click.self="setProfession('Backend Developper')"
-              >
-                Backend Developper
-              </div>
-              <div
-                class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
-                @click.self="setProfession('Software engineeerr')"
-              >
-                Software engineeer
-              </div>
-              <div
-                class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
-                @click.self="setProfession('Algorithmicien and Mathematic')"
-              >
-                Algorithmicien and Mathematic
-              </div>
-              <div
-                class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
-                @click.self="setProfession('DevOps')"
-              >
-                DevOps
-              </div>
-              <div
-                class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
-                @click.self="setProfession('Cloud enginner')"
-              >
-                Cloud enginner
-              </div>
-            </div>
-          </div>
-
-          <!-- entreprise name -->
-          <InputComponent
-            name="Nom de l'entreprise"
-            placeholder="Entrez le nom de l'entreprise"
-            type="text"
-            inputId="userFirm"
-            v-model="clientFirm"
-          />
-          <!-- entreprise size -->
-          <div class="border border-secondary px-5 py-2 rounded-xl relative">
-            <label for="" class="font-bold">Taille d’entreprise</label>
-            <div class="flex gap-3 items-center justify-between">
-              <div class="flex gap-1 items-center">
-                <input
-                  type="radio"
-                  name="userAge"
-                  v-model="clientAge"
-                  id="userAge"
-                  class="ring-bleu right-1 accent-bleu"
-                  checked
-                />
-                <label for="userAge">1 à 10 employés</label>
-              </div>
-              <div class="flex gap-1 items-center">
-                <input
-                  type="radio"
-                  name="userAge"
-                  v-model="clientAge"
-                  id="userAge"
-                  class="ring-bleu right-1 accent-bleu"
-                />
-                <label for="userAge">20+ employés</label>
-              </div>
-            </div>
-          </div>
-          <!-- countrie -->
-          <div class="border border-secondary px-5 py-2 rounded-xl relative">
-            <label for="" class="font-bold">Proffession</label>
-            <div
-              class="flex gap-3 items-center justify-between"
-              @click="ClientCountryActive = true"
-            >
-              <button class="flex gap-4">
-                <span
-                  class="border border-secondary/70 px-2 rounded-md flex items-center justify-center"
-                  >{{ countryFlag }}</span
-                >
-                {{ clientCountry }}
-              </button>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <rect width="20" height="20" fill="url(#pattern0_139_100)" />
-                <defs>
-                  <pattern
-                    id="pattern0_139_100"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
-                    <use xlink:href="#image0_139_100" transform="scale(0.0416667)" />
-                  </pattern>
-                  <image
-                    id="image0_139_100"
-                    width="24"
-                    height="24"
-                    preserveAspectRatio="none"
-                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO3VPUpDQRSG4RskglhkATauIK0ES91CmizAxsLS1ir+7MAt2CqCTZbgEmwkKdIKVsojI3NhvNyrN8koFnnhNIcz3zec+TlF8RdgE1eYWZ0ZLoJmanApP+epQbnzvQzdGEStaZr8ZFXxRr21wf9rEW5xhq2Wb+gEd+j8aIBRcpefcYSNGuEOhnhK6kdtDCY1j+YRh0n9QcxVmbQx6OIY8xqB+xhV5nFNt9UZxNw2TvGimdf47/QWOuRK8Q6u8ZYIv+MGuw1r2huUoI+HGP3iG5YyWIS1wVItKgfOIIP4ft3ACXc5N+PUIHxYwWSaQThojL8M/d/kA3lrjcV5ttuGAAAAAElFTkSuQmCC"
-                  />
-                </defs>
-              </svg>
-            </div>
-            <div
-              class="bg-secondary p-2 px-5 flex-col flex text-primary/70 rounded-lg absolute top-8 w-full right-0 gap-2 h-[300px] overflow-y-scroll z-50"
-              v-if="ClientCountryActive"
-            >
-              <div
-                class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105 flex gap-3"
-                @click.self="
-                  setClientCountry(country.name.common, country.flag, [
-                    country.idd.root,
-                    country.idd.suffixes[0],
-                  ])
-                "
-                v-for="(country, i) in worldCountries"
-                :key="i"
-              >
-                <div>{{ country.flag }}({{ country.idd.root }}{{ country.idd.suffixes[0] }})</div>
-                <div>{{ country.name.common }}</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Portable -->
-          <div class="border border-secondary px-5 py-2 rounded-xl relative">
-            <label for="" class="font-bold">Portable</label>
-            <div class="flex gap-3 items-center">
-              <div class="border rounded-md px-2 font-semibold">{{ countryCode }}</div>
-              <input
-                type="text"
-                placeholder="Entrez votre numéro de portable"
-                class="w-full"
-                v-model="clientPhoneNumber"
-              />
-            </div>
-          </div>
-
-          <!-- service -->
-          <h2 class="text-3xl">Nos services</h2>
-
+            X
+          </button>
+        </div>
+        <div class="form">
           <div class="grid gap-5">
-            <div class="flex gap-3">
-              <input
-                type="checkbox"
-                name="consulting"
-                id="consulting"
-                class="accent-bleu"
-                v-model="clientService"
-              />
-              <div class="grid">
-                <label for="consulting" class="font-bold">Consulting / Expertise technique</label>
-                <label for="consulting" class="text-secondary/70"
-                  >(IA, Data, Architecture Logicielle et Algorithme)</label
+            <InputComponent
+              name="Noms"
+              placeholder="Entrez votre nom complet"
+              type="text"
+              inputId="userName"
+              v-model="clientName"
+            >
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <rect width="30" height="30" fill="url(#pattern0_137_86)" />
+                <defs>
+                  <pattern
+                    id="pattern0_137_86"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use xlink:href="#image0_137_86" transform="scale(0.0333333)" />
+                  </pattern>
+                  <image
+                    id="image0_137_86"
+                    width="30"
+                    height="30"
+                    preserveAspectRatio="none"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABSElEQVR4nO2UsUoDQRCGg8WZmSbaKdb6CvoiEcHMnJWV5yuk00YUX+PAzISInZYaqwQfQBtJrBSJaBnZkEgQ4+2RiVG5H/5qd/n4Z3Yml8v0KxWdzUKou8hSR5aXvutAErmziTCBa0vA2kTW7lcG0oa7Y5+UR0OH4abJoVfe76EfcK7umIGR9NoXjCRXdmDWjjeYtWMJ7qbxVBIDy/Pf7zGQRFP51Tk3x6QNrzkuxoH95qLR8MlsroGKceBK6frY/3DOl73yWifN9LMql2cgrK4Byz6QXABJG0nenIG1BSznQLIHJV11d8fm4ebJIpIcAsuD9xyTtIH1AMPThdTAQihzSHKMrK9p9/SQ3duj+e244AUNqLKCpHdjAD9ZboOt2nIiGEhv7KCDNarNZDBryxqMJPeJ4HxJN4D0yS6tPOa5su7V50z/Su9zYiZacdRUJAAAAABJRU5ErkJggg=="
+                  />
+                </defs>
+              </svg>
+            </InputComponent>
+            <InputComponent
+              name="Email"
+              placeholder="Entrez votre email"
+              type="email"
+              inputId="userEmail"
+              v-model="clientEmail"
+            >
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <rect width="30" height="30" fill="url(#pattern0_138_94)" />
+                <defs>
+                  <pattern
+                    id="pattern0_138_94"
+                    patternContentUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                  >
+                    <use xlink:href="#image0_138_94" transform="scale(0.0416667)" />
+                  </pattern>
+                  <image
+                    id="image0_138_94"
+                    width="24"
+                    height="24"
+                    preserveAspectRatio="none"
+                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVR4nO2SO0jEQBCG1wd4OxELwcJGsBcLC1tBEBSuvUKSnWhzraXlCTa2go2tZeAykwg+KittrrneRmMviDaiEsliwkESkssJWmTgh2V35v92Z1aIOv5NGJa3AcgPgByOJnqMvFIAQDoZ3Zy1pKLD9BM6nXGwqS2RXiobIz1HHkKEY7mtArM7L5HPKrTGmd515nKNpaJLUG4zASm3WW4mdG9Y3noyS5tNQOplzCB+Jp83lL+gN1uOlIoOAPk9w/gDFB0L69qIUqcsb1EiX8XnuYCf4jdA2hctZ0LfCr1lQL4byLk1rO6SLly7mZTIe4D8OuhRAEhAPTD9lfgTNNDdjhStdVvRXZXI/azakgAOQfEXKD6dNS9mkuS2D1LxESB/5tWVB2ACCsCiHS3kp6L84QE4nGpAWKVFhYODslIcZADcrV+BKA7A9jZTgDr+LL4BPrJYwzTtIeAAAAAASUVORK5CYII="
+                  />
+                </defs>
+              </svg>
+            </InputComponent>
+            <!-- PROFESSION -->
+            <div class="border border-secondary px-5 py-2 rounded-xl relative">
+              <label for="" class="font-bold">Proffession</label>
+              <div class="flex gap-3 items-center justify-between" @click="professionActive = true">
+                <button>{{ clientProfession || 'Selectionnez' }}</button>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
                 >
+                  <rect width="20" height="20" fill="url(#pattern0_139_100)" />
+                  <defs>
+                    <pattern
+                      id="pattern0_139_100"
+                      patternContentUnits="objectBoundingBox"
+                      width="1"
+                      height="1"
+                    >
+                      <use xlink:href="#image0_139_100" transform="scale(0.0416667)" />
+                    </pattern>
+                    <image
+                      id="image0_139_100"
+                      width="24"
+                      height="24"
+                      preserveAspectRatio="none"
+                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO3VPUpDQRSG4RskglhkATauIK0ES91CmizAxsLS1ir+7MAt2CqCTZbgEmwkKdIKVsojI3NhvNyrN8koFnnhNIcz3zec+TlF8RdgE1eYWZ0ZLoJmanApP+epQbnzvQzdGEStaZr8ZFXxRr21wf9rEW5xhq2Wb+gEd+j8aIBRcpefcYSNGuEOhnhK6kdtDCY1j+YRh0n9QcxVmbQx6OIY8xqB+xhV5nFNt9UZxNw2TvGimdf47/QWOuRK8Q6u8ZYIv+MGuw1r2huUoI+HGP3iG5YyWIS1wVItKgfOIIP4ft3ACXc5N+PUIHxYwWSaQThojL8M/d/kA3lrjcV5ttuGAAAAAElFTkSuQmCC"
+                    />
+                  </defs>
+                </svg>
+              </div>
+              <div
+                class="bg-secondary p-2 px-5 flex-col flex text-primary/70 rounded-lg absolute top-8 w-full right-0"
+                v-if="professionActive"
+              >
+                <div
+                  class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
+                  @click.self="setProfession('IA engineer')"
+                >
+                  IA engineer
+                </div>
+                <div
+                  class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
+                  @click.self="setProfession('Backend Developper')"
+                >
+                  Backend Developper
+                </div>
+                <div
+                  class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
+                  @click.self="setProfession('Software engineeerr')"
+                >
+                  Software engineeer
+                </div>
+                <div
+                  class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
+                  @click.self="setProfession('Algorithmicien and Mathematic')"
+                >
+                  Algorithmicien and Mathematic
+                </div>
+                <div
+                  class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
+                  @click.self="setProfession('DevOps')"
+                >
+                  DevOps
+                </div>
+                <div
+                  class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105"
+                  @click.self="setProfession('Cloud enginner')"
+                >
+                  Cloud enginner
+                </div>
               </div>
             </div>
-            <div class="flex gap-3">
-              <input
-                type="checkbox"
-                name="consulting"
-                id="consulting"
-                class="accent-bleu"
-                v-model="clientService"
-              />
-              <div class="grid">
-                <label for="consulting" class="font-bold">Formation et masterclass</label>
-                <label for="consulting" class="text-secondary/70">(en direct ou en ligne)</label>
-              </div>
-            </div>
-          </div>
 
-          <!-- btn -->
-          <button class="text-white primaryDeg rounded-lg p-2 font-bold">Entrez en contact</button>
+            <!-- entreprise name -->
+            <InputComponent
+              name="Nom de l'entreprise"
+              placeholder="Entrez le nom de l'entreprise"
+              type="text"
+              inputId="userFirm"
+              v-model="clientFirm"
+            />
+            <!-- entreprise size -->
+            <div class="border border-secondary px-5 py-2 rounded-xl relative">
+              <label for="" class="font-bold">Taille d’entreprise</label>
+              <div class="flex gap-3 items-center justify-between">
+                <div class="flex gap-1 items-center">
+                  <input
+                    type="radio"
+                    name="userAge"
+                    v-model="clientAge"
+                    id="userAge"
+                    class="ring-bleu right-1 accent-bleu"
+                    checked
+                  />
+                  <label for="userAge">1 à 10 employés</label>
+                </div>
+                <div class="flex gap-1 items-center">
+                  <input
+                    type="radio"
+                    name="userAge"
+                    v-model="clientAge"
+                    id="userAge"
+                    class="ring-bleu right-1 accent-bleu"
+                  />
+                  <label for="userAge">20+ employés</label>
+                </div>
+              </div>
+            </div>
+            <!-- countrie -->
+            <div class="border border-secondary px-5 py-2 rounded-xl relative">
+              <label for="" class="font-bold">Proffession</label>
+              <div
+                class="flex gap-3 items-center justify-between"
+                @click="ClientCountryActive = true"
+              >
+                <button class="flex gap-4">
+                  <span
+                    class="border border-secondary/70 px-2 rounded-md flex items-center justify-center"
+                    >{{ countryFlag }}</span
+                  >
+                  {{ clientCountry }}
+                </button>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <rect width="20" height="20" fill="url(#pattern0_139_100)" />
+                  <defs>
+                    <pattern
+                      id="pattern0_139_100"
+                      patternContentUnits="objectBoundingBox"
+                      width="1"
+                      height="1"
+                    >
+                      <use xlink:href="#image0_139_100" transform="scale(0.0416667)" />
+                    </pattern>
+                    <image
+                      id="image0_139_100"
+                      width="24"
+                      height="24"
+                      preserveAspectRatio="none"
+                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO3VPUpDQRSG4RskglhkATauIK0ES91CmizAxsLS1ir+7MAt2CqCTZbgEmwkKdIKVsojI3NhvNyrN8koFnnhNIcz3zec+TlF8RdgE1eYWZ0ZLoJmanApP+epQbnzvQzdGEStaZr8ZFXxRr21wf9rEW5xhq2Wb+gEd+j8aIBRcpefcYSNGuEOhnhK6kdtDCY1j+YRh0n9QcxVmbQx6OIY8xqB+xhV5nFNt9UZxNw2TvGimdf47/QWOuRK8Q6u8ZYIv+MGuw1r2huUoI+HGP3iG5YyWIS1wVItKgfOIIP4ft3ACXc5N+PUIHxYwWSaQThojL8M/d/kA3lrjcV5ttuGAAAAAElFTkSuQmCC"
+                    />
+                  </defs>
+                </svg>
+              </div>
+              <div
+                class="bg-secondary p-2 px-5 flex-col flex text-primary/70 rounded-lg absolute top-8 w-full right-0 gap-2 h-[300px] overflow-y-scroll z-50"
+                v-if="ClientCountryActive"
+              >
+                <div
+                  class="cursor-pointer border-b hover:font-semibold hover:transition transistion duration-300 ease-in-out hover:scale-105 flex gap-3"
+                  @click.self="
+                    setClientCountry(country.name.common, country.flag, [
+                      country.idd.root,
+                      country.idd.suffixes[0],
+                    ])
+                  "
+                  v-for="(country, i) in worldCountries"
+                  :key="i"
+                >
+                  <div>{{ country.flag }}({{ country.idd.root }}{{ country.idd.suffixes[0] }})</div>
+                  <div>{{ country.name.common }}</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portable -->
+            <div class="border border-secondary px-5 py-2 rounded-xl relative">
+              <label for="" class="font-bold">Portable</label>
+              <div class="flex gap-3 items-center">
+                <div class="border rounded-md px-2 font-semibold">{{ countryCode }}</div>
+                <input
+                  type="text"
+                  placeholder="Entrez votre numéro de portable"
+                  class="w-full"
+                  v-model="clientPhoneNumber"
+                />
+              </div>
+            </div>
+
+            <!-- service -->
+            <h2 class="text-3xl">Nos services</h2>
+
+            <div class="grid gap-5">
+              <div class="flex gap-3">
+                <input
+                  type="checkbox"
+                  name="consulting"
+                  id="consulting"
+                  class="accent-bleu"
+                  v-model="clientService"
+                />
+                <div class="grid">
+                  <label for="consulting" class="font-bold">Consulting / Expertise technique</label>
+                  <label for="consulting" class="text-secondary/70"
+                    >(IA, Data, Architecture Logicielle et Algorithme)</label
+                  >
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <input
+                  type="checkbox"
+                  name="consulting"
+                  id="consulting"
+                  class="accent-bleu"
+                  v-model="clientService"
+                />
+                <div class="grid">
+                  <label for="consulting" class="font-bold">Formation et masterclass</label>
+                  <label for="consulting" class="text-secondary/70">(en direct ou en ligne)</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- btn -->
+            <button class="text-white primaryDeg rounded-lg p-2 font-bold">
+              Entrez en contact
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- <div class="flex flex-col gap-6 md:w-fit w-[90%] mx-auto">
-    <div>
-      <h2 class="text-2xl my-5">Email support</h2>
-      <p>Pour toutes préoccupations contacter nous via notre mail</p>
-      <a href="" class="decoration-secondary text-secondary underline underline-offset-5"
-        >legrandGourou@gmail.com</a
-      >
-    </div>
-    <div>
-      <h2 class="text-2xl my-5">Localisation</h2>
+      <!-- <div class="flex flex-col gap-6 md:w-fit w-[90%] mx-auto">
       <div>
-        <img src="/map.png" alt="" class="md:w-[400px] w-full h-fit" />
+        <h2 class="text-2xl my-5">Email support</h2>
+        <p>Pour toutes préoccupations contacter nous via notre mail</p>
+        <a href="" class="decoration-secondary text-secondary underline underline-offset-5"
+          >legrandGourou@gmail.com</a
+        >
       </div>
-    </div>
-    <div>
-      <h2 class="text-2xl my-5">Réseaux sociaux</h2>
-      <div class="flex flex-row gap-7">
-        <a href="" class="">
-          <WhatsappIcon w="20" h="20" />
-        </a>
-        <a href="">
-          <img src="@/assets/linkedin.svg" alt="" class="w-[20px] h-[20px]" />
-        </a>
-        <a href="">
-          <img src="@/assets/twitter.svg" alt="" class="w-[20px] h-[20px]" />
-        </a>
+      <div>
+        <h2 class="text-2xl my-5">Localisation</h2>
+        <div>
+          <img src="/map.png" alt="" class="md:w-[400px] w-full h-fit" />
+        </div>
       </div>
+      <div>
+        <h2 class="text-2xl my-5">Réseaux sociaux</h2>
+        <div class="flex flex-row gap-7">
+          <a href="" class="">
+            <WhatsappIcon w="20" h="20" />
+          </a>
+          <a href="">
+            <img src="@/assets/linkedin.svg" alt="" class="w-[20px] h-[20px]" />
+          </a>
+          <a href="">
+            <img src="@/assets/twitter.svg" alt="" class="w-[20px] h-[20px]" />
+          </a>
+        </div>
+      </div>
+    </div> -->
     </div>
-  </div> -->
-  </div>
+  </transition>
 </template>
 <style lang="scss" scoped>
 .beforeCont {
@@ -785,5 +806,17 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
 
 .ffg::-webkit-scrollbar-corner {
   background: #fff3;
+}
+.formFade-leave-active,
+.formFade-enter-active {
+  transition: all 0.4s ease-out;
+}
+.formFade-enter-from,
+.formFade-leave-to {
+  opacity: 0;
+}
+.formFade-enter-to,
+.formFade-leave-from {
+  opacity: 1;
 }
 </style>

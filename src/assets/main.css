@@ -19,6 +19,7 @@
   --spacing-trois: '24px';
   --spacing-quatre: '32px';
   --animate-showing: showing 1.3s ease-in-out infinite;
+  --animate-simpleFormAnim: simpleFormAnim 1s ease-in-out;
 }
 @keyframes showing {
   from {
@@ -26,6 +27,16 @@
   }
   to {
     transform: translateX(10px);
+  }
+}
+@keyframes simpleFormAnim {
+  from {
+    transform: translateX(-50px);
+    /* transform: rotate(210deg); */
+  }
+  to {
+    transform: translateX(0px);
+    /* transform: rotate(0deg); */
   }
 }
 .is-active > img {

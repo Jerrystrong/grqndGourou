@@ -7,6 +7,7 @@
     "description": "Augmenter la performance de vos tasks asynchrone grace à l'EventEmitter",
     "instructeur": { "name": "Plamedi Musenga", "profil": "plame.jpg" },
     "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi incidunt, aperiam maxime quos veniam, quaerat quae explicabo, esse reiciendis rerum aliquid accusantium rem cupiditate iusto neque? Corrupti, eum cum ipsam voluptatum assumenda provident, recusandae in explicabo laborum ex facere pariatur nobis ipsum qui. Quod molestiae ut, ipsam porro numquam fugiat!",
+    "niveau": "Intermediaire",
     "createAt": 1733958000000
   },
   {
@@ -25,6 +26,7 @@
       ],
       "like": 10
     },
+    "niveau": "Intermediaire",
     "createAt": 1731711600000
   },
   {
@@ -43,6 +45,7 @@
       ],
       "like": 3
     },
+    "niveau": "Difficile",
     "createAt": 1744533491186
   },
   {
@@ -61,6 +64,7 @@
       ],
       "like": 5
     },
+    "niveau": "Intermediaire",
     "createAt": 1744533720891
   }
 ]

@@ -87,16 +87,16 @@ blogs.fetchData()
       <div class="filters flex gap-4 my-6 flex-wrap md:justify-start justify-center">
         <button class="px-4 py-1 filter active" @click="filterTerm = ''">Recents</button>
         <button class="px-4 py-1 filter" @click="filterTerm = 'Rituels du Code'">
-          Rituels du Code
+          Rituels du gourou
         </button>
         <button
           class="px-4 py-1 filter max-[380px]:tricante"
           @click="filterTerm = 'Grimoire des Outils'"
         >
-          Grimoire des Outils
+          Grimoire du gourou
         </button>
         <button class="px-4 py-1 filter" @click="filterTerm = 'Oracles de la Cyber'">
-          Oracles de la Cyber
+          Oracles du gourou
         </button>
         <button class="px-4 py-1 filter" @click="filterTerm = 'Decryptage du gourou'">
           Decryptage du gourou
@@ -163,6 +163,26 @@ blogs.fetchData()
                       alt=""
                       class="w-full h-full rounded-lg object-cover"
                     />
+                    <div
+                      class="h-full absolute w-full top-0 bottom-0 left-0 right-0 degBlack flex items-end justify-between"
+                    >
+                      <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-1">
+                          <img src="/miniteur.svg" class="w-[20px] h-[20px]" />5min
+                        </div>
+                        <div class="flex items-center gap-1">
+                          <img src="/visible.svg" class="w-[20px] h-[20px]" />
+                          {{ data.feeds?.viewer }}
+                        </div>
+                      </div>
+
+                      <div
+                        class="rounded-full p-1 px-3 text-yellow-50"
+                        :class="data.niveau === 'Difficile' ? 'bg-green-700' : 'bg-yl'"
+                      >
+                        {{ data.niveau }}
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div
@@ -244,5 +264,8 @@ blogs.fetchData()
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.3s ease-in-out;
+}
+.degBlack {
+  background: linear-gradient(180deg, rgba(2, 0, 10, 0), rgb(2, 0, 10));
 }
 </style>

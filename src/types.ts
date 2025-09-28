@@ -19,5 +19,6 @@ type Blog = {
   feeds: { viewer: number; commentaires: []; like: number | number }
   createAt: number | string
   timePassed?: string
+  niveau?: string
 }
 export type { formation, Blog }

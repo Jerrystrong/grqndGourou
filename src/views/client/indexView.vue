@@ -458,12 +458,12 @@ const putOtherFormation = () => {
           <div
             class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-5 max-[380]:px-1 truncate"
           >
-            Oracles de la Cyber
+            Oracles du gourou
           </div>
           <div
             class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-5 max-[380]:px-1 truncate"
           >
-            Grimoire des Outils
+            Grimoire du gourou
           </div>
           <div
             class="text-bleu bg-secondary rounded-[50px] text-center w-fit px-5 max-[380]:px-1 truncate"
