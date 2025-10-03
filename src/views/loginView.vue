@@ -8,8 +8,8 @@
         Se connecter / s’inscrire
       </h1>
       <p class="text-center md:w-fit w-[80%] mt-3 md:mt-0">
-        Se connecter en premier pour avoir access au contenu
-        <span class="relative spanOne">premium.</span>
+        Se connecter en premier pour avoir access à
+        <span class="relative spanOne">nos contenus.</span>
       </p>
     </div>
     <div id="loginFrom">

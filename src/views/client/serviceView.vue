@@ -140,10 +140,11 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
           class="md:text-[24px] text-[18px] text-secondary text-center md:w-[80%] w-[90%] relative"
         >
           Nous accompagnons <span class="text-bleu">professionnels</span>, startups et entreprises
-          dans la maîtrise des enjeux technologiques modernes : <span class="font-bold">IA</span>,
-          <span>Data</span>, <span class="text-yl">Architecture Logicielle</span> et Algorithmes.
-          Que vous cherchiez à optimiser vos systèmes, former vos équipes ou pivoter vers un nouveau
-          domaine, nos solutions sont conçues pour répondre à vos besoins avec
+          dans la maîtrise des enjeux technologiques contemporains :
+          <span class="font-bold">Intelligence Artificielle</span>, <span>Data</span>,
+          <span class="text-yl">Architecture Logicielle</span> et Algorithmes. Que vous souhaitiez à
+          optimiser vos systèmes, former vos équipes ou pivoter vers un nouveau domaine, nos
+          solutions sont conçues pour répondre à vos besoins avec
           <span class="relative spanOne text-secondary">précision</span> et impact.
         </h1>
         <div class="flex gap-4">
@@ -278,59 +279,56 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
               style=""
             >
               <h2 class="font-bold">Consulting & Expertise Technique</h2>
-              <ul class="list-disc list-inside">
-                <li>
-                  Audit et optimisation d'architectures logicielles, de pipelines de données ou de
-                  modèles d'IA.
-                </li>
-                <li>Résolution de problèmes complexes</li>
-                <li>
-                  Accompagnement sur mesure : de la conception à la mise en production, en passant
-                  par l'intégration d'outils modernes.
-                </li>
-              </ul>
+              <p>
+                Un regard expert sur vos projets en IA, Data, architecture logicielle et
+                algorithmes, pour entreprises et indépendants.
+              </p>
             </li>
             <li
               class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['2']"
               style=""
             >
               <h2 class="font-bold">Formations & Masterclasses</h2>
-              <ul class="list-disc list-inside">
-                <li>
-                  Thématiques phares : Architecture Data : du prototype à l’échelle industrielle ,
-                  avancés pour la e-commerce.
-                </li>
-                <li>
-                  Formats flexibles : Ateliers en ligne ou en présentiel, Modules sur mesure pour
-                  les équipes.
-                </li>
-              </ul>
+              <p>
+                Des parcours pratiques et progressifs, adaptés aussi bien aux débutants qu'aux
+                experts.
+              </p>
             </li>
             <li
               class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['3']"
               style=""
             >
               <h2 class="font-bold">Conférences & Interventions</h2>
+              <p>
+                Partage d’expertise lors d’événements, séminaires et rencontres professionnelles.
+              </p>
             </li>
             <li
               class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['4']"
               style=""
             >
               <h2 class="font-bold">Partenariats & Contenu Sponsorisé</h2>
+              <p>
+                Création et diffusion de contenus à forte valeur ajoutée, en collaboration avec
+                votre marque.
+              </p>
             </li>
             <li
               class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['5']"
               style=""
             >
               <h2 class="font-bold">Mentorat & Coaching Individuel</h2>
-              <p>• Un accompagnement 1:1 pour les professionnels ambitieux</p>
+              <p>Un accompagnement personnalisé (1:1) pour les professionnels ambitieux.</p>
             </li>
             <li
               class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['6']"
               style=""
             >
               <h2 class="font-bold">Reconversion Professionnelle</h2>
-              <p>• Un parcours clé en main pour ceux qui veulent se lancer dans la tech</p>
+              <p>
+                Un parcours clé en main pour se lancer dans la tech ou réussir une transition de
+                carrière dans ce secteur.
+              </p>
             </li>
           </motion.ul>
         </div>
@@ -341,7 +339,8 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
       <h1
         class="md:text-[32px] text-[24px] w-[90%] md:w-[50%] mx-auto second-text-gradient text-center"
       >
-        Pour garantir une collaboration efficace et alignée, voici la démarche :
+        Pour garantir une collaboration fluide et alignée, nous avons mis en place un processus
+        simple :
         <ol class="list-decimal list-inside mt-5 text-left text-[16px] font-medium">
           <li>
             Remplissez notre formulaire de demande (lien ci-dessous) en précisant :

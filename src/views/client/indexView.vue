@@ -523,7 +523,7 @@ const putOtherFormation = () => {
     filter: blur(8px);
     left: -5px;
   }
-  &:after {
+  /*&:after {
     content: '';
     display: block;
     width: 50px;
@@ -533,7 +533,7 @@ const putOtherFormation = () => {
     z-index: -50000;
     filter: blur(8px);
     right: -5px;
-  }
+  }*/
 }
 .degProfHeader {
   background: linear-gradient(180deg, rgb(0, 0, 0, 0.2), #02000a);

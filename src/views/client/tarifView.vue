@@ -6,14 +6,17 @@ const verifyAndlog = async () => {
   console.log('free access')
   router.push({ name: 'login' })
 }
+const goTopaye = async () => {
+  router.push({ name: 'paiement' })
+}
 </script>
 
 <template>
   <div class="w-[95%] mx-auto">
     <div class="flex items-center justify-center h-[70dvh]">
       <h1 class="second-text-gradient font-abeeze md:text-[32px] text-[24px] w-[800px] text-center">
-        Notre plateforme propose un modèle hybride pour concilier accessibilité et exclusivité,
-        s'adaptant aussi bien aux curieux qu'aux professionnels engagés.
+        Notre plateforme propose un modèle hybride conciliant accessibilité et exclusivité, pensé
+        aussi bien pour les curieux que pour les professionnels exigeants.
       </h1>
     </div>
     <div
@@ -25,7 +28,8 @@ const verifyAndlog = async () => {
       >
         <h1 class="font-abeeze text-[24px] text-center">Offre Standard (Gratuite)</h1>
         <p class="text-center">
-          Accédez à une sélection d'articles, de résumés et de ressources clés
+          Accédez à une sélection d’articles, de résumés et de ressources essentielles. Idéal pour
+          découvrir la qualité de notre contenu, amorcer votre parcours et rester informé.
         </p>
 
         <button
@@ -41,8 +45,8 @@ const verifyAndlog = async () => {
         <h1 class="font-abeeze text-[24px] text-center">Offre Standard (Payante)</h1>
         <p class="text-center">
           Libérez tout le potentiel de notre plateforme en souscrivant à un abonnement mensuel ou
-          annuel. L'offre Premium vous donne un accès illimité à l'intégralité de notre blog et à
-          toutes nos ressources.
+          annuel. L'offre Premium vous donne un accès <b>illimité</b> à l'intégralité de notre blog
+          et à toutes nos ressources.
         </p>
         <ul class="mt-1">
           <li class="flex gap-1 items-center opacity-60">
@@ -61,6 +65,7 @@ const verifyAndlog = async () => {
 
         <button
           class="bg-secondary w-[200px] h-[50px] rounded-[20px] text-yl font-bold absolute bottom-3 left-1/6 cursor-pointer hover:shadow-xs hover:shadow-yl/50 hover:scale-95 transition-all duration-300"
+          @click="goTopaye"
         >
           Acheter
         </button>
