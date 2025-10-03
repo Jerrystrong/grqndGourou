@@ -53,6 +53,9 @@ fetchActivities()
         <div
           class="blur-xs block w-full h-[24px] absolute bg-primary -bottom-1 right-0 left-0 z-5 transition duration-300 delay-200"
         ></div>
+        <div
+          class="blur-xs block w-[24px] h-full absolute bg-primary -right-1 transition duration-300 delay-200 -z-30"
+        ></div>
         <!-- end blur effect -->
         <div class="absolute bottom-4 right-6">
           <svg

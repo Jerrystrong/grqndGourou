@@ -101,6 +101,9 @@ const putOtherFormation = () => {
       <div
         class="blur-xs block w-full h-[24px] absolute bg-primary -bottom-1 right-0 left-0 z-5 transition duration-300 delay-200"
       ></div>
+      <div
+        class="blur-xs block w-[24px] h-full absolute bg-primary -right-1 transition duration-300 delay-200 -z-30"
+      ></div>
       <div class="flex lg:flex-col flex-row gap-7 mt-5 lg:mt-0">
         <a href="" class="">
           <WhatsappIcon w="30" h="30" />
