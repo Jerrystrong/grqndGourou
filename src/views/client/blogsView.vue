@@ -104,107 +104,105 @@ blogs.fetchData()
       </div>
       <div>
         <!-- render blog -->
-        <transition appear>
-          <div class="grid gap-8 mt-8" v-if="blogs.filterBlog(filterTerm, 'categorie').length > 0">
-            <h2 class="second-text-gradient md:text-4xl text-2xl md:my-7 my-3">
-              Les plus recents [{{ blogs.filterBlog(filterTerm, 'categorie').length }}]
-            </h2>
-            <transition-group appear name="slide">
-              <div v-for="(data, index) in blogs.filterBlog(filterTerm, 'categorie')" :key="index">
-                <div class="flex gap-10 justify-between p-8 md:flex-row flex-col-reverse fade">
-                  <div class="flex flex-col gap-4">
-                    <h2 class="md:text-2xl text-xl font-bold md:w-[70%] w-full">
-                      {{ data.title }}
-                    </h2>
-                    <p>{{ data?.description }}</p>
-                    <router-link
-                      :to="{ name: 'singleBlog', params: { id: data._id } }"
-                      class="flex items-center gap-4 group/route transistion duration-300 ease-in-out w-fit"
+        <div class="grid gap-8 mt-8" v-if="blogs.filterBlog(filterTerm, 'categorie').length > 0">
+          <h2 class="second-text-gradient md:text-4xl text-2xl md:my-7 my-3">
+            Les plus recents [{{ blogs.filterBlog(filterTerm, 'categorie').length }}]
+          </h2>
+          <transition-group appear name="slide">
+            <div v-for="(data, index) in blogs.filterBlog(filterTerm, 'categorie')" :key="index">
+              <div class="flex gap-10 justify-between p-8 md:flex-row flex-col-reverse fade">
+                <div class="flex flex-col gap-4">
+                  <h2 class="md:text-2xl text-xl font-bold md:w-[70%] w-full">
+                    {{ data.title }}
+                  </h2>
+                  <p>{{ data?.description }}</p>
+                  <router-link
+                    :to="{ name: 'singleBlog', params: { id: data._id } }"
+                    class="flex items-center gap-4 group/route transistion duration-300 ease-in-out w-fit"
+                  >
+                    <span class="group-hover/route:font-semibold">Lire la suite</span>
+                    <svg
+                      width="30"
+                      height="20"
+                      viewBox="0 0 30 30"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      class="-translate-x-1 group-hover/route:translate-x-1 cursor-pointer transistion duration-300 ease-in-out"
                     >
-                      <span class="group-hover/route:font-semibold">Lire la suite</span>
-                      <svg
-                        width="30"
-                        height="20"
-                        viewBox="0 0 30 30"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        class="-translate-x-1 group-hover/route:translate-x-1 cursor-pointer transistion duration-300 ease-in-out"
-                      >
-                        <rect width="30" height="30" fill="url(#pattern0_28_33)" />
-                        <defs>
-                          <pattern
-                            id="pattern0_28_33"
-                            patternContentUnits="objectBoundingBox"
-                            width="1"
-                            height="1"
-                          >
-                            <use xlink:href="#image0_28_33" transform="scale(0.0333333)" />
-                          </pattern>
-                          <image
-                            id="image0_28_33"
-                            width="30"
-                            height="30"
-                            preserveAspectRatio="none"
-                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqUlEQVR4nO3VwQrCMAzG8YK+hqKPI3t28Sgqgk59hSXkK0S6nWS1Cm7Zwfwhx/KD0mwheJ5XSFVnqjoP1pHEHQtOTaNLU5glaje4Eul6Ajja4vwCG+Lcg1v8UsQZqFjwyB/+dXB+++BYcB8H/YDzqGhshwTHtOtTwIcMjJvBVS9yj2vDgtoUHarCOq0GQ76DDdBUBrX+ZMIOTZHELQn25r/FVG9PPe9vegI0+B9Qd3bRHQAAAABJRU5ErkJggg=="
-                          />
-                        </defs>
-                      </svg>
-                    </router-link>
-                  </div>
-                  <div class="md:w-[400px] w-full h-[200px] relative">
-                    <div
-                      class="bag fade bg-secondary text-bleu rounded-full absolute px-5 top-2 left-2 border border-primary"
-                    >
-                      {{ data.categorie }}
-                    </div>
-                    <img
-                      :src="`/${data.imageBanner}`"
-                      alt=""
-                      class="w-full h-full rounded-lg object-cover"
-                    />
-                    <div
-                      class="h-full absolute w-full top-0 bottom-0 left-0 right-0 degBlack flex items-end justify-between"
-                    >
-                      <div class="flex items-center gap-2">
-                        <div class="flex items-center gap-1">
-                          <img src="/miniteur.svg" class="w-[20px] h-[20px]" />5min
-                        </div>
-                        <div class="flex items-center gap-1">
-                          <img src="/visible.svg" class="w-[20px] h-[20px]" />
-                          {{ data.feeds?.viewer }}
-                        </div>
-                      </div>
-
-                      <div
-                        class="rounded-full p-1 px-3 text-yellow-50"
-                        :class="data.niveau === 'Difficile' ? 'bg-green-700' : 'bg-yl'"
-                      >
-                        {{ data.niveau }}
-                      </div>
-                    </div>
-                  </div>
+                      <rect width="30" height="30" fill="url(#pattern0_28_33)" />
+                      <defs>
+                        <pattern
+                          id="pattern0_28_33"
+                          patternContentUnits="objectBoundingBox"
+                          width="1"
+                          height="1"
+                        >
+                          <use xlink:href="#image0_28_33" transform="scale(0.0333333)" />
+                        </pattern>
+                        <image
+                          id="image0_28_33"
+                          width="30"
+                          height="30"
+                          preserveAspectRatio="none"
+                          xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqUlEQVR4nO3VwQrCMAzG8YK+hqKPI3t28Sgqgk59hSXkK0S6nWS1Cm7Zwfwhx/KD0mwheJ5XSFVnqjoP1pHEHQtOTaNLU5glaje4Eul6Ajja4vwCG+Lcg1v8UsQZqFjwyB/+dXB+++BYcB8H/YDzqGhshwTHtOtTwIcMjJvBVS9yj2vDgtoUHarCOq0GQ76DDdBUBrX+ZMIOTZHELQn25r/FVG9PPe9vegI0+B9Qd3bRHQAAAABJRU5ErkJggg=="
+                        />
+                      </defs>
+                    </svg>
+                  </router-link>
                 </div>
-                <div
-                  class="flex items-center w-[100%]"
-                  v-if="!(index + 1 === blogs.filterBlog(filterTerm, 'categorie').length)"
-                >
-                  <div class="rond rounded-full w-[15px] h-[15px] block bg-secondary"></div>
-                  <div class="rond rounded-full w-[100%] h-[1px] block bg-secondary"></div>
+                <div class="md:w-[400px] w-full h-[200px] relative">
+                  <div
+                    class="bag fade bg-secondary text-bleu rounded-full absolute px-5 top-2 left-2 border border-primary"
+                  >
+                    {{ data.categorie }}
+                  </div>
+                  <img
+                    :src="`/${data.imageBanner}`"
+                    alt=""
+                    class="w-full h-full rounded-lg object-cover"
+                  />
+                  <div
+                    class="h-full absolute w-full top-0 bottom-0 left-0 right-0 degBlack flex items-end justify-between"
+                  >
+                    <div class="flex items-center gap-2">
+                      <div class="flex items-center gap-1">
+                        <img src="/miniteur.svg" class="w-[20px] h-[20px]" />5min
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <img src="/visible.svg" class="w-[20px] h-[20px]" />
+                        {{ data.feeds?.viewer }}
+                      </div>
+                    </div>
+
+                    <div
+                      class="rounded-full p-1 px-3 text-yellow-50"
+                      :class="data.niveau === 'Difficile' ? 'bg-green-700' : 'bg-yl'"
+                    >
+                      {{ data.niveau }}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </transition-group>
-          </div>
-          <div
-            v-else
-            class="w-full bg-secondary/60 h-[300px] flex items-center justify-center relative text-3xl animate-pulse"
-          >
-            <!-- <div
+              <div
+                class="flex items-center w-[100%]"
+                v-if="!(index + 1 === blogs.filterBlog(filterTerm, 'categorie').length)"
+              >
+                <div class="rond rounded-full w-[15px] h-[15px] block bg-secondary"></div>
+                <div class="rond rounded-full w-[100%] h-[1px] block bg-secondary"></div>
+              </div>
+            </div>
+          </transition-group>
+        </div>
+        <div
+          v-else
+          class="w-full bg-secondary/60 h-[300px] flex items-center justify-center relative text-3xl animate-pulse"
+        >
+          <!-- <div
               class="absolute w-full bg-primary/30 h-full top-0 left-0 bottom-0 animatedOne"
             ></div> -->
-            Not data available now
-          </div>
-        </transition>
+          Not data available now!
+        </div>
         <!-- end blog -->
       </div>
     </div>

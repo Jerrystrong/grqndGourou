@@ -347,7 +347,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
       </h1>
       <div class="flex md:flex-row flex-col">
         <div
-          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['1'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[-2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-3 max-lg:border-dashed max-lg:border-secondary"
+          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['1'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[-2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-2 max-lg:border-dashed max-lg:border-secondary"
         >
           <h2 class="text-center border-b border-secondary/10 font-abeeze font-semibold">
             Remplissez notre formulaire de demande en précisant :
@@ -371,7 +371,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
           </div>
         </div>
         <div
-          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['2'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 transition-all duration-300 hover:scale-105 cursor-pointer max-lg:border-3 max-lg:border-dashed max-lg:border-secondary"
+          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['2'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 transition-all duration-300 hover:scale-105 cursor-pointer max-lg:border-2 max-lg:border-dashed max-lg:border-secondary"
         >
           <h2 class="text-center border-b border-secondary/10 font-abeeze font-semibold">
             Échange exploratoire gratuit <br />(15-30 min) :
@@ -395,7 +395,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
           </div>
         </div>
         <div
-          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['3'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-3 max-lg:border-dashed max-lg:border-secondary"
+          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['3'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-2 max-lg:border-dashed max-lg:border-secondary"
         >
           <h2>3. Lancement du projet :</h2>
           <ul class="list-disc list-inside font-normal">
