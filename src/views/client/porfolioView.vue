@@ -147,17 +147,13 @@ fetchActivities()
           <div class="md:w-[80%] lg:mx-0 mx-auto w-full grid gap-6 lg:text-left text-center">
             <p>Expert en IA, Ingénierie des Données, Architecture Logicielle et Algorithmique.</p>
             <p>
-              Je transforme les défis technologiques en solutions innovantes et performantes pour
-              façonner l'avenir numérique.
+              Nous transformons les défis technologiques en solutions innovantes et performantes
+              pour façonner l'avenir numérique.
             </p>
           </div>
-          <div class="flex flex-row gap-7 mt-7 max-[390px]:mt-4 justify-center lg:justify-start">
+          <div class="flex flex-row gap-7 mt-7 max-[390px]:my-4 justify-center lg:justify-start">
             <a href="" class="">
-              <WhatsappIcon
-                w="20"
-                h="20"
-                class="w-[20px] h-[20px] h-[20px] max-sm:h-[30px] max-sm:w-[30px]"
-              />
+              <WhatsappIcon class="w-[20px] h-[20px] h-[20px] max-sm:h-[30px] max-sm:w-[30px]" />
             </a>
             <a href="">
               <img
@@ -184,9 +180,9 @@ fetchActivities()
             alt=""
             class="absolute -left-7 md:w-[100px] w-[50px] bottom-[50px] max-sm:bottom-[100px]"
           />
-          Ma philosophie : (Dans un écosystème où les solutions se ressemblent, ce sont les détails
+          Ma philosophie : Dans un écosystème où les solutions se ressemblent, ce sont les détails
           qui créent la singularité — et la performance. Notre approche ? Allier innovation,
-          précision et pragmatisme pour des résultats concrets.).
+          précision et pragmatisme pour des résultats concrets.
         </p>
       </div>
 

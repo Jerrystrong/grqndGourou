@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-center justify-center flex-col w-screen h-screen relative">
+  <div class="flex items-center justify-center flex-col w-full h-screen relative">
     <div
-      class="heroL absolute top-0 left-0 right-0 bottom-0 bg-primary/50 blur-[4px] w-full h-full -z-50"
+      class="heroL top-0 left-0 absolute right-0 bottom-0 bg-primary/50 blur-[4px] w-full h-full -z-50"
     ></div>
     <div class="flex justify-center flex-col mb-10 w-full items-center">
       <h1 class="second-text-gradient font-abeeze md:text-[32px] text-[24px] w-[800px] text-center">
@@ -18,6 +18,7 @@
         placeholder="Entrez votre email"
         class="border border-bleu bg-bleu/20 placeholder:text-secondary h-[50px] rounded-[20px] w-[300px] pl-[20px]"
       />
+      <div class="primaryDeg px-10 py-3 rounded-full relative text-center my-2">Suivant</div>
       <div class="mt- flex w-[300px] justify-between mt-5">
         <div class="flex gap-2">
           <button class="bg-secondary rounded-full">

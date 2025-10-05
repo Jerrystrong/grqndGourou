@@ -110,6 +110,11 @@ const openMenu = (): void => {
             >À propos</router-link
           >
           <router-link
+            :to="{ name: 'tarif' }"
+            class="hover:text-bleu/50 transition duration-300 h-fit text-xl"
+            >Tarif</router-link
+          >
+          <router-link
             :to="{ name: 'service' }"
             class="hover:text-bleu/50 transition duration-300 h-fit text-xl"
             >Services et collaboration</router-link
@@ -119,6 +124,14 @@ const openMenu = (): void => {
           >
             Communauté
           </button>
+          <router-link :to="{ name: 'login' }">
+            <div class="primaryDeg px-10 py-3 rounded-full relative text-center">
+              Se connecter
+              <!-- <div class="absolute w-[60px] -right-[41px] translate-y-[14px] -z-5 blur-[2px]">
+                <img src="../../components/icons/codeX.svg" alt="" class="w-full -z-3" />
+              </div> -->
+            </div>
+          </router-link>
         </div>
       </transition>
 

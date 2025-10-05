@@ -43,7 +43,7 @@
   @apply grayscale-0;
 }
 body {
-  @apply dark:bg-primary bg-primary box-border text-secondary;
+  @apply dark:bg-primary bg-primary box-border text-secondary p-0 m-0;
 }
 .router-link-active {
   @apply text-bleu/50 relative;

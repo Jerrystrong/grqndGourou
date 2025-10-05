@@ -16,7 +16,7 @@ export default defineComponent({
       <div class="grid gap-4">
         <div class="flex flex-row gap-7">
           <a href="" class="">
-            <WhatsappIcon w="20" h="20" />
+            <WhatsappIcon w="20" h="20" class="w-[20px] h-[20px]" />
           </a>
           <a href="">
             <img src="@/assets/linkedin.svg" alt="" class="w-[20px] h-[20px]" />
@@ -34,7 +34,7 @@ export default defineComponent({
       </div>
       <div>
         <div class="flex flex-col gap-4">
-          <div class="flex items-center gap-4 max-[380px]:text-[12px]">
+          <div class="flex items-center gap-4 max-[380px]:text-[11px]">
             <button>Communauté</button>
             <div class="w-1 h-1 bg-secondary block rounded-full"></div>
             <router-link :to="{ name: 'about' }">À propos</router-link>
@@ -42,6 +42,11 @@ export default defineComponent({
             <router-link :to="{ name: 'service' }">Travailler avec moi</router-link>
           </div>
           <img src="@/assets/CHEZLEGRANDGOUROU.svg" alt="logo-chezlegrandgourou" />
+          <div class="flex gap-3">
+            <a href="tel:+243972640200">+243972640200</a>
+            <a href="tel:+243896702007">+243896702007</a>
+            <a href="tel:+243837133337">+243837133337</a>
+          </div>
         </div>
       </div>
     </div>

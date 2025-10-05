@@ -122,6 +122,9 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
         <div
           class="blur-xs block w-full h-[24px] absolute bg-primary -bottom-1 right-0 left-0 transition duration-300 delay-200 -z-30"
         ></div>
+        <div
+          class="blur-xs block w-[24px] h-full absolute bg-primary -right-1 transition duration-300 delay-200 -z-30"
+        ></div>
         <!-- end blur effect -->
         <div class="md:flex hidden self-start translate-x-10 opacity-50">
           <div class="relative">
@@ -251,9 +254,9 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
     <div class="my-[100px] flex justify-center flex-col gap-7">
       <!-- <h2 class="text-[32px] lg:w-[50%] w-[95%] text-center">Nos services clés</h2> -->
       <!-- service section -->
-      <div class="flex md:flex-row flex-col items-center gap-10 md:gap-0 justify-center">
+      <div class="flex lg:flex-row flex-col items-center gap-10 md:gap-3 justify-center">
         <h3
-          class="text-center text-secondary font-abeeze md:w-[30%] w-[100%] text-[24px] flex flex-col items-center"
+          class="text-center text-secondary font-abeeze lg:w-[30%] w-[100%] text-[24px] flex flex-col items-center"
         >
           <span
             >Découvrez nos services conçus pour propulser votre entreprise vers l'avenir
@@ -337,59 +340,68 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
     <!-- form first entry -->
     <div>
       <h1
-        class="md:text-[32px] text-[24px] w-[90%] md:w-[50%] mx-auto second-text-gradient text-center"
+        class="md:text-[32px] text-[24px] w-[90%] lg:w-[50%] mx-auto second-text-gradient text-center"
       >
         Pour garantir une collaboration fluide et alignée, nous avons mis en place un processus
         simple :
-        <ol class="list-decimal list-inside mt-5 text-left text-[16px] font-medium">
-          <li>
-            Remplissez notre formulaire de demande (lien ci-dessous) en précisant :
-            <ul class="list-disc list-inside font-normal">
-              <li>Le service qui vous intéresse (un ou plusieurs)</li>
-              <li>Vos objectifs</li>
-              <li>
-                Vos contraintes (budget, délais, préférences de format : distanciel/présentiel)
-              </li>
-              <li>Vos coordonnées pour un retour sous 48h maximum.</li>
-            </ul>
-          </li>
-        </ol>
       </h1>
-      <div
-        class="w-[90%] md:w-[50%] mx-auto mt-5 flex items-center gap-5 md:flex-row flex-col cursor-pointer"
-      >
-        <button class="primaryDeg rounded-full relative w-fit p-2" @click="isFormVisible = true">
-          Remplir le formulaire
-        </button>
-        <p>Ceci est indispensable pour souscrire à un de nos services</p>
-      </div>
-      <div class="w-[90%] md:w-[50%] mx-auto mt-5 second-text-gradient">
-        <h2>2. Échange exploratoire gratuit (15-30 min) :</h2>
-        <ul class="list-disc list-inside font-normal">
-          <li>
-            Nous analysons vos besoins et vous proposons un plan d’action détaillé (avec devis si
-            nécessaire).
-          </li>
-        </ul>
-      </div>
-      <div class="w-[90%] md:w-[50%] mx-auto">
-        <p>Définir un chrono préçu</p>
-        <input
-          type="hour"
-          class="border-2 text-bleu placeholder:text-bleu p-1 px-2 rounded-full w-[80px] mt-2 bg-secondary/80 border-bleu"
-          placeholder="12:00"
-        />
-        <button
-          class="border-2 text-bleu p-1 rounded-lg w-[150px] mt-2 ml-4 bg-secondary border-bleu"
+      <div class="flex md:flex-row flex-col">
+        <div
+          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['1'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[-2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-3 max-lg:border-dashed max-lg:border-secondary"
         >
-          Enregistrer
-        </button>
-      </div>
-      <div class="w-[90%] md:w-[50%] mx-auto mt-5 second-text-gradient">
-        <h2>3. Lancement du projet :</h2>
-        <ul class="list-disc list-inside font-normal">
-          <li>Signature d’un accord (si besoin) et démarrage sous 7 jours.</li>
-        </ul>
+          <h2 class="text-center border-b border-secondary/10 font-abeeze font-semibold">
+            Remplissez notre formulaire de demande en précisant :
+          </h2>
+          <ul class="list-disc list-inside font-normal p-3 text-[14px]">
+            <li>Le service qui vous intéresse (un ou plusieurs)</li>
+            <li>Vos objectifs</li>
+            <li>Vos contraintes (budget, délais, préférences de format : distanciel/présentiel)</li>
+            <li>Vos coordonnées pour un retour sous 48h maximum.</li>
+          </ul>
+          <div class="mx-auto mt-2 flex items-center gap-5 flex-col cursor-pointer">
+            <button
+              class="primaryDeg rounded-full relative w-fit p-2 px-5 text-[14px] font-abeeze"
+              @click="isFormVisible = true"
+            >
+              Remplir le formulaire
+            </button>
+            <p class="text-[12px] text-center">
+              Ceci est indispensable pour souscrire à un de nos services
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['2'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 transition-all duration-300 hover:scale-105 cursor-pointer max-lg:border-3 max-lg:border-dashed max-lg:border-secondary"
+        >
+          <h2 class="text-center border-b border-secondary/10 font-abeeze font-semibold">
+            Échange exploratoire gratuit <br />(15-30 min) :
+          </h2>
+          <ul class="list-disc list-inside font-normal">
+            <li>
+              Nous analysons vos besoins et vous proposons un plan d’action détaillé (avec devis si
+              nécessaire).
+            </li>
+          </ul>
+          <div class="mt-5">
+            <p>Définir un chrono préçu</p>
+            <input
+              type="hour"
+              class="border-2 text-secondary/10 placeholder:text-primary/50 p-1 px-2 rounded-full w-[80px] mt-2 bg-secondary/30 border-secondary/50"
+              placeholder="12:00"
+            />
+            <button class="text-bleu p-1 rounded-lg w-[150px] mt-2 ml-4 bg-secondary">
+              Enregistrer
+            </button>
+          </div>
+        </div>
+        <div
+          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['3'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-3 max-lg:border-dashed max-lg:border-secondary"
+        >
+          <h2>3. Lancement du projet :</h2>
+          <ul class="list-disc list-inside font-normal">
+            <li>Signature d’un accord (si besoin) et démarrage sous 7 jours.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
