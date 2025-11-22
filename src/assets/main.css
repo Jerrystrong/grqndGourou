@@ -98,6 +98,6 @@ body {
   width: 4px;
 }
 .scrollCustom::-webkit-scrollbar-thumb {
-  color: #04284a;
+  color: #04284a7e;
   width: 2px;
 }

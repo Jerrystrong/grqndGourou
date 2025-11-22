@@ -180,8 +180,8 @@ fetchActivities()
             alt=""
             class="absolute -left-7 md:w-[100px] w-[50px] bottom-[50px] max-sm:bottom-[100px]"
           />
-          Ma philosophie : Dans un écosystème où les solutions se ressemblent, ce sont les détails
-          qui créent la singularité — et la performance. Notre approche ? Allier innovation,
+          Notre philosophie : <br />Dans un écosystème où les solutions se ressemblent, ce sont les
+          détails qui créent la singularité — et la performance. Notre approche ? Allier innovation,
           précision et pragmatisme pour des résultats concrets.
         </p>
       </div>

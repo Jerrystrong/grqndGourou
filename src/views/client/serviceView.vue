@@ -417,7 +417,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
         class="absolute w-full h-full blur-2xl top-0 bottom-0 left-0 right-0 bg-primary/20 -z-10"
       ></div>
       <div
-        class="bg-primary/80 md:w-[400px] w-[90%] mx-auto p-5 h-full md:rounded-tl-lg rounded-tl-0 shadow-sm shadow-bleu/20 overflow-y-scroll ffg animate-simpleFormAnim"
+        class="bg-primary/80 md:w-[400px] w-[90%] mx-auto p-5 h-full md:rounded-tl-lg rounded-tl-0 shadow-sm shadow-bleu/20 md:overflow-hidden overflow-y-scroll ffg animate-simpleFormAnim"
       >
         <div class="flex justify-between items-center">
           <h2 class="font-semibold text-2xl my-5">Vos coordonnées</h2>
@@ -811,7 +811,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
 }
 
 .ffg::-webkit-scrollbar-thumb {
-  background: #0a5eb0; /* test couleur visible */
+  background: rgba(83, 111, 140, 0.5); /* test couleur visible */
   border-radius: 1ex;
 }
 
