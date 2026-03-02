@@ -43,6 +43,7 @@ const getPopularPost = computed(() => {
 </script>
 <template>
   <div class="w-[90%] mx-auto">
+    <!-- post header -->
     <div class="pt-[100px]">
       <div
         class="header flex md:items-center md:justify-between border-b pb-5 md:flex-row flex-col items-start gap-2"
@@ -81,205 +82,128 @@ const getPopularPost = computed(() => {
         </div>
       </div>
       <div class="title m-5 flex justify-between md:flex-row flex-col md:gap-0 gap-2">
-        <h2 class="font-abeeze md:text-4xl text-2xl md:w-[70%] w-[100%]">
+        <h2
+          class="font-satoshi md:text-4xl text-2xl md:w-[70%] w-[100%]"
+          style="font-family: 'Urbanist', sans-serif"
+        >
           {{ getPost?.title }}
         </h2>
-        <div class="flex gap-4 items-center">
-          <button class="flex gap-1">
-            <img src="/visible.png" alt="" class="w-7 h-7" />
-            {{ getPost?.feeds.viewer }}
-          </button>
-          <button class="flex gap-1">
-            <img src="/message.png" alt="" class="w-7 h-7" />
-            {{ getPost?.feeds.commentaires.length }}
-          </button>
-        </div>
       </div>
+      <!-- post body -->
       <div class="flex my-7 w-full gap-3 lg:flex-row flex-col">
         <div class="lg:h-[100dvh] lg:w-[70%] flex flex-col gap-7 md:overflow-y-scroll scrollCustom">
-          <div class="banner">
+          <div class="banner relative">
+            <div class="degTr w-full h-[100px] bottom-0 left-0 right-0"></div>
+            <div
+              class="flex gap-4 items-center absolute h-[50px] px-4 rounded-lg glass-container bottom-2 right-5"
+            >
+              <button class="flex gap-2 items-center">
+                <img src="/visible.png" alt="" class="w-5 h-5" />
+                {{ getPost?.feeds.viewer }}
+              </button>
+              <button class="flex gap-2 items-center">
+                <img src="/message.png" alt="" class="w-5 h-5" />
+                {{ getPost?.feeds.commentaires.length }}
+              </button>
+            </div>
             <img
               :src="`/${getPost?.imageBanner}`"
               alt=""
-              class="w-full lg:h-[400px] h-[200px] object-cover"
+              class="w-full lg:h-[400px] h-[200px] object-cover rounded-lg"
             />
           </div>
-          <p class="text-justify">{{ getPost?.body }}</p>
-          <div>
-            <h3 class="mb-1">Tags</h3>
-            <div class="flex gap-4">
-              <span class="before:content-['#'] before:text-bleu font-abeeze">Technologie</span>
-              <span class="before:content-['#'] before:text-bleu font-abeeze">Algorithme</span>
-              <span class="before:content-['#'] before:text-bleu font-abeeze">Python</span>
-            </div>
-          </div>
+          <p class="text-left mt-5" style="font-family: 'Satoshi', sans-serif">
+            {{ getPost?.body }}
+          </p>
 
-          <div class="flex gap-7 items-center">
+          <div class="flex gap-3 items-center mt-5 flex-wrap">
             <button
-              class="bg-secondary px-3 py-1 rounded-full flex text-bleu/70 gap-3 items-center cursor-pointer hover:scale-95"
+              class="bg-secondary/90 backdrop-blur-2xl p-2 px-3 rounded-full flex text-bleu/70 gap-1 items-center justify-center cursor-pointer hover:scale-95 text-[14px]"
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <rect width="20" height="20" fill="url(#pattern0_136_34)" />
-                <defs>
-                  <pattern
-                    id="pattern0_136_34"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
-                    <use xlink:href="#image0_136_34" transform="scale(0.02)" />
-                  </pattern>
-                  <image
-                    id="image0_136_34"
-                    width="50"
-                    height="50"
-                    preserveAspectRatio="none"
-                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC9UlEQVR4nO2YPYgTQRTHB/zIzsQvxErOSsXiCi0sLATBQlsLD5HsmwQFC0EQsbRUO1HQRksbIZi8tx6cnArCRUvxwELlxNoPoncqgo0ns5nLucluMrMmmx3JgymyM7Mzv3kf/80wNraxuWVC0nMhaVm3XxzoSVEGk8w1E6sQ7cYlfhF+bS9zyYTefPjDny0KiVX97C2bqnLmJIgyf7bIAV/r55eYsyCMsaIfHA5DDKjpjFdEDIgyLmlePfcATzCnQQDPthKf7jKXQYoymGwnfe7t0NO1SSCtCqb68AfLuwkfK1o33nT2bTpd3aoTfpHl3xu4EJ66j5XObl4ODugcmWcueEMAvVNQnf0e0AXtrTvMVW8oExKpBRqUmaveYOdmChzwm5D4m5+i7SyXNlVdo0pqT28AHtVh9YI56w0WhtUtDXJ5eBuR1Ij79DZoDZPc0CDvU66x3P4roEITsL6xRHuSQL6nXmDFGxIXkryh15j7VxDRBqImL9Umuhbhkl6Fg8q4z8KL+sX9vTEo46XaBAea0etWuwdImg5JfTxm+tLoKfX2xiDNq+AOnWtL3ZsCvKlj8HwKkJ82BzAwEKBmzKbwot7UddMXJn4YDhmCAz7sFVrH9cYwjyAieisTXmQU/GBX10AOtF+762UuQQCfRXOyfiR24IaTD7ZpkK95DS0erVj3em0s1JLNZdyS5xwRrdD6kDjIVktGCgIxFSutlmQN4vWrWGm1JCsQYVqx0mpJZiBgWLHSakmWocVNK1YaLRlFjoh+FSuNlowMBOhT38E2WpIliBetWL1Dy1ZLhg0iOqpVK6zoY0HWd/adnKQlHPCquubkQFcyA4FoteISHxtB9NKSlZBT/5mzDC1uU61MtER5QsH8fQOSVY54q9Xqs/EkGy2JuRRosOFWq0XjSTZaEne74UH9IBtWtQK6bzxxRUtsWggFeMN2nk3jQM31lendVqfAJT6yWGQunHTm9joh8ZoSq4ECSFxSnrCGGNvYxvZ/2h/2LIvMUttLygAAAABJRU5ErkJggg=="
-                  />
-                </defs>
-              </svg>
+              <i class="bx bxs-like"></i>
               {{ getPost?.feeds?.like }}
             </button>
 
-            <a href="" class="flex gap-2 items-center">
-              Partage
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <rect width="20" height="20" fill="url(#pattern0_136_35)" />
-                <defs>
-                  <pattern
-                    id="pattern0_136_35"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
-                    <use xlink:href="#image0_136_35" transform="scale(0.02)" />
-                  </pattern>
-                  <image
-                    id="image0_136_35"
-                    width="50"
-                    height="50"
-                    preserveAspectRatio="none"
-                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADtUlEQVR4nN2ZW08TURDHD9f0nOIlGu/fQONnaGJ89C7rjc4UUYmfgZc+mCgY4wU1kUcjIq6xM1Xia7+FIIjooyESg4K+SM3ZbUsrbTnbbrtbJzlJH/Zs97dzOTP/FSJMZtndEaDzCnhCIs0opJ96Ob+BJyKYOqevEWE2idyrkD4p5GzVBfxRIp8WobNksl0i39kUAEuXBB7Re0VYrBYItQ4zLMJgMkFna4VQeZg4nQqWwrK7dbzXC6KA5wMtALoC1Q2BOa8g9wYGopAnfQMBGg8OBGjWP4/QTJAgKz56ZLm5Tx/LdArL7siB/Go9kFimU0E6oZDmov102AXhhdYJrVimUyFjcT5EMHXRBaFXPnrkWWMALLvjX4Ci9VhfEgW6FN7ym0y2S0hbbuda6e3xdzH4RuUOxIXGHoiW3e0cWCXtNK8q5M8K+GUkzhdKNlt2RxRTcYX8wSwU+Lo/LQqtSeQTZRkkpM9oSoM3sVBopx1P0LiH5FxSfa/36a0K6H4dSX6rfFgg3fbuWrorRLZNJ7YEmjJPUH7nlONksl3fw7MngIfLtvE1QZTACBGNv94tgb952DuZP1ckpE+aDVY0q6+tHE71Vw4nzBTwNcM9qzqstiVoe+FBBse6dLFQSC9yUDovf0jk97rEOtVpcKyrYmIb5cTm67PzJ4lMpKpX9IkO9CCfI6FspyNA5x2vID2qBCAHeL9ohCngCb9AdGleFxKKAJBHGwaQN9Pabwgyr+8ZxfQhBfRbAT2U+PaAaIZJoGXfQJBXC0nbLID/DkQ1ILR6+vhg03IjbxL5uY8emdzQQzWq3Dan/PJoubBTyPdUYmqvCLm+tOAciJbdLZEWq+WRbmmiF9J7fGeRyKfrhPgTjaeP6HupOPWb7aEVLZfuHOAtxS9VumJ2UYviUY3XonCtIBLohr7H1iv2Don81cO+p/kOVkHqmOH4sIka78wUXmFoTSEN5fd7nMOpoKggDbn3Yv/UeC0Ka7XDAOKTjNNxd1e2TQE/MX4IpMWey/YuNxLoZu2RwCPVk8Y50LhXT30SaFq30o6gpl2vx19IW/+Ounm5x9CTV/W2KPBRnV/hU+Nj6/pVFW8sCcuWTrVE+lIPhHJfylzlGaWhQPQo/HKQAVBBoEOyW0+Nj7W6ZPrfidgbLNuWE/1aHUSIarKq8g4yHRiI20+FXY03MFe/apXyu+n44MN3RAj48/R6X9cgNb7ZVtf4gOXU+KCspq8AVFmND9qMxweoosaHxnJqfMn4YKjG/wUOieGwXn90swAAAABJRU5ErkJggg=="
-                  />
-                </defs>
-              </svg>
+            <a
+              href=""
+              class="flex gap-2 glass-container w-[40px] h-[40px] rounded-full items-center justify-center text-secondary backdrop-blur-2xl shadow-2xl shadow-bleu/5 hover:shadow-bleu/10 hover:scale-95 transition-all duration-300 cursor-pointer"
+            >
+              <i class="bx bx-share-alt"></i>
             </a>
+
+            <a
+              href=""
+              class="flex gap-2 glass-container p-2 px-3 rounded-full items-center justify-center text-secondary backdrop-blur-2xl shadow-2xl shadow-bleu/5 hover:shadow-bleu/10 hover:scale-95 transition-all duration-300 cursor-pointer"
+            >
+              <i class="bx bx-download"></i>
+              100
+            </a>
+            <!-- tags -->
+            <div class="flex gap-4">
+              <span class="before:content-['#'] before:text-secondary/50 font-satoshi text-[14px]"
+                >Technologie</span
+              >
+              <span class="before:content-['#'] before:text-secondary/50 font-satoshi text-[14px]"
+                >Algorithme</span
+              >
+              <span class="before:content-['#'] before:text-secondary/50 font-satoshi text-[14px]"
+                >Python</span
+              >
+            </div>
           </div>
           <div class="commentaire text-secondary">
-            <h2 class="border-b pb-3 text-2xl">Commentaires</h2>
+            <h2 class="pb-3 text-2xl mb-2">Commentaires</h2>
             <div
               v-for="(commentaire, index) in getPost?.feeds?.commentaires"
               :key="index"
-              class="bg-secondary/20 mb-7 p-3 relative"
+              class="bg-secondary/10 backdrop-blur-md mb-7 p-5 relative rounded-[20px]"
             >
               <div class="flex gap-1 absolute -bottom-5">
                 <button
-                  class="bg-secondary px-3 py-1 rounded-full flex text-bleu/70 gap-3 items-center cursor-pointer hover:scale-95"
+                  class="bg-secondary w-[30px] h-[30px] flex items-center justify-center rounded-full text-bleu/70 gap-3 cursor-pointer hover:scale-95"
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                  >
-                    <rect width="20" height="20" fill="url(#pattern0_136_34)" />
-                    <defs>
-                      <pattern
-                        id="pattern0_136_34"
-                        patternContentUnits="objectBoundingBox"
-                        width="1"
-                        height="1"
-                      >
-                        <use xlink:href="#image0_136_34" transform="scale(0.02)" />
-                      </pattern>
-                      <image
-                        id="image0_136_34"
-                        width="50"
-                        height="50"
-                        preserveAspectRatio="none"
-                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC9UlEQVR4nO2YPYgTQRTHB/zIzsQvxErOSsXiCi0sLATBQlsLD5HsmwQFC0EQsbRUO1HQRksbIZi8tx6cnArCRUvxwELlxNoPoncqgo0ns5nLucluMrMmmx3JgymyM7Mzv3kf/80wNraxuWVC0nMhaVm3XxzoSVEGk8w1E6sQ7cYlfhF+bS9zyYTefPjDny0KiVX97C2bqnLmJIgyf7bIAV/r55eYsyCMsaIfHA5DDKjpjFdEDIgyLmlePfcATzCnQQDPthKf7jKXQYoymGwnfe7t0NO1SSCtCqb68AfLuwkfK1o33nT2bTpd3aoTfpHl3xu4EJ66j5XObl4ODugcmWcueEMAvVNQnf0e0AXtrTvMVW8oExKpBRqUmaveYOdmChzwm5D4m5+i7SyXNlVdo0pqT28AHtVh9YI56w0WhtUtDXJ5eBuR1Ij79DZoDZPc0CDvU66x3P4roEITsL6xRHuSQL6nXmDFGxIXkryh15j7VxDRBqImL9Umuhbhkl6Fg8q4z8KL+sX9vTEo46XaBAea0etWuwdImg5JfTxm+tLoKfX2xiDNq+AOnWtL3ZsCvKlj8HwKkJ82BzAwEKBmzKbwot7UddMXJn4YDhmCAz7sFVrH9cYwjyAieisTXmQU/GBX10AOtF+762UuQQCfRXOyfiR24IaTD7ZpkK95DS0erVj3em0s1JLNZdyS5xwRrdD6kDjIVktGCgIxFSutlmQN4vWrWGm1JCsQYVqx0mpJZiBgWLHSakmWocVNK1YaLRlFjoh+FSuNlowMBOhT38E2WpIliBetWL1Dy1ZLhg0iOqpVK6zoY0HWd/adnKQlHPCquubkQFcyA4FoteISHxtB9NKSlZBT/5mzDC1uU61MtER5QsH8fQOSVY54q9Xqs/EkGy2JuRRosOFWq0XjSTZaEne74UH9IBtWtQK6bzxxRUtsWggFeMN2nk3jQM31lendVqfAJT6yWGQunHTm9joh8ZoSq4ECSFxSnrCGGNvYxvZ/2h/2LIvMUttLygAAAABJRU5ErkJggg=="
-                      />
-                    </defs>
-                  </svg>
+                  <i class="bx bxs-like"></i>
                 </button>
                 <p>({{ commentaire.like }})</p>
               </div>
-              <h3>{{ commentaire.name }}</h3>
-              {{ commentaire.message }}
+              <h3 class="font-bold font-satoshi">{{ commentaire.name }}</h3>
+              <p style="font-family: 'Satoshi', sans-serif">
+                {{ commentaire.message }}
+              </p>
             </div>
 
-            <div class="flex gap-5 my-10">
+            <div class="flex gap-5 my-10 glass-container backdrop-blur-2xl rounded-lg w-fit p-5">
               <input
                 type="text"
                 placeholder="Ecrivez votre commentaire ici"
-                class="outline-secondary rounded-lg px-3 py-1 w-[300px]"
+                class="focus:outline-secondary/10 focus:border-secondary/10 rounded-lg px-3 py-1 md:w-[500px] w-[300px] outline-0"
                 v-model="commentaire"
               />
               <button
-                class="text-bleu bg-secondary px-3 py-1 flex items-center rounded-lg gap-3 font-abeeze"
+                class="text-secondary glass-container backdrop-blur-md px-3 py-1 flex items-center rounded-full gap-3 w-[40px] h-[40px] justify-center"
                 @click.prevent="sendCommentaire"
               >
-                Envoyer
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <rect width="20" height="20" fill="url(#pattern0_180_48)" />
-                  <defs>
-                    <pattern
-                      id="pattern0_180_48"
-                      patternContentUnits="objectBoundingBox"
-                      width="1"
-                      height="1"
-                    >
-                      <use xlink:href="#image0_180_48" transform="scale(0.0333333)" />
-                    </pattern>
-                    <image
-                      id="image0_180_48"
-                      width="30"
-                      height="30"
-                      preserveAspectRatio="none"
-                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLElEQVR4nO2Wv0oDQRCHF2IzE4koWOhTCBYp7YWU1+jOnH8gD2HlK1jaWy3ob0R7lWjhE4iClhaCnZ2FkhPOIohe4u42Gdjy+L4bZmd/zk0rV7HaDQnuWE1dEVrJwCT2ymof1RE8JBNgsdsaXB88cYm+W7uYiQYmwdEoOIEACfZ/BkcUaOuJ/x0cQYC8df8O/keBzm5YaA6eUGB2OyyyIowPHkOA5LQgsZfJoU0FikC0Y8tcYpU8esMPqgkXHFRdEFyz2CMr3rPMgCtCizePl7jECgvW2WOLFXu1oNrga+PhbURAcJUHrHbZoNV2SGpn0VpNHj1Se04/XM65uY3z+eEfJr1OWRdI1pXZzvZISKZnkXIFAc4Xfew77Knds0DShD21QRVvUwGn5SLXJxyckChOvGeyAAAAAElFTkSuQmCC"
-                    />
-                  </defs>
-                </svg>
+                <i class="bx bxs-send"></i>
               </button>
             </div>
           </div>
         </div>
+        <!-- right side -->
         <div class="lg:h-[100dvh] lg:w-[30%]">
-          <div class="bg-secondary/20 lg:w-[80%] w-full mx-auto">
+          <div
+            class="glass-container backdrop-blur-md rounded-lg px-2 py-3 lg:w-[80%] w-full mx-auto"
+          >
             <h2 class="text-xl text-center">Postes simulaires</h2>
             <div v-for="recent in blogStorage.threeLast" :key="recent._id" class="m-3 border-b">
               <router-link :to="{ name: 'singleBlog', params: { id: recent._id } }">
-                <h3 class="font-semibold">{{ recent.title }}</h3>
+                <h3 class="font-semibold font-satoshi">{{ recent.title }}</h3>
                 <p class="text-secondary/70">{{ recent.timePassed }}</p>
               </router-link>
             </div>
           </div>
 
-          <div class="lg:w-[80%] w-ful mx-auto">
-            <h3 class="text-xl font-bold mb-4">Les plus populaire</h3>
+          <div class="lg:w-[80%] w-ful mx-auto mb-1">
+            <h3 class="text-xl font-bold mb-2">Les plus populaire</h3>
             <router-link
               :to="{ name: 'singleBlog', params: { id: popular._id } }"
               v-for="(popular, index) in getPopularPost"
@@ -294,34 +218,8 @@ const getPopularPost = computed(() => {
                 <div class="flex justify-between text-secondary m-2">
                   <p>{{ popular.timePassed }}</p>
 
-                  <div class="flex gap-2 text-secondary">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                    >
-                      <rect width="20" height="20" fill="url(#pattern0_136_34)" />
-                      <defs>
-                        <pattern
-                          id="pattern0_136_34"
-                          patternContentUnits="objectBoundingBox"
-                          width="1"
-                          height="1"
-                        >
-                          <use xlink:href="#image0_136_34" transform="scale(0.02)" />
-                        </pattern>
-                        <image
-                          id="image0_136_34"
-                          width="50"
-                          height="50"
-                          preserveAspectRatio="none"
-                          xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC9UlEQVR4nO2YPYgTQRTHB/zIzsQvxErOSsXiCi0sLATBQlsLD5HsmwQFC0EQsbRUO1HQRksbIZi8tx6cnArCRUvxwELlxNoPoncqgo0ns5nLucluMrMmmx3JgymyM7Mzv3kf/80wNraxuWVC0nMhaVm3XxzoSVEGk8w1E6sQ7cYlfhF+bS9zyYTefPjDny0KiVX97C2bqnLmJIgyf7bIAV/r55eYsyCMsaIfHA5DDKjpjFdEDIgyLmlePfcATzCnQQDPthKf7jKXQYoymGwnfe7t0NO1SSCtCqb68AfLuwkfK1o33nT2bTpd3aoTfpHl3xu4EJ66j5XObl4ODugcmWcueEMAvVNQnf0e0AXtrTvMVW8oExKpBRqUmaveYOdmChzwm5D4m5+i7SyXNlVdo0pqT28AHtVh9YI56w0WhtUtDXJ5eBuR1Ij79DZoDZPc0CDvU66x3P4roEITsL6xRHuSQL6nXmDFGxIXkryh15j7VxDRBqImL9Umuhbhkl6Fg8q4z8KL+sX9vTEo46XaBAea0etWuwdImg5JfTxm+tLoKfX2xiDNq+AOnWtL3ZsCvKlj8HwKkJ82BzAwEKBmzKbwot7UddMXJn4YDhmCAz7sFVrH9cYwjyAieisTXmQU/GBX10AOtF+762UuQQCfRXOyfiR24IaTD7ZpkK95DS0erVj3em0s1JLNZdyS5xwRrdD6kDjIVktGCgIxFSutlmQN4vWrWGm1JCsQYVqx0mpJZiBgWLHSakmWocVNK1YaLRlFjoh+FSuNlowMBOhT38E2WpIliBetWL1Dy1ZLhg0iOqpVK6zoY0HWd/adnKQlHPCquubkQFcyA4FoteISHxtB9NKSlZBT/5mzDC1uU61MtER5QsH8fQOSVY54q9Xqs/EkGy2JuRRosOFWq0XjSTZaEne74UH9IBtWtQK6bzxxRUtsWggFeMN2nk3jQM31lendVqfAJT6yWGQunHTm9joh8ZoSq4ECSFxSnrCGGNvYxvZ/2h/2LIvMUttLygAAAABJRU5ErkJggg=="
-                        />
-                      </defs>
-                    </svg>
+                  <div class="flex gap-2 text-secondary items-center">
+                    <i class="bx bxs-like"></i>
                     {{ popular?.feeds?.like }}
                   </div>
                 </div>

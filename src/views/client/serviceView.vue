@@ -110,7 +110,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
     <!-- header -->
     <div class="pt-[100px] md:pt-[100px]">
       <div
-        class="hero flex items-center md:justify-end justify-center lg:h-[65dvh] md:h-[45dvh] h-[65dvh] flex-col gap-7 relative"
+        class="hero flex items-center md:justify-center justify-center lg:h-[65dvh] md:h-[50dvh] h-[65dvh] flex-col gap-7 relative"
       >
         <!-- blur effect -->
         <div
@@ -122,6 +122,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
         <div
           class="blur-xs block w-full h-[24px] absolute bg-primary -bottom-1 right-0 left-0 transition duration-300 delay-200 -z-30"
         ></div>
+        <!-- end blur effect -->
         <div
           class="blur-xs block w-[24px] h-full absolute bg-primary -right-1 transition duration-300 delay-200 -z-30"
         ></div>
@@ -140,15 +141,11 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
         </div>
 
         <h1
-          class="md:text-[24px] text-[18px] text-secondary text-center md:w-[80%] w-[90%] relative"
+          class="md:text-[24px] text-[18px] text-secondary text-center md:w-[80%] w-[90%] relative mt-5 font-satoshi"
+          style="font-family: 'Satoshi', sans-serif"
         >
-          Nous accompagnons <span class="text-bleu">professionnels</span>, startups et entreprises
-          dans la maîtrise des enjeux technologiques contemporains :
-          <span class="font-bold">Intelligence Artificielle</span>, <span>Data</span>,
-          <span class="text-yl">Architecture Logicielle</span> et Algorithmes. Que vous souhaitiez à
-          optimiser vos systèmes, former vos équipes ou pivoter vers un nouveau domaine, nos
-          solutions sont conçues pour répondre à vos besoins avec
-          <span class="relative spanOne text-secondary">précision</span> et impact.
+          Nous aidons professionnels et entreprises à maîtriser l’IA, la data et l’architecture
+          logicielle pour optimiser, former et innover avec impact
         </h1>
         <div class="flex gap-4">
           <button
@@ -204,7 +201,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
           </div>
 
           <div
-            class="-translate-x-2 flex items-center bg-bleu/50 border border-bleu rounded-full font-abeeze md:px-6 px-4 py-1 rounded-full font-abeeze md:text-[16px] text-[12px] gap-1"
+            class="-translate-x-2 flex items-center bg-bleu/50 border border-bleu rounded-full md:px-6 px-4 py-1 md:text-[16px] text-[12px] gap-1"
           >
             <span>10+</span> <span class="max-sm:hidden"> Collaborations</span>
           </div>
@@ -213,46 +210,8 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
     </div>
     <!--  -->
 
-    <!-- slide -->
-    <!-- <div class="w-[90%] mx-auto">
-      <Splide :options="opt" tag="div" :has-track="false">
-        <SplideTrack tag="div" class="">
-          <SplideSlide class="rounded-lg overflow-hidden" tag="div">
-            <img
-              src="/logo.jpg"
-              alt=""
-              class="w-[200px] h-[200px] rounded-lg hover:scale-102 grayscale-75 hover:grayscale-0 transition duration-300 delay-200 cursor-pointer object-contain"
-            />
-          </SplideSlide>
-          <SplideSlide class="rounded-lg overflow-hidden" tag="div">
-            <img
-              src="/logob.png"
-              alt=""
-              class="w-[200px] h-[200px] rounded-lg hover:scale-102 grayscale-75 hover:grayscale-0 transition duration-300 delay-200 cursor-pointer object-contain"
-            />
-          </SplideSlide>
-          <SplideSlide class="" tag="div">
-            <img
-              src="/logomemiore.png"
-              alt=""
-              class="w-[200px] h-[200px] rounded-lg hover:scale-102 grayscale-75 hover:grayscale-0 transition duration-300 delay-200 cursor-pointer object-contain"
-            />
-          </SplideSlide>
-          <SplideSlide class="" tag="div">
-            <img
-              src="/logoBiblio.png"
-              alt=""
-              class="w-[200px] h-[200px] rounded-lg hover:scale-102 grayscale-75 hover:grayscale-0 transition duration-300 delay-200 cursor-pointer object-contain"
-            />
-          </SplideSlide>
-        </SplideTrack>
-      </Splide>
-    </div> -->
-    <!--  -->
-
     <!-- formulaire -->
     <div class="my-[100px] flex justify-center flex-col gap-7">
-      <!-- <h2 class="text-[32px] lg:w-[50%] w-[95%] text-center">Nos services clés</h2> -->
       <!-- service section -->
       <div class="flex lg:flex-row flex-col items-center gap-10 md:gap-3 justify-center">
         <h3
@@ -262,14 +221,6 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
             >Découvrez nos services conçus pour propulser votre entreprise vers l'avenir
             numérique.</span
           >
-          <button
-            class="bg-secondary text-[14px] text-bleu px-6 py-2 rounded-full flex items-center gap-3 mt-5 justify-center"
-          >
-            Plus de 5 services
-            <p class="animate-showing">
-              <span class="md:block hidden">👉</span> <span class="md:hidden block">👇</span>
-            </p>
-          </button>
         </h3>
         <div class="serviceScrol w-[100vw] md:max-w-[700px] max-w-[400px]" id="serviceScrol">
           <motion.ul
@@ -278,60 +229,46 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
             class="flex gap-[20px] overflow-x-scroll h-[300px] flex-[0_0_600px] ffg"
           >
             <li
-              class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['1']"
+              class="bg-secondary/10 backdrop-blur-2xl flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['1']"
               style=""
             >
               <h2 class="font-bold">Consulting & Expertise Technique</h2>
-              <p>
+              <p style="font-family: 'Satoshi', sans-serif">
                 Un regard expert sur vos projets en IA, Data, architecture logicielle et
                 algorithmes, pour entreprises et indépendants.
               </p>
+              <button class="bg-secondary self-start text-bleu/70 mt-5 rounded-full px-3 py-2">
+                En savoir plus
+              </button>
             </li>
             <li
-              class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['2']"
+              class="bg-secondary/10 backdrop-blur-2xl flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['2']"
               style=""
             >
-              <h2 class="font-bold">Formations & Masterclasses</h2>
-              <p>
-                Des parcours pratiques et progressifs, adaptés aussi bien aux débutants qu'aux
-                experts.
+              <h2 class="font-bold">Le Mentorat Élite</h2>
+              <p style="font-family: 'Satoshi', sans-serif">
+                Vous maîtrisez les bases, mais vous stagnez techniquement. Ce mentorat est conçu
+                pour briser votre plafond de verre : passez du statut d'exécutant à celui d'Expert
+                Référent capable.
               </p>
+              <button class="bg-secondary self-start text-bleu/70 mt-5 rounded-full px-3 py-2">
+                En savoir plus
+              </button>
             </li>
             <li
-              class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['3']"
+              class="bg-secondary/10 backdrop-blur-2xl flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['3']"
               style=""
             >
-              <h2 class="font-bold">Conférences & Interventions</h2>
-              <p>
-                Partage d’expertise lors d’événements, séminaires et rencontres professionnelles.
+              <h2 class="font-bold">La Forge</h2>
+              <p style="font-family: 'Satoshi', sans-serif">
+                Vous venez d’un autre univers, mais vous possédez la discipline des meilleurs. La
+                Forge n'est pas un bootcamp, c'est une mutation. Notre objectif : faire de la
+                technologie votre langue maternelle pour vous rendre immédiatement indispensable sur
+                le marché.
               </p>
-            </li>
-            <li
-              class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['4']"
-              style=""
-            >
-              <h2 class="font-bold">Partenariats & Contenu Sponsorisé</h2>
-              <p>
-                Création et diffusion de contenus à forte valeur ajoutée, en collaboration avec
-                votre marque.
-              </p>
-            </li>
-            <li
-              class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['5']"
-              style=""
-            >
-              <h2 class="font-bold">Mentorat & Coaching Individuel</h2>
-              <p>Un accompagnement personnalisé (1:1) pour les professionnels ambitieux.</p>
-            </li>
-            <li
-              class="bg-secondary/20 flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['6']"
-              style=""
-            >
-              <h2 class="font-bold">Reconversion Professionnelle</h2>
-              <p>
-                Un parcours clé en main pour se lancer dans la tech ou réussir une transition de
-                carrière dans ce secteur.
-              </p>
+              <button class="bg-secondary self-start text-bleu/70 mt-5 rounded-full px-3 py-2">
+                En savoir plus
+              </button>
             </li>
           </motion.ul>
         </div>
@@ -347,7 +284,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
       </h1>
       <div class="flex md:flex-row flex-col">
         <div
-          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['1'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[-2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-2 max-lg:border-dashed max-lg:border-secondary"
+          class="w-[300px] relative mx-auto mt-5 bg-secondary/10 backdrop-blur-2xl p-3 rounded-lg before:content-['1'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[-2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-2 max-lg:border-dashed max-lg:border-secondary/50"
         >
           <h2 class="text-center border-b border-secondary/10 font-abeeze font-semibold">
             Remplissez notre formulaire de demande en précisant :
@@ -370,8 +307,9 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
             </p>
           </div>
         </div>
+        <!-- second step -->
         <div
-          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['2'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 transition-all duration-300 hover:scale-105 cursor-pointer max-lg:border-2 max-lg:border-dashed max-lg:border-secondary"
+          class="w-[300px] relative mx-auto mt-5 bg-secondary/10 backdrop-blur-2xl p-3 rounded-lg before:content-['2'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 transition-all duration-300 hover:scale-105 cursor-pointer max-lg:border-2 max-lg:border-dashed max-lg:border-secondary/50"
         >
           <h2 class="text-center border-b border-secondary/10 font-abeeze font-semibold">
             Échange exploratoire gratuit <br />(15-30 min) :
@@ -382,20 +320,19 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
               nécessaire).
             </li>
           </ul>
-          <div class="mt-5">
+          <div class="mt-5 flex flex-col">
             <p>Définir un chrono préçu</p>
             <input
               type="hour"
-              class="border-2 text-secondary/10 placeholder:text-primary/50 p-1 px-2 rounded-full w-[80px] mt-2 bg-secondary/30 border-secondary/50"
+              class="border-2 text-secondary/70 placeholder:text-secondary/70p-1 p-2 rounded-full w-full mt-2 bg-secondary/10 border-secondary/10"
               placeholder="12:00"
             />
-            <button class="text-bleu p-1 rounded-lg w-[150px] mt-2 ml-4 bg-secondary">
-              Enregistrer
-            </button>
+            <button class="text-secondary p-1 rounded-full w-full mt-2 bg-yl">Enregistrer</button>
           </div>
         </div>
+        <!-- last step -->
         <div
-          class="w-[300px] relative mx-auto mt-5 bg-secondary/25 p-3 rounded-lg before:content-['3'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-2 max-lg:border-dashed max-lg:border-secondary"
+          class="w-[300px] relative mx-auto mt-5 bg-secondary/10 backdrop-blur-2xl p-3 rounded-lg before:content-['3'] before:flex before:h-[50px] before:w-[50px] before:bg-bleu before:items-center before:absolute before:rounded-full before:justify-start before:-right-3 before:-top-5 overflow-hidden before:pl-4 before:pt-5 rotate-[2deg] hover:rotate-[0deg] transition-all duration-300 cursor-pointer max-lg:border-2 max-lg:border-dashed max-lg:border-secondary/50"
         >
           <h2>3. Lancement du projet :</h2>
           <ul class="list-disc list-inside font-normal">

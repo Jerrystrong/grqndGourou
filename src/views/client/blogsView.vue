@@ -54,10 +54,16 @@ blogs.fetchData()
       :data="filterArray"
     />
     <!-- header -->
-    <div class="md:h-[90vh] h-[70vh] w-full flex items-center justify-center flex-col gap-8">
+    <div
+      class="md:h-[90vh] h-[70vh] w-full flex items-center justify-center flex-col gap-8 relative"
+    >
       <h1 class="md:text-5xl text-3xl second-text-gradient text-center">
         LES ÉCRITS DU GRAND GOUROU
       </h1>
+      <p class="font-satoshi" style="font-family: 'Satoshi', sans-serif">
+        Un espace de publication permettant la lecture d'articles en ligne et le téléchargement
+        gratuit de leurs versions PDF.
+      </p>
       <div
         class="bg-secondary px-8 py-4 rounded-full transition duration-300 ease-in-out flex items-center"
         :class="{
@@ -80,10 +86,12 @@ blogs.fetchData()
           <img src="/search.png" alt="search-icon" class="w-4 h-4" />
         </button>
       </div>
+      <!-- pattern bg -->
+      <div class="blogHeaderBg absolute bottom-0 h-[100px] w-full"></div>
     </div>
     <!-- blogs -->
     <div>
-      <SectionHeader section-name="Rubriques" :width-c="100" />
+      <!-- <SectionHeader section-name="Rubriques" :width-c="100" />
       <div class="filters flex gap-4 my-6 flex-wrap md:justify-start justify-center">
         <button class="px-4 py-1 filter active" @click="filterTerm = ''">Recents</button>
         <button class="px-4 py-1 filter" @click="filterTerm = 'Rituels du Code'">
@@ -101,7 +109,7 @@ blogs.fetchData()
         <button class="px-4 py-1 filter" @click="filterTerm = 'Decryptage du gourou'">
           Decryptage du gourou
         </button>
-      </div>
+      </div> -->
       <div>
         <!-- render blog -->
         <div class="grid gap-8 mt-8" v-if="blogs.filterBlog(filterTerm, 'categorie').length > 0">
@@ -110,7 +118,9 @@ blogs.fetchData()
           </h2>
           <transition-group appear name="slide">
             <div v-for="(data, index) in blogs.filterBlog(filterTerm, 'categorie')" :key="index">
-              <div class="flex gap-10 justify-between p-8 md:flex-row flex-col-reverse fade">
+              <div
+                class="flex gap-10 justify-between p-8 md:flex-row flex-col-reverse fade shadow-2xl shadow-bleu/5 hover:shadow-bleu/10 transition-all duration-300 cursor-pointer"
+              >
                 <div class="flex flex-col gap-4">
                   <h2 class="md:text-2xl text-xl font-bold md:w-[70%] w-full">
                     {{ data.title }}
@@ -184,13 +194,14 @@ blogs.fetchData()
                   </div>
                 </div>
               </div>
-              <div
+              <!-- bottom separator -->
+              <!-- <div
                 class="flex items-center w-[100%]"
                 v-if="!(index + 1 === blogs.filterBlog(filterTerm, 'categorie').length)"
               >
                 <div class="rond rounded-full w-[15px] h-[15px] block bg-secondary"></div>
                 <div class="rond rounded-full w-[100%] h-[1px] block bg-secondary"></div>
-              </div>
+              </div> -->
             </div>
           </transition-group>
         </div>

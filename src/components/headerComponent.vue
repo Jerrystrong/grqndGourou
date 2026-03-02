@@ -18,6 +18,7 @@ const openMenu = (): void => {
 </script>
 <template>
   <div>
+    <!-- desktop animation -->
     <div
       class="z-50 desktop hidden lg:flex items-center justify-between px-10 pt-6 pb-2 fixed w-full transition duration-300 delay-200"
       :class="{
@@ -38,7 +39,7 @@ const openMenu = (): void => {
       </div>
 
       <nav
-        class="text-white text-deux flex gap-6 items-center bg-secondary/10 rounded-full h-[50px] px-7"
+        class="text-white text-deux flex gap-6 items-center bg-secondary/10 rounded-full h-[50px] px-7 backdrop-blur-md"
         @mouseover="setHover"
       >
         <router-link
@@ -64,7 +65,7 @@ const openMenu = (): void => {
       </nav>
 
       <button
-        class="transition-all duration-300 cursor-pointer border rounded-md border-transparent px-5 py-1 h-fit bg-bleu text-secondary hover:text-primary hover:bg-white/90 hover:border-primary hover:scale-105 hover:shadow-bleu hover:shadow-sm"
+        class="transition-all duration-300 cursor-pointer rounded-full px-5 py-2 h-fit bg-yl text-secondary hover:scale-102 font-satoshi"
       >
         Communauté
       </button>
@@ -120,7 +121,7 @@ const openMenu = (): void => {
             >Services et collaboration</router-link
           >
           <button
-            class="transition duration-300 delay-200 cursor-pointer border rounded-md border-bleu px-5 py-1 h-fit bg-white text-primary hover:bg-white/90 hover:border-primary hover:scale-105"
+            class="transition-all duration-300 cursor-pointer rounded-md px-5 py-1 h-fit primaryDeg text-secondary hover:scale-105 font-satoshi"
           >
             Communauté
           </button>
