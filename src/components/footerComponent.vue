@@ -17,14 +17,14 @@ export default defineComponent({
     >
       <div class="grid gap-4">
         <div class="flex flex-row gap-7">
-          <a href="" class="">
-            <WhatsappIcon w="20" h="20" class="w-[20px] h-[20px]" />
+          <a href="" class="text-[21px]">
+            <i class="bx bxl-whatsapp"></i>
           </a>
-          <a href="">
-            <img src="@/assets/linkedin.svg" alt="" class="w-[20px] h-[20px]" />
+          <a href="" class="text-[21px]">
+            <i class="bx bxl-linkedin"></i>
           </a>
-          <a href="">
-            <img src="@/assets/twitter.svg" alt="" class="w-[20px] h-[20px]" />
+          <a href="" class="text-[21px]">
+            <i class="bx bxl-twitter"></i>
           </a>
         </div>
         <h2

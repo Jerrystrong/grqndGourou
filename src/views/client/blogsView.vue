@@ -153,15 +153,14 @@ blogs.fetchData()
                     alt=""
                     class="w-full h-full rounded-lg object-cover"
                   />
+                  <!-- number view and lecture time -->
                   <div
                     class="h-full absolute w-full top-0 bottom-0 left-0 right-0 degBlack flex items-end justify-between"
                   >
                     <div class="flex items-center gap-2">
+                      <div class="flex items-center gap-1"><i class="bx bx-timer"></i> 5min</div>
                       <div class="flex items-center gap-1">
-                        <img src="/miniteur.svg" class="w-[20px] h-[20px]" />5min
-                      </div>
-                      <div class="flex items-center gap-1">
-                        <img src="/visible.svg" class="w-[20px] h-[20px]" />
+                        <i class="bx bx-show"></i>
                         {{ data.feeds?.viewer }}
                       </div>
                     </div>

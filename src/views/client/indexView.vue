@@ -267,7 +267,7 @@ onMounted(() => {
                 <div
                   class="bg-bleu/40 border rounded-full flex items-center justify-center border-bleu/50 w-[30px] h-[30px] backdrop-blur-md"
                 >
-                  <img src="/seeOph.svg" alt="" class="w-[20px] h-[20px]" />
+                  <i class="bx bx-bar-chart-alt-2 text-[21px]"></i>
                 </div>
                 <router-link :to="{ name: 'blogs' }"> Insights </router-link>
               </div>
@@ -297,7 +297,7 @@ onMounted(() => {
                 <div
                   class="bg-bleu/40 border rounded-full flex items-center justify-center border-bleu/50 w-[30px] h-[30px] backdrop-blur-md"
                 >
-                  <img src="/etiquette.svg" alt="" class="w-[20px] h-[20px]" />
+                  <i class="bx bxs-purchase-tag text-[21px]"></i>
                 </div>
                 Prix
               </div>
