@@ -8,6 +8,8 @@ import notFound from '../views/notFound.vue'
 import TarifView from '@/views/client/tarifView.vue'
 import LoginView from '@/views/loginView.vue'
 import PayementProcess from '@/views/client/payementProcess.vue'
+import SingleServiceView from '../views/client/singleServiceView.vue'
+import ContactView from '@/views/client/contactView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,9 +38,19 @@ const router = createRouter({
       component: serviceView,
     },
     {
+      path: '/service/:name',
+      name: 'singleService',
+      component: SingleServiceView,
+    },
+    {
       path: '/about',
       name: 'about',
       component: porfolioView,
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: ContactView,
     },
     {
       path: '/tarif',

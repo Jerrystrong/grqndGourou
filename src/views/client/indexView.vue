@@ -243,7 +243,7 @@ onMounted(() => {
     <div id="profilSection" class="relative">
       <!-- emodji bg -->
       <!-- <div class="freeBg absolute w-[200px] h-[200px] right-1/3 top-1/3 block opacity-15"></div> -->
-      <div class="freeBgChild absolute w-[200px] h-[200px] right-1/3 top-1/3 block"></div>
+      <!-- <div class="freeBgChild absolute w-[200px] h-[200px] right-1/3 top-1/3 block"></div> -->
       <!--  -->
       <div class="grid grid-cols-12 w-full mb-10 mt-5">
         <div class="md:col-span-6 col-span-12 p-4">

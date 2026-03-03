@@ -13,7 +13,7 @@ const inputFocus = ref(false)
 </script>
 <template>
   <div
-    class="border border-secondary px-5 py-2 rounded-xl"
+    class="border border-secondary/20 px-5 py-2 rounded-xl bg-secondary/10 focus-within:bg-secondary/20 transition duration-300 ease-in-out"
     :class="{ 'outline-4 outline-secondary/50': inputFocus }"
   >
     <label :for="inputId" class="font-bold">{{ name }}</label>

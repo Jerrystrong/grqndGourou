@@ -182,8 +182,8 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
             </svg>
           </button>
 
-          <router-link :to="{ name: 'about' }" class="primaryDeg px-5 p-1 rounded-full"
-            >A propos de moi</router-link
+          <router-link :to="{ name: 'contact' }" class="primaryDeg px-5 p-1 rounded-full"
+            >Nous ecrire</router-link
           >
         </div>
         <!-- figure process -->
@@ -222,6 +222,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
             numérique.</span
           >
         </h3>
+        <!-- all service -->
         <div class="serviceScrol w-[100vw] md:max-w-[700px] max-w-[400px]" id="serviceScrol">
           <motion.ul
             ref="containerRef"
@@ -237,9 +238,16 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
                 Un regard expert sur vos projets en IA, Data, architecture logicielle et
                 algorithmes, pour entreprises et indépendants.
               </p>
-              <button class="bg-secondary self-start text-bleu/70 mt-5 rounded-full px-3 py-2">
+              <router-link
+                :to="{
+                  name: 'singleService',
+                  params: { name: 'consulting' },
+                  query: { service: 'consultation' },
+                }"
+                class="bg-secondary self-start text-bleu/70 mt-5 rounded-full px-3 py-2"
+              >
                 En savoir plus
-              </button>
+              </router-link>
             </li>
             <li
               class="bg-secondary/10 backdrop-blur-2xl flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['2']"
@@ -251,9 +259,16 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
                 pour briser votre plafond de verre : passez du statut d'exécutant à celui d'Expert
                 Référent capable.
               </p>
-              <button class="bg-secondary self-start text-bleu/70 mt-5 rounded-full px-3 py-2">
+              <router-link
+                :to="{
+                  name: 'singleService',
+                  params: { name: 'mentorat_elite' },
+                  query: { service: 'mentorat' },
+                }"
+                class="bg-secondary self-start text-bleu/70 mt-5 rounded-full px-3 py-2"
+              >
                 En savoir plus
-              </button>
+              </router-link>
             </li>
             <li
               class="bg-secondary/10 backdrop-blur-2xl flex flex-col flex-[0_0_300px] w-[300px] mx-auto p-5 h-full rounded-lg relative beforeCont before:content-['3']"
@@ -266,9 +281,16 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
                 technologie votre langue maternelle pour vous rendre immédiatement indispensable sur
                 le marché.
               </p>
-              <button class="bg-secondary self-start text-bleu/70 mt-5 rounded-full px-3 py-2">
+              <router-link
+                :to="{
+                  name: 'singleService',
+                  params: { name: 'forge' },
+                  query: { service: 'formation' },
+                }"
+                class="bg-secondary self-start text-bleu/70 mt-5 rounded-full px-3 py-2"
+              >
                 En savoir plus
-              </button>
+              </router-link>
             </li>
           </motion.ul>
         </div>
@@ -324,7 +346,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
             <p>Définir un chrono préçu</p>
             <input
               type="hour"
-              class="border-2 text-secondary/70 placeholder:text-secondary/70p-1 p-2 rounded-full w-full mt-2 bg-secondary/10 border-secondary/10"
+              class="border border-secondary/20 px-5 py-2 rounded-xl bg-secondary/10 focus-within:bg-secondary/20 transition duration-300 ease-in-out"
               placeholder="12:00"
             />
             <button class="text-secondary p-1 rounded-full w-full mt-2 bg-yl">Enregistrer</button>
@@ -354,16 +376,21 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
         class="absolute w-full h-full blur-2xl top-0 bottom-0 left-0 right-0 bg-primary/20 -z-10"
       ></div>
       <div
-        class="bg-primary/80 md:w-[400px] w-[90%] mx-auto p-5 h-full md:rounded-tl-lg rounded-tl-0 shadow-sm shadow-bleu/20 md:overflow-hidden overflow-y-scroll ffg animate-simpleFormAnim"
+        class="bg-primary/80 md:w-[400px] w-[90%] mx-auto p-5 h-full md:rounded-tl-lg rounded-tl-0 shadow-sm shadow-bleu/20 overflow-y-scroll ffg animate-simpleFormAnim"
       >
         <div class="flex justify-between items-center">
-          <h2 class="font-semibold text-2xl my-5">Vos coordonnées</h2>
+          <h2
+            class="font-semibold text-2xl my-5 font-satoshi"
+            style="font-family: 'Satoshi', sans-serif"
+          >
+            Vos coordonnées
+          </h2>
 
           <button
-            class="font-abeeze text-[16px] text-bleu bg-secondary p-1 px-3 rounded-full cursor-pointer"
-            @click.self="isFormVisible = false"
+            class="font-satoshi text-[16px] bg-secondary/20 text-secondary w-[30px] h-[30px] flex items-center justify-center rounded-full cursor-pointer shadow-2xl shadow-secondary/50"
+            @click="isFormVisible = false"
           >
-            X
+            <i class="bx bx-x"></i>
           </button>
         </div>
         <div class="form">
@@ -375,33 +402,7 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
               inputId="userName"
               v-model="clientName"
             >
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <rect width="30" height="30" fill="url(#pattern0_137_86)" />
-                <defs>
-                  <pattern
-                    id="pattern0_137_86"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
-                    <use xlink:href="#image0_137_86" transform="scale(0.0333333)" />
-                  </pattern>
-                  <image
-                    id="image0_137_86"
-                    width="30"
-                    height="30"
-                    preserveAspectRatio="none"
-                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABSElEQVR4nO2UsUoDQRCGg8WZmSbaKdb6CvoiEcHMnJWV5yuk00YUX+PAzISInZYaqwQfQBtJrBSJaBnZkEgQ4+2RiVG5H/5qd/n4Z3Yml8v0KxWdzUKou8hSR5aXvutAErmziTCBa0vA2kTW7lcG0oa7Y5+UR0OH4abJoVfe76EfcK7umIGR9NoXjCRXdmDWjjeYtWMJ7qbxVBIDy/Pf7zGQRFP51Tk3x6QNrzkuxoH95qLR8MlsroGKceBK6frY/3DOl73yWifN9LMql2cgrK4Byz6QXABJG0nenIG1BSznQLIHJV11d8fm4ebJIpIcAsuD9xyTtIH1AMPThdTAQihzSHKMrK9p9/SQ3duj+e244AUNqLKCpHdjAD9ZboOt2nIiGEhv7KCDNarNZDBryxqMJPeJ4HxJN4D0yS6tPOa5su7V50z/Su9zYiZacdRUJAAAAABJRU5ErkJggg=="
-                  />
-                </defs>
-              </svg>
+              <i class="bx bx-user"></i>
             </InputComponent>
             <InputComponent
               name="Email"
@@ -410,66 +411,16 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
               inputId="userEmail"
               v-model="clientEmail"
             >
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <rect width="30" height="30" fill="url(#pattern0_138_94)" />
-                <defs>
-                  <pattern
-                    id="pattern0_138_94"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
-                    <use xlink:href="#image0_138_94" transform="scale(0.0416667)" />
-                  </pattern>
-                  <image
-                    id="image0_138_94"
-                    width="24"
-                    height="24"
-                    preserveAspectRatio="none"
-                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVR4nO2SO0jEQBCG1wd4OxELwcJGsBcLC1tBEBSuvUKSnWhzraXlCTa2go2tZeAykwg+KittrrneRmMviDaiEsliwkESkssJWmTgh2V35v92Z1aIOv5NGJa3AcgPgByOJnqMvFIAQDoZ3Zy1pKLD9BM6nXGwqS2RXiobIz1HHkKEY7mtArM7L5HPKrTGmd515nKNpaJLUG4zASm3WW4mdG9Y3noyS5tNQOplzCB+Jp83lL+gN1uOlIoOAPk9w/gDFB0L69qIUqcsb1EiX8XnuYCf4jdA2hctZ0LfCr1lQL4byLk1rO6SLly7mZTIe4D8OuhRAEhAPTD9lfgTNNDdjhStdVvRXZXI/azakgAOQfEXKD6dNS9mkuS2D1LxESB/5tWVB2ACCsCiHS3kp6L84QE4nGpAWKVFhYODslIcZADcrV+BKA7A9jZTgDr+LL4BPrJYwzTtIeAAAAAASUVORK5CYII="
-                  />
-                </defs>
-              </svg>
+              <i class="bx bx-envelope"></i>
             </InputComponent>
             <!-- PROFESSION -->
-            <div class="border border-secondary px-5 py-2 rounded-xl relative">
+            <div
+              class="border border-secondary/20 px-5 py-2 rounded-xl bg-secondary/10 focus-within:bg-secondary/20 transition duration-300 ease-in-out relative"
+            >
               <label for="" class="font-bold">Proffession</label>
               <div class="flex gap-3 items-center justify-between" @click="professionActive = true">
                 <button>{{ clientProfession || 'Selectionnez' }}</button>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <rect width="20" height="20" fill="url(#pattern0_139_100)" />
-                  <defs>
-                    <pattern
-                      id="pattern0_139_100"
-                      patternContentUnits="objectBoundingBox"
-                      width="1"
-                      height="1"
-                    >
-                      <use xlink:href="#image0_139_100" transform="scale(0.0416667)" />
-                    </pattern>
-                    <image
-                      id="image0_139_100"
-                      width="24"
-                      height="24"
-                      preserveAspectRatio="none"
-                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO3VPUpDQRSG4RskglhkATauIK0ES91CmizAxsLS1ir+7MAt2CqCTZbgEmwkKdIKVsojI3NhvNyrN8koFnnhNIcz3zec+TlF8RdgE1eYWZ0ZLoJmanApP+epQbnzvQzdGEStaZr8ZFXxRr21wf9rEW5xhq2Wb+gEd+j8aIBRcpefcYSNGuEOhnhK6kdtDCY1j+YRh0n9QcxVmbQx6OIY8xqB+xhV5nFNt9UZxNw2TvGimdf47/QWOuRK8Q6u8ZYIv+MGuw1r2huUoI+HGP3iG5YyWIS1wVItKgfOIIP4ft3ACXc5N+PUIHxYwWSaQThojL8M/d/kA3lrjcV5ttuGAAAAAElFTkSuQmCC"
-                    />
-                  </defs>
-                </svg>
+                <i class="bx bx-caret-down"></i>
               </div>
               <div
                 class="bg-secondary p-2 px-5 flex-col flex text-primary/70 rounded-lg absolute top-8 w-full right-0"
@@ -523,7 +474,9 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
               v-model="clientFirm"
             />
             <!-- entreprise size -->
-            <div class="border border-secondary px-5 py-2 rounded-xl relative">
+            <div
+              class="border border-secondary/20 px-5 py-2 rounded-xl bg-secondary/10 focus-within:bg-secondary/20 transition duration-300 ease-in-out relative"
+            >
               <label for="" class="font-bold">Taille d’entreprise</label>
               <div class="flex gap-3 items-center justify-between">
                 <div class="flex gap-1 items-center">
@@ -550,46 +503,22 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
               </div>
             </div>
             <!-- countrie -->
-            <div class="border border-secondary px-5 py-2 rounded-xl relative">
-              <label for="" class="font-bold">Proffession</label>
+            <div
+              class="border border-secondary/20 px-5 py-2 rounded-xl bg-secondary/10 focus-within:bg-secondary/20 transition duration-300 ease-in-out relative"
+            >
+              <label for="" class="font-bold">Pays</label>
               <div
                 class="flex gap-3 items-center justify-between"
                 @click="ClientCountryActive = true"
               >
                 <button class="flex gap-4">
                   <span
-                    class="border border-secondary/70 px-2 rounded-md flex items-center justify-center"
+                    class="border border-secondary/20 py-2 rounded-xl bg-secondary/10 focus-within:bg-secondary/20 transition duration-300 ease-in-out px-2 font-semibold"
                     >{{ countryFlag }}</span
                   >
                   {{ clientCountry }}
                 </button>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <rect width="20" height="20" fill="url(#pattern0_139_100)" />
-                  <defs>
-                    <pattern
-                      id="pattern0_139_100"
-                      patternContentUnits="objectBoundingBox"
-                      width="1"
-                      height="1"
-                    >
-                      <use xlink:href="#image0_139_100" transform="scale(0.0416667)" />
-                    </pattern>
-                    <image
-                      id="image0_139_100"
-                      width="24"
-                      height="24"
-                      preserveAspectRatio="none"
-                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA/ElEQVR4nO3VPUpDQRSG4RskglhkATauIK0ES91CmizAxsLS1ir+7MAt2CqCTZbgEmwkKdIKVsojI3NhvNyrN8koFnnhNIcz3zec+TlF8RdgE1eYWZ0ZLoJmanApP+epQbnzvQzdGEStaZr8ZFXxRr21wf9rEW5xhq2Wb+gEd+j8aIBRcpefcYSNGuEOhnhK6kdtDCY1j+YRh0n9QcxVmbQx6OIY8xqB+xhV5nFNt9UZxNw2TvGimdf47/QWOuRK8Q6u8ZYIv+MGuw1r2huUoI+HGP3iG5YyWIS1wVItKgfOIIP4ft3ACXc5N+PUIHxYwWSaQThojL8M/d/kA3lrjcV5ttuGAAAAAElFTkSuQmCC"
-                    />
-                  </defs>
-                </svg>
+                <i class="bx bx-caret-down"></i>
               </div>
               <div
                 class="bg-secondary p-2 px-5 flex-col flex text-primary/70 rounded-lg absolute top-8 w-full right-0 gap-2 h-[300px] overflow-y-scroll z-50"
@@ -613,21 +542,27 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
             </div>
 
             <!-- Portable -->
-            <div class="border border-secondary px-5 py-2 rounded-xl relative">
+            <div
+              class="border border-secondary/20 px-5 py-2 rounded-xl bg-secondary/10 focus-within:bg-secondary/20 transition duration-300 ease-in-out relative"
+            >
               <label for="" class="font-bold">Portable</label>
               <div class="flex gap-3 items-center">
-                <div class="border rounded-md px-2 font-semibold">{{ countryCode }}</div>
+                <div
+                  class="border border-secondary/20 py-2 rounded-xl bg-secondary/10 focus-within:bg-secondary/20 transition duration-300 ease-in-out px-2 font-semibold"
+                >
+                  {{ countryCode }}
+                </div>
                 <input
                   type="text"
                   placeholder="Entrez votre numéro de portable"
-                  class="w-full"
+                  class="w-full border-0 outline-none bg-transparent text-secondary/70 placeholder:text-secondary/70"
                   v-model="clientPhoneNumber"
                 />
               </div>
             </div>
 
             <!-- service -->
-            <h2 class="text-3xl">Nos services</h2>
+            <h2 class="text-[27px]" style="font-family: 'Satoshi', sans-serif">Nos services</h2>
 
             <div class="grid gap-5">
               <div class="flex gap-3">
@@ -639,8 +574,16 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
                   v-model="clientService"
                 />
                 <div class="grid">
-                  <label for="consulting" class="font-bold">Consulting / Expertise technique</label>
-                  <label for="consulting" class="text-secondary/70"
+                  <label
+                    for="consulting"
+                    class="font-bold"
+                    style="font-family: 'Satoshi', sans-serif"
+                    >Consulting / Expertise technique</label
+                  >
+                  <label
+                    for="consulting"
+                    class="text-secondary/70"
+                    style="font-family: 'Satoshi', sans-serif"
                     >(IA, Data, Architecture Logicielle et Algorithme)</label
                   >
                 </div>
@@ -654,48 +597,32 @@ function useScrollOverflowMask(scrollXProgress: ReturnType<typeof useScroll>['sc
                   v-model="clientService"
                 />
                 <div class="grid">
-                  <label for="consulting" class="font-bold">Formation et masterclass</label>
-                  <label for="consulting" class="text-secondary/70">(en direct ou en ligne)</label>
+                  <label
+                    for="consulting"
+                    class="font-bold"
+                    style="font-family: 'Satoshi', sans-serif"
+                    >Formation et masterclass</label
+                  >
+                  <label
+                    for="consulting"
+                    class="text-secondary/70"
+                    style="font-family: 'Satoshi', sans-serif"
+                    >(en direct ou en ligne)</label
+                  >
                 </div>
               </div>
             </div>
 
             <!-- btn -->
-            <button class="text-white primaryDeg rounded-lg p-2 font-bold">
+            <button
+              class="text-white primaryDeg rounded-full p-3 font-bold"
+              style="font-family: 'Satoshi', sans-serif"
+            >
               Entrez en contact
             </button>
           </div>
         </div>
       </div>
-      <!-- <div class="flex flex-col gap-6 md:w-fit w-[90%] mx-auto">
-      <div>
-        <h2 class="text-2xl my-5">Email support</h2>
-        <p>Pour toutes préoccupations contacter nous via notre mail</p>
-        <a href="" class="decoration-secondary text-secondary underline underline-offset-5"
-          >legrandGourou@gmail.com</a
-        >
-      </div>
-      <div>
-        <h2 class="text-2xl my-5">Localisation</h2>
-        <div>
-          <img src="/map.png" alt="" class="md:w-[400px] w-full h-fit" />
-        </div>
-      </div>
-      <div>
-        <h2 class="text-2xl my-5">Réseaux sociaux</h2>
-        <div class="flex flex-row gap-7">
-          <a href="" class="">
-            <WhatsappIcon w="20" h="20" />
-          </a>
-          <a href="">
-            <img src="@/assets/linkedin.svg" alt="" class="w-[20px] h-[20px]" />
-          </a>
-          <a href="">
-            <img src="@/assets/twitter.svg" alt="" class="w-[20px] h-[20px]" />
-          </a>
-        </div>
-      </div>
-    </div> -->
     </div>
   </transition>
 </template>

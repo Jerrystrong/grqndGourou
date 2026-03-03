@@ -44,7 +44,7 @@ const goBack = () => {
           <h2 class="font-abeeze text-[24px]">Selectionnez le méthode de payement</h2>
           <div class="grid gap-2 mt-5 z-50">
             <label
-              class="bg-secondary/10 p-2 flex justify-between cursor-pointer"
+              class="bg-secondary/10 p-2 flex justify-between cursor-pointer rounded-lg"
               :class="{ 'border-2 border-secondary/10 bg-secondary/20': paymentMethod === 'visa' }"
             >
               <div class="flex gap-2 items-center">
@@ -60,7 +60,7 @@ const goBack = () => {
               />
             </label>
             <label
-              class="bg-secondary/10 p-2 flex justify-between cursor-pointer"
+              class="bg-secondary/10 p-2 flex justify-between cursor-pointer rounded-lg"
               :class="{
                 'border-2 border-secondary/10 bg-secondary/20': paymentMethod === 'mobile',
               }"
@@ -79,7 +79,7 @@ const goBack = () => {
               />
             </label>
           </div>
-          <div class="bg-secondary/10 h-[250px] mt-4 p-5">
+          <div class="bg-secondary/10 h-[250px] mt-4 p-5 rounded-lg">
             <div>
               <small>Abonnement mentuel</small>
               <div class="flex gap-2 items-center">

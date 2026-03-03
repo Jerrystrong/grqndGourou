@@ -68,13 +68,19 @@ const openMenu = (): void => {
           >Membership</router-link
         >
       </nav>
-
-      <router-link
-        :to="{ name: 'login' }"
-        class="transition-all duration-300 cursor-pointer rounded-full px-5 py-2 h-fit bg-yl text-secondary hover:scale-102 font-satoshi"
-      >
-        Connexion
-      </router-link>
+      <div class="flex items-center justify-center gap-2">
+        <button
+          class="bg-white rounded-full text-bleu w-[30px] h-[30px] flex items-center justify-center"
+        >
+          <i class="bx bx-user"></i>
+        </button>
+        <router-link
+          :to="{ name: 'login' }"
+          class="transition-all duration-300 cursor-pointer rounded-full px-5 py-2 h-fit bg-yl text-secondary hover:scale-102 font-satoshi"
+        >
+          Connexion
+        </router-link>
+      </div>
     </div>
 
     <!-- mobile menu -->
