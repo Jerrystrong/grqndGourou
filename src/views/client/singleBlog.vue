@@ -196,8 +196,8 @@ const getPopularPost = computed(() => {
             <h2 class="text-xl text-center">Postes simulaires</h2>
             <div v-for="recent in blogStorage.threeLast" :key="recent._id" class="m-3 border-b">
               <router-link :to="{ name: 'singleBlog', params: { id: recent._id } }">
-                <h3 class="font-semibold font-satoshi">{{ recent.title }}</h3>
-                <p class="text-secondary/70">{{ recent.timePassed }}</p>
+                <h3 class="font-semibold font-satoshi text-[18px]">{{ recent.title }}</h3>
+                <p class="text-secondary/70 text-[16px]">{{ recent.timePassed }}</p>
               </router-link>
             </div>
           </div>
