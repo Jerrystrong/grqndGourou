@@ -14,7 +14,10 @@ const goTopaye = async () => {
 <template>
   <div class="w-[95%] mx-auto">
     <div class="flex items-center justify-center h-[70dvh]">
-      <h1 class="second-text-gradient font-abeeze md:text-[32px] text-[24px] w-[800px] text-center">
+      <h1
+        class="second-text-gradient font-abeeze md:text-[32px] text-[24px] w-[800px] text-center"
+        style="font-family: 'Satoshi', sans-serif"
+      >
         Notre plateforme propose un modèle hybride conciliant accessibilité et exclusivité, pensé
         aussi bien pour les curieux que pour les professionnels exigeants.
       </h1>

@@ -4,7 +4,10 @@
       class="heroL top-0 left-0 absolute right-0 bottom-0 bg-primary/50 blur-[4px] w-full h-full -z-50"
     ></div>
     <div class="flex justify-center flex-col mb-10 w-full items-center">
-      <h1 class="second-text-gradient font-abeeze md:text-[32px] text-[24px] w-[800px] text-center">
+      <h1
+        class="second-text-gradient font-abeeze md:text-[32px] text-[24px] w-[800px] text-center"
+        style="font-family: 'Satoshi', sans-serif"
+      >
         Se connecter / s’inscrire
       </h1>
       <p class="text-center md:w-fit w-[80%] mt-3 md:mt-0">
@@ -19,13 +22,17 @@
         class="border border-bleu bg-bleu/20 placeholder:text-secondary h-[50px] rounded-[20px] w-[300px] pl-[20px]"
       />
       <div class="primaryDeg px-10 py-3 rounded-full relative text-center my-2">Suivant</div>
+      <div class="text-center">
+        <p>Ou</p>
+      </div>
       <div class="mt- flex w-[300px] justify-between mt-5">
         <div class="flex gap-2">
-          <button class="bg-secondary rounded-full">
-            <img src="/google.svg" alt="" class="w-[50px] h-[50px] p-1" />
+          <button class="bg-secondary rounded-full flex items-center gap-3 w-[300px] p-2">
+            <img src="/google.svg" alt="" class="w-[30px] h-[30px] p-1" />
+            <p class="text-[16px] text-bleu/50">Se connecter avec Google</p>
           </button>
         </div>
-        <div class="flex gap-2">
+        <!-- <div class="flex gap-2">
           <button class="bg-secondary rounded-full">
             <img src="/github.svg" alt="" class="w-[50px] h-[50px] p-1" />
           </button>
@@ -34,7 +41,7 @@
           <button class="bg-secondary rounded-full">
             <img src="/facebook.svg" alt="" class="w-[50px] h-[50px] p-1" />
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

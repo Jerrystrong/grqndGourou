@@ -52,23 +52,29 @@ const openMenu = (): void => {
           class="hover:text-bleu/50 transition duration-300 hover:after:block after:content-[''] after:bg-secondary/45 after:left-1/2 after:-bottom-1 after:w-1 after:h-1 after:rounded-full after:absolute relative after:transition after:duration-300 after:delay-200 after:hidden"
           >Blog</router-link
         >
-        <router-link
+        <!-- <router-link
           :to="{ name: 'about' }"
           class="hover:text-bleu/50 transition duration-300 hover:after:block after:content-[''] after:bg-secondary/45 after:left-1/2 after:-bottom-1 after:w-1 after:h-1 after:rounded-full after:absolute relative after:transition after:duration-300 after:delay-200 after:hidden"
           >À propos</router-link
-        >
+        > -->
         <router-link
           :to="{ name: 'service' }"
           class="hover:text-bleu/50 transition duration-300 hover:after:block after:content-[''] after:bg-secondary/45 after:left-1/2 after:-bottom-1 after:w-1 after:h-1 after:rounded-full after:absolute relative after:transition after:duration-300 after:delay-200 after:hidden"
           >Services et collaboration</router-link
         >
+        <router-link
+          :to="{ name: 'tarif' }"
+          class="hover:text-bleu/50 transition duration-300 hover:after:block after:content-[''] after:bg-secondary/45 after:left-1/2 after:-bottom-1 after:w-1 after:h-1 after:rounded-full after:absolute relative after:transition after:duration-300 after:delay-200 after:hidden"
+          >Membership</router-link
+        >
       </nav>
 
-      <button
+      <router-link
+        :to="{ name: 'login' }"
         class="transition-all duration-300 cursor-pointer rounded-full px-5 py-2 h-fit bg-yl text-secondary hover:scale-102 font-satoshi"
       >
-        Communauté
-      </button>
+        Connexion
+      </router-link>
     </div>
 
     <!-- mobile menu -->
@@ -97,41 +103,29 @@ const openMenu = (): void => {
         >
           <router-link
             :to="{ name: 'home' }"
-            class="hover:text-bleu/50 transition duration-300 delay-200 h-fit text-xl"
+            class="hover:text-secondary/45 transition duration-300 delay-200 h-fit text-[27px]"
             >Acceuil</router-link
           >
           <router-link
             :to="{ name: 'blogs' }"
-            class="hover:text-bleu/50 transition duration-300 h-fit text-xl"
+            class="hover:text-secondary/45 transition duration-300 h-fit text-[27px]"
             >Blog</router-link
           >
           <router-link
-            :to="{ name: 'about' }"
-            class="hover:text-bleu/50 transition duration-300 h-fit text-xl"
-            >À propos</router-link
+            :to="{ name: 'service' }"
+            class="hover:text-secondary/45 transition duration-300 h-fit text-[27px] hover:scale-105"
+            >Services et collaboration</router-link
           >
           <router-link
             :to="{ name: 'tarif' }"
-            class="hover:text-bleu/50 transition duration-300 h-fit text-xl"
-            >Tarif</router-link
+            class="hover:text-secondary/45 transition duration-300 hover:after:block after:content-[''] after:bg-secondary/45 after:left-1/2 after:-bottom-1 after:w-1 after:h-1 after:rounded-full after:absolute relative after:transition after:duration-300 after:delay-200 after:hidden text-[27px]"
+            >Membership</router-link
           >
           <router-link
-            :to="{ name: 'service' }"
-            class="hover:text-bleu/50 transition duration-300 h-fit text-xl"
-            >Services et collaboration</router-link
+            :to="{ name: 'login' }"
+            class="transition-all duration-300 cursor-pointer rounded-full px-5 py-2 h-fit bg-yl text-secondary hover:scale-102 font-satoshi"
           >
-          <button
-            class="transition-all duration-300 cursor-pointer rounded-md px-5 py-1 h-fit primaryDeg text-secondary hover:scale-105 font-satoshi"
-          >
-            Communauté
-          </button>
-          <router-link :to="{ name: 'login' }">
-            <div class="primaryDeg px-10 py-3 rounded-full relative text-center">
-              Se connecter
-              <!-- <div class="absolute w-[60px] -right-[41px] translate-y-[14px] -z-5 blur-[2px]">
-                <img src="../../components/icons/codeX.svg" alt="" class="w-full -z-3" />
-              </div> -->
-            </div>
+            Connexion
           </router-link>
         </div>
       </transition>

@@ -2,16 +2,16 @@
 import leftIcon from '../../components/icons/leftIcon.vue'
 import { useBlogStore } from '../../stores/blog'
 import { useRouter } from 'vue-router'
-import { onMounted, ref, useTemplateRef } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useFetch } from '../../composable/useFetch'
 import useDuration from '../../composable/useDuration'
-import BounderBal from '../../components/bounderBal.vue'
 import FooterComponent from '../../components/footerComponent.vue'
-import WhatsappIcon from '../../components/whatsappIcon.vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitType from 'split-type'
-import type { QuickToFunc } from 'gsap'
+import NewsLetterComponent from '@/components/newsLetterComponent.vue'
+
+// import type { QuickToFunc } from 'gsap'
 const router = useRouter()
 const changeRoute = (id: string) => {
   router.push({ name: 'singleBlog', params: { id } })
@@ -41,13 +41,6 @@ const fetchData = async () => {
   }
 }
 fetchData()
-
-// new letter logic
-const userMail = ref<string>('')
-const userName = ref<string>('')
-const sendNewsLetter = () => {
-  console.log('cordonate send with success')
-}
 
 // user message
 const userMessage = ref<string>('')
@@ -140,30 +133,7 @@ onMounted(() => {
   gsap.set(lang.value, { perspective: 650 })
   // scroll event text appear
   gsap.set(split.value, { opacity: 1 })
-  const containers: HTMLDivElement[] = gsap.utils.toArray('.containr')
-  // containers.forEach((cn: HTMLDivElement) => {
-  //   const text = cn.querySelector('.split')
-  //   SplitText.create(text, {
-  //     type: 'words,lines',
-  //     mask: 'lines',
-  //     linesClass: 'line',
-  //     autoSplit: true,
-  //     onSplit: (instance) => {
-  //       console.log('split')
-  //       return gsap.from(instance.lines, {
-  //         yPercent: 120,
-  //         stagger: 0.1,
-  //         scrollTrigger: {
-  //           trigger: cn,
-  //           // markers: true,
-  //           scrub: true,
-  //           start: 'clamp(top center)',
-  //           end: 'clamp(bottom center)',
-  //         },
-  //       })
-  //     },
-  //   })
-  // })
+  // const containers: HTMLDivElement[] = gsap.utils.toArray('.containr')
   const splits = new SplitType(split.value!, { types: 'lines,words' })
   gsap.from(splits.words, {
     opacity: 0,
@@ -198,23 +168,17 @@ onMounted(() => {
       ></div>
       <!-- end blur effect -->
       <!-- social links -->
-      <div class="flex lg:flex-col flex-row gap-7 mt-0 lg:mt-0">
-        <a href="" class="">
-          <WhatsappIcon w="30" h="30" />
+      <div
+        class="flex lg:flex-col flex-row gap-7 mt-0 lg:mt-0 lg:bg-secondary/10 backdrop-blur-2xl md:p-5 p-0 rounded-[20px] shadow-2xl shadow-bleu/10"
+      >
+        <a href="" class="text-[21px]">
+          <i class="bx bxl-whatsapp"></i>
         </a>
-        <a href="">
-          <img
-            src="@/assets/linkedin.svg"
-            alt=""
-            class="lg:w-[50px] lg:h-[50px] w-[30px] h-[30px]"
-          />
+        <a href="" class="text-[21px]">
+          <i class="bx bxl-linkedin"></i>
         </a>
-        <a href="">
-          <img
-            src="@/assets/twitter.svg"
-            alt=""
-            class="lg:w-[50px] lg:h-[50px] w-[30px] h-[30px]"
-          />
+        <a href="" class="text-[21px]">
+          <i class="bx bxl-twitter"></i>
         </a>
       </div>
       <!-- header containt -->
@@ -278,7 +242,7 @@ onMounted(() => {
     <!-- profil show -->
     <div id="profilSection" class="relative">
       <!-- emodji bg -->
-      <div class="freeBg absolute w-[200px] h-[200px] right-1/3 top-1/3 block opacity-15"></div>
+      <!-- <div class="freeBg absolute w-[200px] h-[200px] right-1/3 top-1/3 block opacity-15"></div> -->
       <div class="freeBgChild absolute w-[200px] h-[200px] right-1/3 top-1/3 block"></div>
       <!--  -->
       <div class="grid grid-cols-12 w-full mb-10 mt-5">
@@ -353,10 +317,7 @@ onMounted(() => {
             >
           </h1>
           <div class="containr">
-            <p
-              class="lg:w-[435px] md:w-[350px] 250px font-urbanist md:mt-0 mt-5 text-left split"
-              ref="split"
-            >
+            <p class="lg:w-[435px] md:w-[350px] 250px font-urbanist md:mt-0 mt-5 text-left">
               Dans un écosystème où les solutions se ressemblent, ce sont les détails qui créent la
               singularité — et la performance. Notre approche ? Allier innovation, précision et
               pragmatisme pour des résultats concrets.
@@ -559,50 +520,14 @@ onMounted(() => {
       </button>
     </div> -->
 
+    <!-- pattern bg -->
+    <div class="blogHeaderBg2 h-[100px] w-full opacity-65 mb-10"></div>
     <!-- newletter section  -->
-    <div
-      class="relative bg-secondary w-full h-[300px] flex items-center justify-center flex-col text-primary lg:gap-6 gap-2 mb-10 overflow-hidden"
-    >
-      <BounderBal class="md:top-2 top-[-52%] left-2" :iteration="7" />
-      <BounderBal class="md:bottom-2 bottom-[-27%] right-2" :iteration="4" />
-      <h2
-        class="text-bleu lg:text-3xl md:text-2xl lg:w-[50%] md:w-[70%] w-[90%] text-center text-xl font-abeeze"
-      >
-        Restez à la pointe de l'IA, de la data, des algorithmes et de l'architecture logicielle !
-      </h2>
-      <p class="lg:w-full md:w-[60%] w-[90%] text-center">
-        Abonnez-vous pour recevoir analyses, conseils et tendances tech directement dans votre boîte
-        mail.
-      </p>
-
-      <div class="form flex flex-col gap-2">
-        <input
-          type="text"
-          name="userName"
-          id="userName"
-          placeholder="Entrez votre noms"
-          class="border border-bleu px-2 rounded-lg placeholder:text-black/70 focus:outline-2 py-1 focus:outline-bleu/60 focus:border-bleu focus:transition focus:placeholder:text-black/50 transition duration-300 ease-in-out active:outline-bleu/60 active:outline-2 max-[380px]:w-[300px] max-[380px]:ml-2"
-          v-model="userName"
-        />
-        <div class="flex gap-2 max-[380px]:gap-1">
-          <input
-            type="email"
-            name="userMail"
-            id="userMail"
-            placeholder="Entrez votre e-mail"
-            class="border border-bleu px-2 rounded-lg placeholder:text-black/70 focus:outline-2 py-1 focus:outline-bleu/60 focus:border-bleu focus:transition focus:placeholder:text-black/50 transition duration-300 ease-in-out active:outline-bleu/60 active:outline-2 max-[380px]:w-[180px] max-[380px]:ml-2"
-            v-model="userMail"
-          />
-          <button @click="sendNewsLetter" class="text-secondary bg-bleu px-7 rounded-lg py-1">
-            Envoyer
-          </button>
-        </div>
-      </div>
-    </div>
+    <NewsLetterComponent />
 
     <!-- categories -->
 
-    <div class="mb-8">
+    <!-- <div class="mb-8">
       <h2 class="font-satoshi text-2xl">Toutes les categories</h2>
       <div class="flex items-center justify-center my-10">
         <div
@@ -638,7 +563,7 @@ onMounted(() => {
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!--  ask the gourou-->
     <div class="mb-8">

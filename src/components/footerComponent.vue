@@ -7,10 +7,10 @@ export default defineComponent({
 })
 </script>
 <template>
-  <div class="mb-5 mt-5">
+  <div class="md:mb-0 mb-5 mt-5">
     <div class="flex items-center my-7">
-      <div class="w-4 h-4 bg-secondary block rounded-full"></div>
-      <div class="w-[100%] h-[1px] bg-secondary block rounded-full"></div>
+      <div class="w-4 h-4 bg-secondary/70 block rounded-full"></div>
+      <div class="w-[100%] h-[1px] bg-secondary/70 block rounded-full"></div>
     </div>
     <div
       class="flex justify-between md:flex-row-reverse flex-row md:flex-nowrap flex-wrap md:gap-0 gap-10"
@@ -27,12 +27,12 @@ export default defineComponent({
             <img src="@/assets/twitter.svg" alt="" class="w-[20px] h-[20px]" />
           </a>
         </div>
-        <h2 class="text-xl font-abeeze md:block hidden">
+        <h2
+          class="text-xl font-satoshi text-secondary/70"
+          style="font-family: 'Satoshi', sans-serif"
+        >
           Les details façonnent l’excellence technologique
         </h2>
-        <p class="text-[14px] md:mt-0 mt-10">
-          Copyright CHEZLEGRANDGOUROU @{{ new Date().getFullYear() }}. Tout droit réserver
-        </p>
       </div>
       <!-- 2 col -->
       <div>
@@ -57,14 +57,46 @@ export default defineComponent({
           </div>
         </div>
       </div>
-      <!-- 3 col -->
-      <div class="flex gap-3 flex-col text-secondary/70" style="font-family: 'Satoshi', sans-serif">
-        <h2 class="text-secondary font-bold">Contacts</h2>
-        <a href="tel:+243972640200">+243972640200</a>
-        <a href="tel:+243896702007">+243896702007</a>
-        <a href="tel:+243837133337">+243837133337</a>
+      <!-- Contacts -->
+      <div class="flex flex-col gap-4 text-secondary/70" style="font-family: 'Satoshi', sans-serif">
+        <h2 class="text-secondary font-semibold text-sm uppercase tracking-wider">Contacts</h2>
+
+        <ul class="flex flex-col gap-2 text-sm">
+          <li>
+            <a
+              href="tel:+243972640200"
+              class="flex items-center gap-2 hover:text-secondary transition-colors"
+            >
+              <span class="text-secondary/50"><i class="bx bx-caret-right"></i></span>
+              <span>+243 972 640 200</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="tel:+243896702007"
+              class="flex items-center gap-2 hover:text-secondary transition-colors"
+            >
+              <span class="text-secondary/50"><i class="bx bx-caret-right"></i></span>
+              <span>+243 896 702 007</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="tel:+243837133337"
+              class="flex items-center gap-2 hover:text-secondary transition-colors"
+            >
+              <span class="text-secondary/50"><i class="bx bx-caret-right"></i></span>
+              <span>+243 837 133 337</span>
+            </a>
+          </li>
+        </ul>
       </div>
       <!-- <img src="@/assets/CHEZLEGRANDGOUROU.svg" alt="logo-chezlegrandgourou" /> -->
     </div>
+    <p class="text-[14px] mt-5 bg-bleu/50 p-2">
+      Copyright CHEZLEGRANDGOUROU @{{ new Date().getFullYear() }}. Tout droit réserver
+    </p>
   </div>
 </template>

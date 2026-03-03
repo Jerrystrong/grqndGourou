@@ -4,7 +4,7 @@ import { useBlogStore } from '../../stores/blog'
 import FooterComponent from '../../components/footerComponent.vue'
 import SearchComponent from '../../components/searchComponent.vue'
 import { useRouter } from 'vue-router'
-import SectionHeader from '../../components/sectionHeader.vue'
+import NewsLetterComponent from '@/components/newsLetterComponent.vue'
 
 type Blog = {
   readonly _id: string
@@ -91,25 +91,6 @@ blogs.fetchData()
     </div>
     <!-- blogs -->
     <div>
-      <!-- <SectionHeader section-name="Rubriques" :width-c="100" />
-      <div class="filters flex gap-4 my-6 flex-wrap md:justify-start justify-center">
-        <button class="px-4 py-1 filter active" @click="filterTerm = ''">Recents</button>
-        <button class="px-4 py-1 filter" @click="filterTerm = 'Rituels du Code'">
-          Rituels du gourou
-        </button>
-        <button
-          class="px-4 py-1 filter max-[380px]:tricante"
-          @click="filterTerm = 'Grimoire des Outils'"
-        >
-          Grimoire du gourou
-        </button>
-        <button class="px-4 py-1 filter" @click="filterTerm = 'Oracles de la Cyber'">
-          Oracles du gourou
-        </button>
-        <button class="px-4 py-1 filter" @click="filterTerm = 'Decryptage du gourou'">
-          Decryptage du gourou
-        </button>
-      </div> -->
       <div>
         <!-- render blog -->
         <div class="grid gap-8 mt-8" v-if="blogs.filterBlog(filterTerm, 'categorie').length > 0">
@@ -217,6 +198,8 @@ blogs.fetchData()
         <!-- end blog -->
       </div>
     </div>
+    <!-- newsletter section -->
+    <NewsLetterComponent />
     <!-- footer -->
     <FooterComponent />
   </div>
