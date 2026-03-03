@@ -197,7 +197,7 @@ onMounted(() => {
           croissance stratégique.
         </p>
         <!-- button cta -->
-        <router-link :to="{ name: 'about' }">
+        <router-link :to="{ name: 'service' }">
           <div
             class="primaryDeg px-10 py-3 rounded-full relative shadownCustom transition-all duration-300 font-urbanist cursor-pointer"
             @mouseover="stopCodexTimeLine"
